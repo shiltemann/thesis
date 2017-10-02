@@ -1,0 +1,290 @@
+\chapter{Introduction}
+\label{introduction}
+\setlength\parindent{0pt}
+
+\begin{comment}
+Structure
+
+--> cover complexity of cancer step by step
+ - small variants
+ - SVs --> fusion genes
+ - clonality
+ - temporal evolution
+ - epigenetics
+
+-> for each variant type, cover:
+  - how to detect
+  - how to bioinf analyze
+  - challenges/limitations
+
+
+\end{comment}
+
+\section{A Brief History}
+
+\begin{comment}
+    describe some of the major developments over time and what that meant for cancer research in particular
+
+    Sources / outline:
+    - From Human genome to cancer genome: the first decade. [@wheeler2013human]
+    - U.S. declaration of war on cancer 1971 \url{https://en.wikipedia.org/wiki/War_on_Cancer}
+    - Sequencing human genome 1990-2003, timeline: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
+    - WES – large scale [@wood2007genomic] → confirmed known oncogenes
+    - WGS – large SVs
+    - augment with cDNA sequencing (RNASeq) → gene expression, splicing, fusions, ..
+    - augment with epigenetics (chromatin modification)
+
+    - some cancers can be cured, but rarely after metastases
+    - treatment vs prevention
+\end{comment}
+
+On December 23, 1971, President Richard Nixon, buoyed by recent technical feats such as the moon landing, signed into law the National Cancer Act, thereby declaring a war on cancer. During his state of the union address he proclaimed:
+
+\textit{"I will also ask for an appropriation of an extra \$100 million to launch an intensive campaign to find a cure for cancer, and I will ask later for whatever additional funds can effectively be used. The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease. Let us make a total national commitment to achieve this goal."}
+
+Today, more than 45 years later, that war is still being waged in full force. While great advancements have been made towards this goal, some of the initial optimism has been quelled by discoveries of the great complexity and heterogeneity underlying cancer.
+
+We have come a long way since those early days when.. [some words on early methods and challenges]
+
+In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of cancer research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (Fig. \ref{fig:seqcost}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{chapters/images/Historic_cost_of_sequencing_a_human_genome.png}
+    \caption{The cost of sequencing a human-sized genome over time. Data from the NHGRI Genome Sequencing Program (GSP) }
+    \label{fig:seqcost}
+\end{figure}
+
+In 2007, these technological advancements enabled cancer researchers to look at the complete set of genes (the \textit{exome}) known at the time, in a set of 22 samples of 2 different tumour types. This brute-force, whole-exome sequencing (WES) method yielded a genomic landscape of \textit{mountains} of frequently mutated genes as well as a large number of \textit{hills} that were mutated at lower frequencies across patients, and highlighted once again the vast heterogeneity of cancer genomes \cite{wood2007genomic}.
+
+Since then, many such WES studies on large cohorts of patients have been conducted \cite{wheeler2013human} and have greatly increased our insight into the mutational landscapes of the different tumor types.
+
+\verb+<whole-genome>+
+
+\verb+<rna seq>+
+
+\section{The Central Dogma}
+
+<just a quick paragraph on the very basics>
+
+\section{The Hallmarks of Cancer}
+
+Tumor cells evolve from normal cells through the acquisition and accumulation of mutations. The human body has mechanisms in place to repair or dispose of damaged cells and to prevent runaway cell division, so in order for a tumour cell to survive and thrive it needs to acquire changes that provide it with advantages for proliferation and evasion of the cell's defense mechanisms. Evidence suggests this transformation from healthy cells into malignant cells follows a strikingly similar path across all different tumour types \cite{}. A cell's acquired abilities that drive tumour progression are know as the \emph{hallmarks of cancer} and consist of the following six characteristics:
+
+\begin{itemize}
+    \item self-sufficiency in growth signals
+    \item insensitivity to anti-growth signals
+    \item evasion of programmed cell death
+    \item limitless replicative potential
+    \item sustained angiogenesis
+    \item tissue invasion and metastasis
+\end{itemize}
+
+Each of these steps overcomes one of the body's anti-cancer defense mechanisms. This evolution into malignancy is an almost darwinian process where the mutations acquired are random, but those cells that have gained mutations which are advantageous for survival will be able to replicate and thrive and accumulate further mutations. Distinguishing the mutations that impart a strategic advantage and thereby \emph{drive} a tumour's progression, from the often huge number of less harmful \emph{passenger} mutations accumulated over the lifetime of a cancer cell is no easy task. The optimal course of treatment for a patient often depends on the mutations present and how the cell functions are subsequently impacted by those mutations. However, many different mutations may lead to the same disruptions of key pathways, therefore we must evaluate mutations not just as the DNA level but in the broader context of their functional impact on the cell's internal processes.
+
+
+\section{Prostate Cancer}
+
+Prostate cancer remains one of the most common cancers in men, with an estimated 1 in 7 men being diagnosed with the disease in their lifetime \cite{}[cancer.org]. Prostate tumours are often very slow growing leading to the observation that most men die \emph{with} prostate cancer, rather than \emph{from} it. Early detection is key in selecting the optimal treatment strategy, but prostate cancer often shows few symptoms in the early stages making this a challenge.
+
+A subset of prostate cancers (x \% [cite]) is of a more aggressive type,
+
+
+
+
+\section{Cancer's Complexities}
+
+Determining the exact genetic sequence of healthy individuals is already quite a challenging endeavor; trying to extend this to cancer genomes takes this challenge to the extreme. There are several complexities present in cancer geneomes that make accurate determination of the genetic changes and their downstream impacts a difficult task:
+
+\begin{enumerate}
+\item Small variants
+\item Structural variations
+\item Clonality
+\item Temporal Evolution
+\item others? Epigenetics? transcriptome level complexities?
+\end{enumerate}
+
+In the following sections we will discuss each of these complexities and explore the biological and informatics challenges posed by them.
+
+\subsection{\color{midgrey}{small variants}}
+
+The simplest mutations are those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
+
+\subsubsection{The Biology}
+The impact of such mutations depends on where in the genome they occur. Single nucleotide variants (SNVs) in exonic regions can range from having no effect on the resulting protein (silent) to changing an amino acid in the protein to a different amino acid (missense mutations), to changing a codon into a stop codon (nonsense mutation) which nearly always results in a nonfunctional protein. If this happens in a protein that is vital to the functioning of the cell this can have disastrous consequences <some examples of SNVs causing serious problems/phenotypes> <conserved regions, cell's mechanisms for preventing such fatal flaws>
+
+These simple variations were the first to be extensively studied and found to contribute ..
+
+While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health, for example 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of TERT (Horn et al. 2013; Huang et al. 2013).
+
+\subsubsection{The Informatics}
+
+We know that changes in sequence and structure of DNA contributes to cancer development. But how do we describe these properties? Any two healthy individuals differ greatly in their DNA sequence; it's what makes us us. How to denote these differences is a non-trivial problem, as is determining which of these differences are just part of the natural variation between individuals and which are ones detrimental to our health and functioning.
+
+If you were asked to describe the differences between two Shakespeare plays, how would you go about it? They are made up of the same alphabet, and share many of the same words and even whole sentences, but to list the differences between them can be done in many ways. You could number the words in both books and take note of the ones that are different in each position, but then if you were to take two identical sentences and prefix one with a single extra word, all positions would end up being flagged as different while clearly these sentences are nearly identical. And ..
+
+<note: ditch the book analogy? example shakespearean sentence to illustrate? >
+
+
+
+Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, and was constructed by taking the most frequently observed nucleotide at any given  position in the genome
+<discuss some drawbacks/things to realize: based on relatively small set of samples, not optimally diverse set of individuals>
+
+<multiple ways to describe the same variant, makes comparisons across platforms/versions hard, add picture with example, genome in a bottle picture>
+
+<not to mention sequencing errors, at rate of abt x/100, sequencing depth helps but tradeoff with cost>
+
+<repetitive regions>
+
+The result of all of this is that different variant calling tools will produce different sets of variants given the exact same input dataset and reference genome, and it is hard to know who does a better job, if their respective papers are to be believed each one of them far outstrips all the others. But as with everything in life, the truth lies somewhere in the middle. Each of the variant callers has its strengths and weaknesses, some may very accurate in calling one type of variant but have  more difficulty with others. Some are very accurate in healthy genomes but less so in highly mutated genomes or vice versa. One possible solution is to run a set of variant callers
+
+
+\subsection{\color{midgrey}{structural variants}}
+
+rarely involve the coding sequences directly, only observed through WGS
+
+<chromothripsis/kataegis>
+
+
+
+\subsubsection{The Biology}
+\subsubsection{The Informatics}
+
+<very very poor overlap between different methods>
+
+<hard to resolve exact location of junctions>
+
+<chainfinder>
+
+
+\subsection{\color{midgrey}{clonality}}
+\subsubsection{The Biology}
+\subsubsection{The Informatics}
+
+\subsection{\color{midgrey}{temporal evolution}}
+\subsubsection{The Biology}
+\subsubsection{The Informatics}
+
+\subsection{\color{midgrey}{epigenetics}}
+Not only nucleotide sequence matters..
+\subsubsection{The Biology}
+\subsubsection{The Informatics}
+
+
+\section{Informatics Challenges}
+\subsection*{\color{midgrey}{big data}}
+need compute infrastructure for computation, smart algorithms to finish analysis in
+
+need visualisation, reporting for humans to make sense of large result datasets
+
+\subsection*{\color{midgrey}{noisy data}}
+
+- statistical methods to cut through noise
+
+\subsection*{\color{midgrey}{complex data}}
+- machine learning
+
+\subsection*{\color{midgrey}{infrastructure}}
+making it usable/reproducible (dare I say FAIR ;P): Importance of Galaxy, docker, conda, training
+
+
+\begin{comment}
+
+<WGS reveals changes outside coding regions, such as one affecting regulation of genes are of importance, and can reveal large scale changes (SVs), fusion genes>
+
+<epigenetics>
+
+<potential of developing treatments from all this knowledge>
+
+sources:
+- Hallmarks of cancer: the next generation [@hanahan2011hallmarks]
+- Chromosome aberrations in solid tumors [@albertson2003chromosome]
+
+~~~
+low-resolution methods:
+- fluorescent in sit hybridisation FISH [Pinkel et al 1988, Thompon and Gray, 1993]
+- chromosome painting [Jauch et al, 1992]
+- spectral karyotyping [Schrock et al 1996]
+- comparative genome hybridisation CGH [Kallioneimi 1992]
+
+- arrays
+
+high-throughput:
+ - LOH [@hampton1996simultaneous]
+ - GWAS
+
+ - 2003 still infeasible to sequence entire tumor genome, so
+   ESP (end sequencing profiling) used [Volik et al 2003]
+       (- BAC library from tumor, sequence ends, map to reference)
+    → reconstruction from ESP data [Rapael et al 2003]
+
+now: WGS
+- NGS: DNA short reads
+- NGS: RNA Seq
+- NGS: Paired end mapping [@korbel2007paired]
+- limitations of current methods
+~~~
+
+advanced in cancer research specifically from next generation methods: [@meyerson2010advances]
+
+\end{comment}
+
+
+
+
+
+
+
+\begin{comment}
+
+types of SVs: standard, complex, chromothripsis [@stephens2011massive]
+
+- well-known examples
+    - TMPRSS ERG
+    - ABL gene on chr9, chronic myeloid leukema, translocation between chr9 and 22,
+       changes regulation, promotor becomes promotor of BCR gene on chr22
+      [Heisterkamp et al 1983]
+
+#### usefulness in biomarker and treatment development
+
+- Gleevec, targeting BCR-ABL fusion gene [@druker2001efficacy]
+- Herceptin, targeting ERBB2 amplification [@kauraniemi2004effects]
+
+
+#### SV Tools and databases
+
+~~~
+- catalogued in Mitleman database [Mitelman 2003]
+- COSMIC
+- ..
+~~~
+
+## Clonality
+
+## Temporal evolution
+
+## etc..
+~~~
+<Informatics/analysis methods>
+ - History of methodologies (gwas, ..)
+ - NGS: Huge datasets, excel and manual analyses no longer suffice
+ - Cancer: Germline correction, drivers vs passengers
+
+<Limitations of current methods>
+ - imperfect data
+ - disagreements and biases per lab/informatics technique
+
+<Challenges in tumour genome reconstruction>
+→ explain in biology section, here describe why that complicates things
+
+ - Normal Contamination
+ - Clonality detection
+ - Event Chains detection
+ - Temporal evolution detection
+
+
+\end{comment}
+
+
+\bibliographystyle{plain}
+\bibliography{references}

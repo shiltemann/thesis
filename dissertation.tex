@@ -1,0 +1,58 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[School=EMC]{Dissertate}
+\usepackage{tikz}
+\usepackage{chapterbib}
+\usepackage{natbib}
+
+\begin{document}
+
+% the front matter
+\include{frontmatter/cover}
+\input{frontmatter/personalize}
+\maketitle
+\copyrightpage
+%\abstractpage
+\dedicationpage
+
+\include{frontmatter/foreword}
+\include{frontmatter/stellingen}
+\include{frontmatter/scope}
+
+\tableofcontents
+%\authorlist
+%\listoffigures
+
+\abstractpage
+%\doublespacing
+
+% include each chapter...
+\setcounter{chapter}{-1}  % start chapter numbering at 0 because (computer) science
+\include{chapters/introduction}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/discussion}
+\begin{appendices}
+    \include{endmatter/glossary}
+    \include{endmatter/summary}
+    \include{endmatter/samenvatting}
+    \include{endmatter/publications}
+    \include{endmatter/cv}
+    \include{endmatter/portfolio}
+\end{appendices}
+
+\acknowledgments
+\singlespacing
+
+% the back matter
+\clearpage
+\bibliography{references}
+%\addcontentsline{toc}{chapter}{References}
+%\bibliographystyle{apalike2}
+\bibliographystyle{plain}
+\include{endmatter/colophon}
+
+\end{document}
