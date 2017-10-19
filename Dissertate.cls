@@ -68,7 +68,9 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 \renewcommand{\cftsecfont}{\scshape}
-\renewcommand{\cftsubsecfont}{\scshape}
+\renewcommand{\cftsubsecfont}{\color{midgrey}}
+
+
 
 % \usepackage{fixltx2e}
 \usepackage{ragged2e}

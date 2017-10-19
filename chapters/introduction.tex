@@ -20,7 +20,7 @@ Structure
 
 \end{comment}
 
-\section{A Brief History}
+\section{A Brief History of Genomics}
 
 \begin{comment}
     describe some of the major developments over time and what that meant for cancer research in particular
@@ -28,7 +28,7 @@ Structure
     Sources / outline:
     - From Human genome to cancer genome: the first decade. [@wheeler2013human]
     - U.S. declaration of war on cancer 1971 \url{https://en.wikipedia.org/wiki/War_on_Cancer}
-    - Sequencing human genome 1990-2003, timeline: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
+    - Sequencing human genome 1990-2003, time line: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
     - WES – large scale [@wood2007genomic] → confirmed known oncogenes
     - WGS – large SVs
     - augment with cDNA sequencing (RNASeq) → gene expression, splicing, fusions, ..
@@ -37,14 +37,6 @@ Structure
     - some cancers can be cured, but rarely after metastases
     - treatment vs prevention
 \end{comment}
-
-On December 23, 1971, President Richard Nixon, buoyed by recent technical feats such as the moon landing, signed into law the National Cancer Act, thereby declaring a war on cancer. During his state of the union address he proclaimed:
-
-\textit{"I will also ask for an appropriation of an extra \$100 million to launch an intensive campaign to find a cure for cancer, and I will ask later for whatever additional funds can effectively be used. The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease. Let us make a total national commitment to achieve this goal."}
-
-Today, more than 45 years later, that war is still being waged in full force. While great advancements have been made towards this goal, some of the initial optimism has been quelled by discoveries of the great complexity and heterogeneity underlying cancer.
-
-We have come a long way since those early days when.. [some words on early methods and challenges]
 
 In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of cancer research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (Fig. \ref{fig:seqcost}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
@@ -63,11 +55,51 @@ Since then, many such WES studies on large cohorts of patients have been conduct
 
 \verb+<rna seq>+
 
-\section{The Central Dogma}
+\newpage
+\section{The bioinformatics foundation for the big red button}
 
-<just a quick paragraph on the very basics>
+- easy to use (galaxy)
+- easy to install and maintain (conda, galaxy)
+- reproducible results (galaxy, conda)
+- importance of visualization (circos)
+- reporting of results
+- good training (gtn)
 
-\section{The Hallmarks of Cancer}
+- tool selection (many choices for tools, can have great impact on final results, poor overlap typically)
+
+\newpage
+\section{Use case 1: Prostate Cancer}
+
+\begin{color}{chaptergrey}
+\hfill I like puzzles. Any type of puzzle. I always have. If I see a puzzle or a problem I have to solve it. I think that is what makes cancer such a fascinating topic for me.
+
+\hfill Imagine you are given a jigsaw puzzle. Now instead of a few hundred pieces, there are several billion pieces. The picture on the box is not a picture of the puzzle inside the box,
+it is just a somewhat similar image. Oh, and did I mention there are a whole bunch of pieces missing? and that many pieces are duplicated? Some pieces don't even belong in our box,
+but come from a completely different puzzle. On top of that your little sister has spilled paint over some of the pieces so those can't be trusted to contribute to the image. And instead of one
+single puzzle, the box contains several, they are all variations of the image on the box, but you have no idea how many different puzzles the box contains. Sound challenging? This is the problem we are solving whenever we sequence a cancer genome.
+\end{color}
+
+\vspace*{0.5cm}
+\textbf{[Metaphor key]} \\
+\textit{puzzle pieces} = sequence reads \\
+\textit{picture on box} = reference genome \\
+\textit{missing pieces} = hard-to-sequence areas \\
+\textit{other puzzles} = contamination \\
+\textit{painted pieces} = sequencing errors \\
+\textit{multiple puzzles in box} = clonality
+
+
+\subsection{Background}
+\epigraph{3in}{The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease.}{President Richard Nixon}
+
+On December 23, 1971, President Richard Nixon, buoyed by recent technical feats such as the moon landing, signed into law the National Cancer Act, thereby declaring a war on cancer. Today, more than 45 years later, that war is still being waged in full force. While great advancements have been made towards this goal, some of the initial optimism has been quelled by discoveries of the great complexity and heterogeneity underlying cancer.
+
+Prostate cancer remains one of the most common cancers in men, with an estimated 1 in 7 men being diagnosed with the disease in their lifetime \cite{}[cancer.org]. Prostate tumours are often very slow growing leading to the observation that most men die \emph{with} prostate cancer, rather than \emph{from} it. Early detection is key in selecting the optimal treatment strategy, but prostate cancer often shows few symptoms in the early stages making this a challenge.
+
+A subset of prostate cancers (x \% [cite]) is of a more aggressive type,
+
+
+\subsection{The Hallmarks of Cancer}
 
 Tumor cells evolve from normal cells through the acquisition and accumulation of mutations. The human body has mechanisms in place to repair or dispose of damaged cells and to prevent runaway cell division, so in order for a tumour cell to survive and thrive it needs to acquire changes that provide it with advantages for proliferation and evasion of the cell's defense mechanisms. Evidence suggests this transformation from healthy cells into malignant cells follows a strikingly similar path across all different tumour types \cite{}. A cell's acquired abilities that drive tumour progression are know as the \emph{hallmarks of cancer} and consist of the following six characteristics:
 
@@ -83,16 +115,7 @@ Tumor cells evolve from normal cells through the acquisition and accumulation of
 Each of these steps overcomes one of the body's anti-cancer defense mechanisms. This evolution into malignancy is an almost darwinian process where the mutations acquired are random, but those cells that have gained mutations which are advantageous for survival will be able to replicate and thrive and accumulate further mutations. Distinguishing the mutations that impart a strategic advantage and thereby \emph{drive} a tumour's progression, from the often huge number of less harmful \emph{passenger} mutations accumulated over the lifetime of a cancer cell is no easy task. The optimal course of treatment for a patient often depends on the mutations present and how the cell functions are subsequently impacted by those mutations. However, many different mutations may lead to the same disruptions of key pathways, therefore we must evaluate mutations not just as the DNA level but in the broader context of their functional impact on the cell's internal processes.
 
 
-\section{Prostate Cancer}
-
-Prostate cancer remains one of the most common cancers in men, with an estimated 1 in 7 men being diagnosed with the disease in their lifetime \cite{}[cancer.org]. Prostate tumours are often very slow growing leading to the observation that most men die \emph{with} prostate cancer, rather than \emph{from} it. Early detection is key in selecting the optimal treatment strategy, but prostate cancer often shows few symptoms in the early stages making this a challenge.
-
-A subset of prostate cancers (x \% [cite]) is of a more aggressive type,
-
-
-
-
-\section{Cancer's Complexities}
+\subsection{Cancer's Complexities}
 
 Determining the exact genetic sequence of healthy individuals is already quite a challenging endeavor; trying to extend this to cancer genomes takes this challenge to the extreme. There are several complexities present in cancer geneomes that make accurate determination of the genetic changes and their downstream impacts a difficult task:
 
@@ -106,18 +129,22 @@ Determining the exact genetic sequence of healthy individuals is already quite a
 
 In the following sections we will discuss each of these complexities and explore the biological and informatics challenges posed by them.
 
-\subsection{\color{midgrey}{small variants}}
+\paragraph{The Bio}
+\subparagraph{Small variants} comprise the simplest class of mutations; those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
 
-The simplest mutations are those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
-
-\subsubsection{The Biology}
 The impact of such mutations depends on where in the genome they occur. Single nucleotide variants (SNVs) in exonic regions can range from having no effect on the resulting protein (silent) to changing an amino acid in the protein to a different amino acid (missense mutations), to changing a codon into a stop codon (nonsense mutation) which nearly always results in a nonfunctional protein. If this happens in a protein that is vital to the functioning of the cell this can have disastrous consequences <some examples of SNVs causing serious problems/phenotypes> <conserved regions, cell's mechanisms for preventing such fatal flaws>
 
 These simple variations were the first to be extensively studied and found to contribute ..
 
 While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health, for example 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of TERT (Horn et al. 2013; Huang et al. 2013).
 
-\subsubsection{The Informatics}
+\subparagraph{Structural variations}
+rarely involve the coding sequences directly, only observed through WGS
+\subparagraph{Clonality}
+\subparagraph{Temporal Evolution}
+\subparagraph{Epigenetics}
+
+\paragraph{The Informatics}
 
 We know that changes in sequence and structure of DNA contributes to cancer development. But how do we describe these properties? Any two healthy individuals differ greatly in their DNA sequence; it's what makes us us. How to denote these differences is a non-trivial problem, as is determining which of these differences are just part of the natural variation between individuals and which are ones detrimental to our health and functioning.
 
@@ -138,54 +165,18 @@ Currently variations in DNA are described relative to a \emph{reference genome};
 
 The result of all of this is that different variant calling tools will produce different sets of variants given the exact same input dataset and reference genome, and it is hard to know who does a better job, if their respective papers are to be believed each one of them far outstrips all the others. But as with everything in life, the truth lies somewhere in the middle. Each of the variant callers has its strengths and weaknesses, some may very accurate in calling one type of variant but have  more difficulty with others. Some are very accurate in healthy genomes but less so in highly mutated genomes or vice versa. One possible solution is to run a set of variant callers
 
-
-\subsection{\color{midgrey}{structural variants}}
-
-rarely involve the coding sequences directly, only observed through WGS
-
-<chromothripsis/kataegis>
-
-
-
-\subsubsection{The Biology}
-\subsubsection{The Informatics}
-
+\subparagraph{Structural variations}
 <very very poor overlap between different methods>
 
 <hard to resolve exact location of junctions>
 
 <chainfinder>
+\subparagraph{Clonality}
+\subparagraph{Temporal Evolution}
+\subparagraph{Epigenetics}
 
-
-\subsection{\color{midgrey}{clonality}}
-\subsubsection{The Biology}
-\subsubsection{The Informatics}
-
-\subsection{\color{midgrey}{temporal evolution}}
-\subsubsection{The Biology}
-\subsubsection{The Informatics}
-
-\subsection{\color{midgrey}{epigenetics}}
-Not only nucleotide sequence matters..
-\subsubsection{The Biology}
-\subsubsection{The Informatics}
-
-
-\section{Informatics Challenges}
-\subsection*{\color{midgrey}{big data}}
-need compute infrastructure for computation, smart algorithms to finish analysis in
-
-need visualisation, reporting for humans to make sense of large result datasets
-
-\subsection*{\color{midgrey}{noisy data}}
-
-- statistical methods to cut through noise
-
-\subsection*{\color{midgrey}{complex data}}
-- machine learning
-
-\subsection*{\color{midgrey}{infrastructure}}
-making it usable/reproducible (dare I say FAIR ;P): Importance of Galaxy, docker, conda, training
+\newpage
+\section{Use case 2: Microbiota}
 
 
 \begin{comment}

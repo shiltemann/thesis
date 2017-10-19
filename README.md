@@ -1,4 +1,4 @@
-# Jigsaw Genome
+# PhD Thesis
 
 PhD thesis based on the [dissertate template](https://github.com/suchow/Dissertate)
 
