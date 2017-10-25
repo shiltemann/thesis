@@ -2,24 +2,6 @@
 \label{introduction}
 \setlength\parindent{0pt}
 
-\begin{comment}
-Structure
-
---> cover complexity of cancer step by step
- - small variants
- - SVs --> fusion genes
- - clonality
- - temporal evolution
- - epigenetics
-
--> for each variant type, cover:
-  - how to detect
-  - how to bioinf analyze
-  - challenges/limitations
-
-
-\end{comment}
-
 \section{A Brief History of Genomics}
 
 \begin{comment}
@@ -58,26 +40,92 @@ Since then, many such WES studies on large cohorts of patients have been conduct
 \newpage
 \section{The bioinformatics foundation for the big red button}
 
-- easy to use (galaxy)
-- easy to install and maintain (conda, galaxy)
-- reproducible results (galaxy, conda)
-- importance of visualization (circos)
-- reporting of results
-- good training (gtn)
+With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
 
-- tool selection (many choices for tools, can have great impact on final results, poor overlap typically)
+Some concepts important to
+
+\begin{enumerate}
+\item accessibility of tools (open source, github etc)
+\item reproducibility (version control)
+\item maintainability (testing, continuous integration)
+\item usability (galaxy, dependency management, docker)
+\item results delivery (reporting/visualization)
+\item data management (FAIR data, LIMS)
+\item training
+\end{enumerate}
+
+
+\subsection{Usability}
+Most bioinformatics tools are commandline tools, and most biologists are not trained in the use of such
+
+even for bioinformaticians, running some of these tools can be a challenge as they are often not documented well. Just getting them installed can already be a challenge with all dependencies and OS differences
+
+Galaxy provides a web interface to such tools, bringing analysis tools to the experts equiped to do the interpretations.
+
+
+\subsection{Reproducibility}
+Every lab will have had a variation of the following conversation at some point in their existence:
+
+\textit{
+\begin{itemize}
+\item \textbf{Alice:} I want to redo analysis X, how was it run the last time? \\
+\item \textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop \\
+\item \textbf{Alice:} Who is Charlie? \\
+\item \textbf{Bob:} Charlie was our student, they left 6 months ago \\
+\item \textbf{Alice:} How do I get this information now? \\
+\item \textbf{Bob:} ... *crickets* ...
+\end{itemize}
+}
+
+And this is not just a problem within a single institution; far too often, results described in papers are also impossible to reproduce given the information available in the manuscript.
+
+As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
+
+The Galaxy platform
+
+
+
+
+\begin{comment}
+"forensic bioinformatics" -> have to figure out by trial and error what was done
+
+https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-017-0377-6
+
+https://www.biostars.org/p/52561/
+
+https://www.nature.com/naturejobs/science/articles/10.1038/nj7396-137a
+https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
+
+\end{comment}
+
+
+\subsection{Finding the right tool}
+many tools to do the same task. which is best? all claim superiority in manuscript. review articles may compare several, still an optimization problem (better at subtask A but worse at subtask B)
+
+horrible overlap (variants/SVs as example)
+
+\subsection{Training}
+
+
 
 \newpage
 \section{Use case 1: Prostate Cancer}
+%\addcontentsline{toc}{section}{Use case 1: Prostate Cancer}
 
-\begin{color}{chaptergrey}
-\hfill I like puzzles. Any type of puzzle. I always have. If I see a puzzle or a problem I have to solve it. I think that is what makes cancer such a fascinating topic for me.
+\begin{center}
+\vspace{2cm}
+\begin{minipage}{5in}
+\begin{center}
 
-\hfill Imagine you are given a jigsaw puzzle. Now instead of a few hundred pieces, there are several billion pieces. The picture on the box is not a picture of the puzzle inside the box,
+\color{midgrey}{
+I like puzzles. Any type of puzzle. I always have. If I see a puzzle or a problem I have to solve it. I think that is what makes cancer such a fascinating topic for me.
+
+\vspace*{0.5cm}
+
+Imagine you are given a jigsaw puzzle. Now instead of a few hundred pieces, there are several billion pieces. The picture on the box is not a picture of the puzzle inside the box,
 it is just a somewhat similar image. Oh, and did I mention there are a whole bunch of pieces missing? and that many pieces are duplicated? Some pieces don't even belong in our box,
 but come from a completely different puzzle. On top of that your little sister has spilled paint over some of the pieces so those can't be trusted to contribute to the image. And instead of one
 single puzzle, the box contains several, they are all variations of the image on the box, but you have no idea how many different puzzles the box contains. Sound challenging? This is the problem we are solving whenever we sequence a cancer genome.
-\end{color}
 
 \vspace*{0.5cm}
 \textbf{[Metaphor key]} \\
@@ -87,7 +135,11 @@ single puzzle, the box contains several, they are all variations of the image on
 \textit{other puzzles} = contamination \\
 \textit{painted pieces} = sequencing errors \\
 \textit{multiple puzzles in box} = clonality
+}
 
+\end{center}
+\end{minipage}
+\end{center}
 
 \subsection{Background}
 \epigraph{3in}{The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease.}{President Richard Nixon}
@@ -129,8 +181,8 @@ Determining the exact genetic sequence of healthy individuals is already quite a
 
 In the following sections we will discuss each of these complexities and explore the biological and informatics challenges posed by them.
 
-\paragraph{The Bio}
-\subparagraph{Small variants} comprise the simplest class of mutations; those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
+\subsubsection{The Bio}
+\paragraph{Small variants} comprise the simplest class of mutations; those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
 
 The impact of such mutations depends on where in the genome they occur. Single nucleotide variants (SNVs) in exonic regions can range from having no effect on the resulting protein (silent) to changing an amino acid in the protein to a different amino acid (missense mutations), to changing a codon into a stop codon (nonsense mutation) which nearly always results in a nonfunctional protein. If this happens in a protein that is vital to the functioning of the cell this can have disastrous consequences <some examples of SNVs causing serious problems/phenotypes> <conserved regions, cell's mechanisms for preventing such fatal flaws>
 
@@ -138,13 +190,13 @@ These simple variations were the first to be extensively studied and found to co
 
 While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health, for example 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of TERT (Horn et al. 2013; Huang et al. 2013).
 
-\subparagraph{Structural variations}
+\paragraph{Structural variations}
 rarely involve the coding sequences directly, only observed through WGS
-\subparagraph{Clonality}
-\subparagraph{Temporal Evolution}
-\subparagraph{Epigenetics}
+\paragraph{Clonality}
+\paragraph{Temporal Evolution}
+\paragraph{Epigenetics}
 
-\paragraph{The Informatics}
+\subsubsection{The Informatics}
 
 We know that changes in sequence and structure of DNA contributes to cancer development. But how do we describe these properties? Any two healthy individuals differ greatly in their DNA sequence; it's what makes us us. How to denote these differences is a non-trivial problem, as is determining which of these differences are just part of the natural variation between individuals and which are ones detrimental to our health and functioning.
 
@@ -165,15 +217,16 @@ Currently variations in DNA are described relative to a \emph{reference genome};
 
 The result of all of this is that different variant calling tools will produce different sets of variants given the exact same input dataset and reference genome, and it is hard to know who does a better job, if their respective papers are to be believed each one of them far outstrips all the others. But as with everything in life, the truth lies somewhere in the middle. Each of the variant callers has its strengths and weaknesses, some may very accurate in calling one type of variant but have  more difficulty with others. Some are very accurate in healthy genomes but less so in highly mutated genomes or vice versa. One possible solution is to run a set of variant callers
 
-\subparagraph{Structural variations}
+\paragraph{Structural variations}
 <very very poor overlap between different methods>
 
 <hard to resolve exact location of junctions>
 
 <chainfinder>
-\subparagraph{Clonality}
-\subparagraph{Temporal Evolution}
-\subparagraph{Epigenetics}
+\paragraph{Clonality}
+\paragraph{Temporal Evolution}
+\paragraph{Epigenetics}
+
 
 \newpage
 \section{Use case 2: Microbiota}
