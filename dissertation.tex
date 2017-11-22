@@ -3,13 +3,11 @@
 
 \documentclass[School=EMC]{Dissertate}
 \usepackage{tikz}
-\usepackage{chapterbib}
+\usepackage[sectionbib]{chapterbib}
 \usepackage{natbib}
-
 \usepackage{setspace}
-
 \usepackage{pdfpages} % to include existing papers
-
+\usepackage{tabularx}
 
 
 %\newcommand\bookepigraph[4]{
@@ -70,6 +68,7 @@
 \include{chapters/chapter2}
 \include{chapters/chapter3}
 \include{chapters/chapter4}
+\include{chapters/chapter5}
 \include{chapters/discussion}
 \begin{appendices}
     \include{endmatter/glossary}
@@ -85,8 +84,8 @@
 
 % the back matter
 \clearpage
-\bibliography{references}
-%\addcontentsline{toc}{chapter}{References}
+%\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
 %\bibliographystyle{apalike2}
 \bibliographystyle{plain}
 \include{endmatter/colophon}

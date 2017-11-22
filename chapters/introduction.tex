@@ -37,6 +37,8 @@ Since then, many such WES studies on large cohorts of patients have been conduct
 
 \verb+<rna seq>+
 
+\verb+<metagenomics>+
+
 \newpage
 \section{The bioinformatics foundation for the big red button}
 
@@ -45,25 +47,31 @@ With huge amounts of data now being generated at relatively low cost, and comput
 Some concepts important to
 
 \begin{enumerate}
-\item accessibility of tools (open source, github etc)
-\item reproducibility (version control)
-\item maintainability (testing, continuous integration)
-\item usability (galaxy, dependency management, docker)
-\item results delivery (reporting/visualization)
-\item data management (FAIR data, LIMS)
-\item training
+\item Accessibility (usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
+\item Reproducibility (conda, docker, galaxy, version control, code notebooks)
+\item Maintainability (testing, continuous integration, community building)
+\item Visualization (and reporting)
+\item Data management (FAIR data, LIMS, PIDs)
+\item Training
 \end{enumerate}
 
 
-\subsection{Usability}
-Most bioinformatics tools are commandline tools, and most biologists are not trained in the use of such
+\subsection{Accessibility}
+Tools should be both easy to install and easy to use.
 
-even for bioinformaticians, running some of these tools can be a challenge as they are often not documented well. Just getting them installed can already be a challenge with all dependencies and OS differences
+Most bioinformatics tools are commandline tools, and most biologists are not trained in the use of such, and even for bioinformaticians, running some of these tools can be a challenge as they are often not documented well. Just getting them installed can already be a challenge with all dependencies and OS differences
 
-Galaxy provides a web interface to such tools, bringing analysis tools to the experts equiped to do the interpretations.
+Galaxy \cite{afgan2016galaxy} provides a web interface to such tools, bringing analysis tools to the experts equipped to perfor the interpretation of the results.
 
 
 \subsection{Reproducibility}
+\begin{verbatim}
+
+- conda
+- sweave/jupyter notebooks/rmarkdown/knitr
+
+
+\end{verbatim}
 Every lab will have had a variation of the following conversation at some point in their existence:
 
 \textit{
@@ -71,13 +79,13 @@ Every lab will have had a variation of the following conversation at some point 
 \item \textbf{Alice:} I want to redo analysis X, how was it run the last time? \\
 \item \textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop \\
 \item \textbf{Alice:} Who is Charlie? \\
-\item \textbf{Bob:} Charlie was our student, they left 6 months ago \\
+\item \textbf{Bob:} Charlie was our PhD student, they left 6 months ago \\
 \item \textbf{Alice:} How do I get this information now? \\
 \item \textbf{Bob:} ... *crickets* ...
 \end{itemize}
 }
 
-And this is not just a problem within a single institution; far too often, results described in papers are also impossible to reproduce given the information available in the manuscript.
+And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript.
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
@@ -98,14 +106,19 @@ https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 
 \end{comment}
 
-
-\subsection{Finding the right tool}
-many tools to do the same task. which is best? all claim superiority in manuscript. review articles may compare several, still an optimization problem (better at subtask A but worse at subtask B)
-
-horrible overlap (variants/SVs as example)
-
+\subsection{Maintainability}
+\subsection{Visualization}
+\subsection{Data Management}
 \subsection{Training}
 
+
+
+\section{Which Tool?}
+For each task you may wish to perform there will be a number of tools available to do the job, but which is best? Each tool will claim superiority over all the others in their publication, and all these claim are usually true, each tool can usually outperform all other under a set of hand-picked conditions.
+
+review articles may compare several, still an optimization problem (better at subtask A but worse at subtask B)
+
+horrible overlap (variants/SVs as example)
 
 
 \newpage
