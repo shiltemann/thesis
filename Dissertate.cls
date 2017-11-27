@@ -70,8 +70,6 @@
 \renewcommand{\cftsecfont}{\scshape}
 \renewcommand{\cftsubsecfont}{\color{midgrey}}
 
-
-
 % \usepackage{fixltx2e}
 \usepackage{ragged2e}
 

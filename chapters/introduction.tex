@@ -1,5 +1,10 @@
 \chapter{Introduction}
 \label{introduction}
+ % start numberings at 0 because (computer) science
+\setcounter{figure}{-1}
+\setcounter{table}{-1}
+\setcounter{section}{-1}
+
 \setlength\parindent{0pt}
 
 \section{A Brief History of Genomics}
@@ -122,15 +127,22 @@ horrible overlap (variants/SVs as example)
 
 
 \newpage
-\section{Use case 1: Prostate Cancer}
-%\addcontentsline{toc}{section}{Use case 1: Prostate Cancer}
-
+\thispagestyle{empty}
 \begin{center}
 \vspace{2cm}
-\begin{minipage}{5in}
+\begin{minipage}{6in}
+\tikz[remember picture,overlay]
+\node[opacity=0.8,inner sep=0pt] at (current page.center){
+    \includegraphics[width=\paperwidth,height=\paperheight]{chapters/images/background-texture-blue.jpg}
+};
+\sc
 \begin{center}
 
-\color{midgrey}{
+\color{white}{
+\Large Prostate Cancer \normalsize
+\vspace{2cm}
+
+
 I like puzzles. Any type of puzzle. I always have. If I see a puzzle or a problem I have to solve it. I think that is what makes cancer such a fascinating topic for me.
 
 \vspace*{0.5cm}
@@ -154,6 +166,7 @@ single puzzle, the box contains several, they are all variations of the image on
 \end{minipage}
 \end{center}
 
+\section{Use case 1: Prostate Cancer}
 \subsection{Background}
 \epigraph{3in}{The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease.}{President Richard Nixon}
 
@@ -241,7 +254,36 @@ The result of all of this is that different variant calling tools will produce d
 \paragraph{Epigenetics}
 
 
+
 \newpage
+\thispagestyle{empty}
+\begin{center}
+\vspace{2cm}
+\begin{minipage}{5in}
+\tikz[remember picture,overlay]
+\node[opacity=0.8,inner sep=0pt] at (current page.center){
+    \includegraphics[width=\paperwidth,height=\paperheight]{chapters/images/background-texture-blue.jpg}
+};
+\sc
+\begin{center}
+
+\color{white}{
+\Large Metagenomics \normalsize
+\vspace{2cm}
+
+blabla
+
+\vspace*{0.5cm}
+
+}
+
+\end{center}
+\end{minipage}
+\end{center}
+
+\newpage
+
+
 \section{Use case 2: Microbiota}
 
 
