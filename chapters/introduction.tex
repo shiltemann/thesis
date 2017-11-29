@@ -259,11 +259,10 @@ If you were asked to describe the differences between two Shakespeare plays, how
 poor concordance between variant callers: https://genomemedicine.biomedcentral.com/articles/10.1186/gm432
 
 
-Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, and was constructed by taking the most frequently observed nucleotide at any given  position in the genome
+Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, which was constructed by taking the most frequently observed nucleotide at any given  position in the genome
 <discuss some drawbacks/things to realize: based on relatively small set of samples, not optimally diverse set of individuals>
 
-<multiple ways to describe the same variant, makes comparisons across platforms/versions hard, add picture with example, genome in a bottle picture> \cite{zook2014integrating} (Figure \ref{fig:variant-multiple-representations})
-
+As we have seen, the choice of software can impact downstream analysis, and variant calling is no exception. Different aligners lead employ different strategies, which leads to different variant calls for the same observed sequence depending on the choice of mapping and calling algorithms \cite{zook2014integrating} (Figure \ref{fig:variant-multiple-representations}) This greatly complicates comparisons of variants across studies
 
 \begin{figure}[h!]
     \centering
