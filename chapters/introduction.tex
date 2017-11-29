@@ -34,9 +34,7 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
     \label{fig:seqcost}
 \end{figure}
 
-In 2007, these technological advancements enabled cancer researchers to look at the complete set of genes (the \textit{exome}) known at the time, in a set of 22 samples of 2 different tumour types. This brute-force, whole-exome sequencing (WES) method yielded a genomic landscape of \textit{mountains} of frequently mutated genes as well as a large number of \textit{hills} that were mutated at lower frequencies across patients, and highlighted once again the vast heterogeneity of cancer genomes \cite{wood2007genomic}.
 
-Since then, many such WES studies on large cohorts of patients have been conducted \cite{wheeler2013human} and have greatly increased our insight into the mutational landscapes of the different tumor types.
 
 \verb+<whole-genome>+
 
@@ -49,7 +47,19 @@ Since then, many such WES studies on large cohorts of patients have been conduct
 
 With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
 
-Some concepts important to
+Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are:
+\begin{enumerate}
+    \item Base calling and quality scoring, typically done by software integrated into sequencing machines
+    \item Mapping and/or assembling of the short reads, and variant calling
+    \item Annotation, data integration, and visualisation
+    \item Aggregation of heterogeneous datasets into a coherent reference data source
+\end{enumerate}
+
+Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation, and must be carefully examined in order to correct for them or assign appropriate confidence levels to results in subsequent analysis steps.
+
+\verb+expand on each point?+
+
+Some concepts important to good software
 
 \begin{enumerate}
 \item Accessibility (usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
@@ -112,10 +122,16 @@ https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 \end{comment}
 
 \subsection{Maintainability}
-\subsection{Visualization}
-\subsection{Data Management}
-\subsection{Training}
 
+\subsection{Visualization}
+
+\subsection{Data Management}
+
+\subsection{Training}
+\begin{comment}can I plagiarize my own papers? :P VV\end{comment}
+Rapid development of DNA sequencing technologies has made it possible for biomedical disciplines to rival the physical sciences in data production capability. The combined output of today’s sequencing instruments has already surpassed the data generation speed of resources such as the Large Hadron Collider and is rivaling those in the field of astronomy. Yet biology is different from physics (and other quantitative disciplines) in one fundamental aspect: the lack of computational and data analysis training in standard biomedical curricula. Many biomedical scientists do not possess the skills to use or even access existing analysis resources.
+Such paucity of training also negatively impacts the ability of biomedical researchers to collaborate with their statistics and math counterparts, because of the inability to speak each other’s language. In addition, an estimated one-third of biomedical researchers do not have access to proper data analysis support \cite{larcombe2017elixir}. The only operative way to address these deficiencies is with training. The need for such training cannot be overstated: while the majority (>95\%) of researchers work or plan to work with large datasets, most (>65\%) possess only minimal bioinformatics skills and are not comfortable with statistical analyses \cite{larcombe2017elixir}, \cite{williams2017vision}.
+This overwhelming need drives the demand, which, at present, greatly exceeds supply \cite{attwood2017global}. In a recent survey \cite{survey2013embl} over 60\% of biologists expressed a need for more training while only 5\% called for more computing power. Thus one can assume that the true bottleneck of the current data deluge is not storage or processing power, but the knowledge and skills to utilize existing resources.
 
 
 \section{Importance of Analysis Software}
@@ -126,7 +142,9 @@ review articles may compare several, still an optimization problem (better at su
 horrible overlap (variants/SVs as example)
 
 % choice of transcript reference
-Not only the choice of software, but also the choice of reference database can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to led to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}.
+Not only the choice of software, but also the choice of reference database can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}.
+
+Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve
 
 \newpage
 \thispagestyle{empty}
@@ -174,7 +192,13 @@ single puzzle, the box contains several, they are all variations of the image on
 
 On December 23, 1971, President Richard Nixon, buoyed by recent technical feats such as the moon landing, signed into law the National Cancer Act, thereby declaring a war on cancer. Today, more than 45 years later, that war is still being waged in full force. While great advancements have been made towards this goal, some of the initial optimism has been quelled by discoveries of the great complexity and heterogeneity underlying cancer.
 
-Prostate cancer remains one of the most common cancers in men, with an estimated 1 in 7 men being diagnosed with the disease in their lifetime \cite{}[cancer.org]. Prostate tumours are often very slow growing leading to the observation that most men die \emph{with} prostate cancer, rather than \emph{from} it. Early detection is key in selecting the optimal treatment strategy, but prostate cancer often shows few symptoms in the early stages making this a challenge.
+In 2007, technological advancements enabled cancer researchers to look at the complete set of genes (the \textit{exome}) known at the time, in a set of 22 samples of 2 different tumour types. This brute-force, whole-exome sequencing (WES) method yielded a genomic landscape of \textit{mountains} of frequently mutated genes as well as a large number of \textit{hills} that were mutated at lower frequencies across patients, and highlighted once again the vast heterogeneity of cancer genomes \cite{wood2007genomic}.
+
+Since then, many such WES studies on large cohorts of patients have been conducted \cite{wheeler2013human} and have greatly increased our insight into the mutational landscapes of the different tumor types.
+
+...
+
+Prostate cancer remains one of the most common cancers in men, with an estimated 1 in 7 men being diagnosed with the disease in their lifetime \cite{}[cancer.org]. Prostate tumours are often very slow growing, leading to the observation that most men die \emph{with} prostate cancer, rather than \emph{from} it. Early detection is key in selecting the optimal treatment strategy, but prostate cancer often shows few symptoms in the early stages making this a challenge.
 
 A subset of prostate cancers (x \% [cite]) is of a more aggressive type,
 
@@ -232,12 +256,26 @@ If you were asked to describe the differences between two Shakespeare plays, how
 
 <note: ditch the book analogy? example shakespearean sentence to illustrate? >
 
+poor concordance between variant callers: https://genomemedicine.biomedcentral.com/articles/10.1186/gm432
 
 
 Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, and was constructed by taking the most frequently observed nucleotide at any given  position in the genome
 <discuss some drawbacks/things to realize: based on relatively small set of samples, not optimally diverse set of individuals>
 
-<multiple ways to describe the same variant, makes comparisons across platforms/versions hard, add picture with example, genome in a bottle picture>
+<multiple ways to describe the same variant, makes comparisons across platforms/versions hard, add picture with example, genome in a bottle picture> \cite{zook2014integrating} (Figure \ref{fig:variant-multiple-representations})
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=400pt]{chapters/images/variant-representation-all.png}
+    \begin{comment}
+        image in google drive https://docs.google.com/drawings/d/1WWmzW6uWtJ7HZ5WVgtg_oAMA_3E_569M4Ikjz4Ecjic/edit
+    \end{comment}
+    \caption{Complex variants can be represented in multiple ways. Four different aligners (Novoalign, Ssaha2, BWA, Complete Genomics) treat the same variant in vastly different ways, which leads to such differing sets of variant descriptions in the VCF files that it is not at all apparent that these variants describe the same observed sequence.}
+    \label{fig:variant-multiple-representations}
+\end{figure}
+
+some can be mitigated via variant normalisation (left-aligning etc), but no consensus (left aligned prevalent but <online database forget name> recommends 3' end aligned which can be right aligned for reverse strand genes)
 
 <not to mention sequencing errors, at rate of abt x/100, sequencing depth helps but tradeoff with cost>
 
