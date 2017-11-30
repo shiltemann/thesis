@@ -49,7 +49,7 @@
 \RequirePackage{lettrine}
 %\RequirePackage[super,comma,numbers]{natbib}
 %\renewcommand{\bibnumfmt}[1]{[#1]}
-\RequirePackage[width=6.75in, letterpaper]{geometry}
+\RequirePackage[width=6.75in, letterpaper, bottom=3cm, top=3cm]{geometry}
 \RequirePackage{fancyhdr}
 
 \usepackage[titletoc]{appendix}
