@@ -112,6 +112,7 @@
    \noindent\textsc{#1}%
 }
 
+
 % Align reference numbers so that they do not cause an indent
 \newlength\mybibindent
 \setlength\mybibindent{0pt}

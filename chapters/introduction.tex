@@ -25,7 +25,7 @@
     - treatment vs prevention
 \end{comment}
 
-In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of cancer research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (Fig. \ref{fig:seqcost}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
+In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (Fig. \ref{fig:seqcost}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
 \begin{figure}[h!]
     \centering
@@ -41,6 +41,8 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
 \verb+<rna seq>+
 
 \verb+<metagenomics>+
+
+And now we are moving into third-generation sequencing, single-molecule
 
 \newpage
 \section{The bioinformatics foundation for the big red button}
@@ -186,6 +188,9 @@ single puzzle, the box contains several, they are all variations of the image on
 \end{minipage}
 \end{center}
 
+
+
+\newpage
 \section{Use case 1: Prostate Cancer}
 \subsection{Background}
 \epigraph{3in}{The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease.}{President Richard Nixon}
@@ -242,8 +247,11 @@ These simple variations were the first to be extensively studied and found to co
 
 While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health, for example 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of TERT (Horn et al. 2013; Huang et al. 2013).
 
-\paragraph{Structural variations}
-rarely involve the coding sequences directly, only observed through WGS
+\paragraph{Structural variations} are larger-scale mutations, involving rearrangement of segments of DNA of more than roughly 50 bp. These often do not involve the coding sequences directly, and can therefore only observed through whole-genome sequencing.
+
+<fusion genes>
+
+
 \paragraph{Clonality}
 \paragraph{Temporal Evolution}
 \paragraph{Epigenetics}
@@ -262,7 +270,8 @@ poor concordance between variant callers: https://genomemedicine.biomedcentral.c
 Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, which was constructed by taking the most frequently observed nucleotide at any given  position in the genome
 <discuss some drawbacks/things to realize: based on relatively small set of samples, not optimally diverse set of individuals>
 
-As we have seen, the choice of software can impact downstream analysis, and variant calling is no exception. Different aligners lead employ different strategies, which leads to different variant calls for the same observed sequence depending on the choice of mapping and calling algorithms \cite{zook2014integrating} (Figure \ref{fig:variant-multiple-representations}) This greatly complicates comparisons of variants across studies
+As we have seen, the choice of software can impact downstream analysis, and variant calling is no exception. Different aligners employ different mapping strategies, which leads to different variant calls for the same observed sequence depending on the choice of algorithm, complicating variant comparisons between studies \cite{zook2014integrating}. While there do exist tools to canonicalise some of these differing representations \cite{vcflib}, complex variants remain that do not have a single obvious standard form (Figure \ref{fig:variant-multiple-representations}).
+But even for the simpler cases, there is not always a clear consensus on how to standardise representation. Consider for instance the case where an adenine nucleotide has been inserted, transforming the sequence \verb+TAAG+ to \verb+TAAAG+. Do we describe the insertion to have happened at position 1 (after the \verb+T+), position 2 (between the two \verb+A+s), or at position 3 (before the \verb+G+)? While this particular case is easily solved by agreeing on a convention of either left-aligning or right-aligning these variants, such community agreement does not currently exist, with most next-generation analysis tools opting for left-alignment, while certain variant databases such as HGVS [TODO cite] still recommend (but do not enforce) alignment to the position nearest the 3\` end of the gene, which translates to right-alignment in genomic coordinates for reverse strand genes. Furthermore, once variants have been submitted to online databases, information about surrounding variants observed in the same sample is often not kept, making it impossible to resolve equivalency of variant representations going forward.
 
 \begin{figure}[h!]
     \centering
@@ -270,13 +279,18 @@ As we have seen, the choice of software can impact downstream analysis, and vari
     \begin{comment}
         image in google drive https://docs.google.com/drawings/d/1WWmzW6uWtJ7HZ5WVgtg_oAMA_3E_569M4Ikjz4Ecjic/edit
     \end{comment}
-    \caption{Complex variants can be represented in multiple ways. Four different aligners (Novoalign, Ssaha2, BWA, Complete Genomics) treat the same variant in vastly different ways, which leads to such differing sets of variant descriptions in the VCF files that it is not at all apparent that these variants describe the same observed sequence.}
+    \caption{Complex variants can be represented in multiple ways. Four different aligners (Novoalign, Ssaha2, BWA, Complete Genomics) treat the same variant in vastly different ways, which leads to such differing sets of variant descriptions in the VCF files that it is no longer apparent that these variants in fact describe the same observed sequence.}
     \label{fig:variant-multiple-representations}
 \end{figure}
 
-some can be mitigated via variant normalisation (left-aligning etc), but no consensus (left aligned prevalent but <online database forget name> recommends 3' end aligned which can be right aligned for reverse strand genes)
 
 <not to mention sequencing errors, at rate of abt x/100, sequencing depth helps but tradeoff with cost>
+
+sources of mismatch with reference genome \\
+- real mutation \\
+- wrong base call \\
+- wrong mapping/variant call \\
+
 
 <repetitive regions>
 
@@ -324,6 +338,16 @@ blabla
 
 
 \section{Use case 2: Microbiota}
+
+
+\subsection{The Bio}
+first complete bacterial genomes published in 1995  \cite{land2015insights}
+
+16S rRNA
+
+whole genome shotgun
+
+\subsection{The Informatics}
 
 
 \begin{comment}
