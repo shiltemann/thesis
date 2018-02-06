@@ -80,16 +80,27 @@
 \parindent 12pt
 \RequirePackage{mathspec}
 
-\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional},SizeFeatures={{Size=-8, OpticalSize=8},{Size= 8-, OpticalSize=12}},]{EB Garamond}
-\setmathrm{EB Garamond}
 
 \widowpenalty=300
 \clubpenalty=300
 
 \defaultfontfeatures{Mapping=tex-text}
-\newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
+
+%% use Garamond font
+%%\fontspec [Path = ./fonts/Garamond,
+%%    UprightFont = EBGaramond12-Regular.tff,
+%%    ItalicFont = EBGaramond12-Italic.tff,
+%%	BoldFont = AdobeGaramondProBold.ttf
+%% ]
+%%{EB Garamond}
+
 %\setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0, BoldFont = {Adobe Garamond Pro Bold}]{EB Garamond}
-\setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0, BoldFont=fonts/Garamond/AdobeGaramondProBold.ttf, ItalicFont=fonts/Garamond/EBGaramond12-Italic.ttf]{EBGaramond12-Regular.ttf}
+\setromanfont[Path=./fonts/Garamond/, Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0, BoldFont=AdobeGaramondProBold.ttf, ItalicFont=EBGaramond12-Italic.ttf]{EBGaramond12-Regular.ttf}
+\newfontfamily{\smallcaps}[Path=./fonts/Garamond/, RawFeature={+c2sc,+scmp}]{EBGaramond12-Regular.ttf}
+\setmathsfont(Digits,Latin,Greek)[Path=./fonts/Garamond/, Numbers={Proportional},SizeFeatures={{Size=-8, OpticalSize=8},{Size= 8-, OpticalSize=12}},]{EBGaramond12-Regular.ttf}
+\setmathrm[Path=./fonts/Garamond/,]{EBGaramond12-Regular.ttf}
+
+
 \setsansfont[Scale=MatchLowercase, BoldFont={Lato Bold}]{Lato Regular}
 \setmonofont[Scale=MatchLowercase]{Noto Mono} % Font substitution for Source Code Pro
 
