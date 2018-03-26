@@ -1,5 +1,24 @@
 # Notes on papers
 
+## structure
+
+themes:
+
+1) big red button - automation, pipelines, bioinformatics best practices, visualisation, training
+2) jigsaw genome - solving the puzzles
+
+
+1) bioinformatics practices
+ - pipelines, automation, reproducibility
+ - visualisation, reporting
+ - FAIR data
+ - training
+
+2) prostate cancer
+
+3) microbiota
+
+
 ## Large scale projects
 
 COSMIC
