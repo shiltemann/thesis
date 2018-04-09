@@ -4,8 +4,10 @@ thesis:
 	bibtex chapters/chapter1
 	bibtex chapters/chapter2
 	bibtex chapters/chapter3
+	bibtex chapters/chapter3-paper2
 	bibtex chapters/chapter4
 	bibtex chapters/chapter5
+	bibtex chapters/chapter5-paper2
 	bibtex chapters/discussion
 	xelatex dissertation.tex
 	xelatex dissertation.tex
