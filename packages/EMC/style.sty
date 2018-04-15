@@ -24,7 +24,7 @@
     colorlinks,
     citecolor=emc-dark-blue,
     filecolor=black,
-    linkcolor=black,
+    linkcolor=emc-dark-blue,
     urlcolor=emc-dark-blue,
 }
 
@@ -92,7 +92,7 @@
 	% \contentsline {chapter}{Appendix A}{\pageref{AppendixA}}{}
 
 	\newpage
-	\setcounter{page}{1}
+	\setcounter{page}{0}
 	\pagenumbering{arabic}
 }
 
@@ -118,6 +118,10 @@
 	\end{center}
 	\vspace*{\fill}
 }
+
+%\makeatletter
+%\renewcommand\@biblabel[1]{[\the\numexpr#1-1\relax]}
+%\makeatother
 
 \newcommand{\copyrightpage}{
 	\newpage

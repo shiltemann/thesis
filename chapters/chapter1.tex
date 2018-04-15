@@ -42,17 +42,12 @@ DOI: \url{https://doi.org/10.1186/2047-217X-3-19} \\
 
 \section*{Abstract}
 
-\subsection{Background}
-Galaxy offers a number of visualisation options with components, such as Trackster, Circster and Galaxy Charts, but currently lacks the ability to easily combine outputs from different tools into a single view or report. A number of tools produce HTML reports as output in order to combine the various output files from a single tool; however, this requires programming and knowledge of HTML, and the reports must be custom-made for each new tool.
-
-\subsection{Findings}
-We have developed a generic and flexible reporting tool for Galaxy, iReport, that allows users to create interactive HTML reports directly from the Galaxy UI, with the ability to combine an arbitrary number of outputs from any number of different tools. Content can be organised into different tabs, and interactivity can be added to components. To demonstrate the capability of iReport we provide two publically available examples, the first is an iReport explaining about iReports, created for, and using content from the recent Galaxy Community Conference 2014. The second is a genetic report based on a trio analysis to determine candidate pathogenic variants which uses our previously developed Galaxy toolset for whole-genome NGS analysis, CGtag. These reports may be adapted for outputs from any sequencing platform and any results, such as omics data, non-high throughput results and clinical variables.
-
-\subsection{Conclusions}
-iReport provides a secure, collaborative, and flexible web-based reporting system that is compatible with Galaxy (and non-Galaxy) generated content. We demonstrate its value with a real-life example of reporting genetic trio-analysis.
+\textbf{Background:} Galaxy offers a number of visualisation options with components, such as Trackster, Circster and Galaxy Charts, but currently lacks the ability to easily combine outputs from different tools into a single view or report. A number of tools produce HTML reports as output in order to combine the various output files from a single tool; however, this requires programming and knowledge of HTML, and the reports must be custom-made for each new tool.\\
+\textbf{Findings:}We have developed a generic and flexible reporting tool for Galaxy, iReport, that allows users to create interactive HTML reports directly from the Galaxy UI, with the ability to combine an arbitrary number of outputs from any number of different tools. Content can be organised into different tabs, and interactivity can be added to components. To demonstrate the capability of iReport we provide two publically available examples, the first is an iReport explaining about iReports, created for, and using content from the recent Galaxy Community Conference 2014. The second is a genetic report based on a trio analysis to determine candidate pathogenic variants which uses our previously developed Galaxy toolset for whole-genome NGS analysis, CGtag. These reports may be adapted for outputs from any sequencing platform and any results, such as omics data, non-high throughput results and clinical variables.\\
+\textbf{Conclusions:} iReport provides a secure, collaborative, and flexible web-based reporting system that is compatible with Galaxy (and non-Galaxy) generated content. We demonstrate its value with a real-life example of reporting genetic trio-analysis.
 
 
-\section{Findings}
+\section*{Findings}
 
 Structured reporting and documentation of experimental outcome is required for the successful transfer of knowledge from the research scientist to their peers and to the broader academic community.
 
@@ -100,7 +95,7 @@ iReport produced a report webpage consisting of one or more subpages with one or
 An iReport tutorial has been developed to demonstrate and explain the functionality of iReport, and is available as a shared history from the CTMM-TraIT public Galaxy instance \cite{url-ireport-tutorial}. The following sections describe each of the components of iReport in more detail.
 
 \subsection*{Cover Page}
-The cover page consists of a user-specified title and a cover image. The cover image parameter is optional and when the field is left blank a default image is used (Figure \ref{fig:defaultcover}).
+The cover page consists of a user-specified title and a cover image. The cover image parameter is optional and when the field is left blank a default image is used (\hyperref[fig:defaultcover]{Figure \ref*{fig:defaultcover}}).
 By clicking on the image, or the link above it, the user can access the main report page. There is also a link to download the entire iReport webpage, including all dependency files, for storing or viewing on different systems.
 
 \begin{figure}[h!]
@@ -111,7 +106,7 @@ By clicking on the image, or the link above it, the user can access the main rep
 
 
 \subsection*{Main Report Page}
-An arbitrary number of tabs may be added via a repeat parameter. Each tab can be labelled with a name specified by the user. An arbitrary number of \emph{content items} may then be added to each tab in a repeat parameter. A type must be specified for each content item (e.g., text, image, table \emph{etc.}), as well as several other parameters depending on the type chosen (Figure \ref{fig:wrapper}). Layout is mostly left up to the browser, but users can explicitly add a line-break after each item to force items to appear underneath each other.
+An arbitrary number of tabs may be added via a repeat parameter. Each tab can be labelled with a name specified by the user. An arbitrary number of \emph{content items} may then be added to each tab in a repeat parameter. A type must be specified for each content item (e.g., text, image, table \emph{etc.}), as well as several other parameters depending on the type chosen (\hyperref[fig:wrapper]{Figure \ref*{fig:wrapper}}). Layout is mostly left up to the browser, but users can explicitly add a line-break after each item to force items to appear underneath each other.
 
 % Galaxy wrapper
 \begin{figure}[h!]
@@ -125,7 +120,7 @@ An arbitrary number of tabs may be added via a repeat parameter. Each tab can be
 Text can be entered in a text field in the tool interface, for example to create an introduction paragraph and to give a description of the items on the page. Text is printed verbatim, although a small number of HTML tags are allowed in order to give the user some control over formatting (e.g., \verb+b, i, em, strong, h1-h6+ tags). Text files can also be specified, and the contents of the file will be printed to the screen verbatim.
 
 \paragraph*{Content item: Images}
-Many tools produce images as output, which can also be displayed by iReport. Users specify the image file from their Galaxy history, and the desired image size. For images that have been scaled down, an optional jQuery zoom-on-mouseover effect may  be added (Figure \ref{fig:imagezoom})\cite{url-jqueryzoom}. Currently supported image formats are JPG, PNG and SVG.
+Many tools produce images as output, which can also be displayed by iReport. Users specify the image file from their Galaxy history, and the desired image size. For images that have been scaled down, an optional jQuery zoom-on-mouseover effect may  be added (\hyperref[fig:imagezoom]{Figure \ref*{fig:imagezoom}})\cite{url-jqueryzoom}. Currently supported image formats are JPG, PNG and SVG.
 
 %% zoomeffect
 \begin{figure}[h!]
@@ -135,7 +130,7 @@ Many tools produce images as output, which can also be displayed by iReport. Use
 \end{figure}
 
 \paragraph*{Content item: Tables}
-iReport can also display tables. The input must be a tab-delimited file from the users' Galaxy history, and the first nonempty line not starting with a hash symbol (\verb+#+) is assumed to contain the column headers. The jQuery library \emph{DataTables} \cite{url-datatables} is used to create tables which can be searchable, sortable and paginated, if requested by the user. There is an option to create hyperlinks within the columns of a table by providing a column number, a URL prefix and a URL suffix. This is illustrated in Figure \ref{fig:collinks}, where the first column contains gene names and by including the GeneCards \cite{genecardspaper,url-genecards} URL prefix ``\emph{http://www.genecards.org/cgi-bin/carddisp.pl?gene=}''. This generates a hyperlink to the corresponding GeneCards entry for every item in the column in the table.
+iReport can also display tables. The input must be a tab-delimited file from the users' Galaxy history, and the first nonempty line not starting with a hash symbol (\verb+#+) is assumed to contain the column headers. The jQuery library \emph{DataTables} \cite{url-datatables} is used to create tables which can be searchable, sortable and paginated, if requested by the user. There is an option to create hyperlinks within the columns of a table by providing a column number, a URL prefix and a URL suffix. This is illustrated in \hyperref[fig:collinks]{Figure \ref*{fig:collinks}}, where the first column contains gene names and by including the GeneCards \cite{genecardspaper,url-genecards} URL prefix \verb+http://www.genecards.org/cgi-bin/carddisp.pl?gene=+. This generates a hyperlink to the corresponding GeneCards entry for every item in the column in the table.
 
 %% weblinks from table columns
 \begin{figure}[h!]
@@ -146,7 +141,7 @@ iReport can also display tables. The input must be a tab-delimited file from the
 \end{figure}
 
 \paragraph*{Content item: PDF Files}
-This is one of the simplest content items. The user provides a PDF file from the Galaxy history, which will be embedded in the page. If the browser does not have the necessary plug-ins installed, a download link for the file will be generated instead (Figure \ref{fig:pdfexample}).
+This is one of the simplest content items. The user provides a PDF file from the Galaxy history, which will be embedded in the page. If the browser does not have the necessary plug-ins installed, a download link for the file will be generated instead (\hyperref[fig:pdfexample]{Figure \ref*{fig:pdfexample}}).
 
 %% PDF example
 \begin{figure}[h!]
@@ -156,7 +151,7 @@ This is one of the simplest content items. The user provides a PDF file from the
 \end{figure}
 
 \paragraph*{Content item: Links}
-Users can create links to web locations by specifying a URL and a link text. Links to datasets in the history can also be created here by specifying a dataset and a link text. Several tools create archives of files as output (for example a zip file containing the plots for each chromosome). Links to all files contained in an archive can also be created, and will be named with the file names (excluding file extension). Currently the supported archive formats are zip, bz2, tar, gz and tar.gz. An example can be seen in Figure \ref{fig:archivelinks}, where an archive with images was used as input and a series of links to each contained file was created. An option to create a link to an iReport is also present. This allows users to create a kind of electronic lab notebook, by creating an overview of all their samples and linking to one or more iReports for each sample.
+Users can create links to web locations by specifying a URL and a link text. Links to datasets in the history can also be created here by specifying a dataset and a link text. Several tools create archives of files as output (for example a zip file containing the plots for each chromosome). Links to all files contained in an archive can also be created, and will be named with the file names (excluding file extension). Currently the supported archive formats are zip, bz2, tar, gz and tar.gz. An example can be seen in \hyperref[fig:archivelinks]{Figure \ref*{fig:archivelinks}}, where an archive with images was used as input and a series of links to each contained file was created. An option to create a link to an iReport is also present. This allows users to create a kind of electronic lab notebook, by creating an overview of all their samples and linking to one or more iReports for each sample.
 
 %% links from archive
 \begin{figure}[h!]
@@ -169,7 +164,7 @@ Users can create links to web locations by specifying a URL and a link text. Lin
 
 Accurate, reproducible and traceable reporting is an essentialrequirement to the evaluation of the genetic outcome from any assay \cite{skyline}, including those variations predicted from NGS analysis. Since iReport is capable of including many formats, we have used the outcome from a trio analysis generated from the Complete Genomics \cite{drmanac} NGS platform to demonstrate its utility in representing these data in a user-defined format, which contains the provenance of the underlying analysis. In this example we use a trio of individuals sequenced in the International HapMap Project \cite{hapmap}\cite{hapmap2}, to demonstrate how to select protein affecting candidate variants based on a recessive genetic model.  All data in this example is freely available for download from the Complete Genomics website \cite{url-CGpublicdata}.
 
-This example iReport has one tab devoted to explaining the protocol used (Figure \ref{fig:trioscreenshots}B), one tab with circos plots and an explanation of the family structure (Figure \ref{fig:trioscreenshots}D), and one tab with tables containing the candidate pathogenic variants determined by the protocol based on a recessive model for selection. This iReport is also available as a published history on the TraIT-CTMM public Galaxy \cite{url-traitgalaxy}.
+This example iReport has one tab devoted to explaining the protocol used (\hyperref[fig:trioscreenshots]{Figure \ref*{fig:trioscreenshots}B}), one tab with circos plots and an explanation of the family structure (\hyperref[fig:trioscreenshots]{Figure \ref*{fig:trioscreenshots}D}), and one tab with tables containing the candidate pathogenic variants determined by the protocol based on a recessive model for selection. This iReport is also available as a published history on the TraIT-CTMM public Galaxy \cite{url-traitgalaxy}.
 
 %% Genetic Report
 % file: Hiltemann_geneticreport[A-D].jpg
@@ -209,8 +204,8 @@ License: GNU GPL \\
 Any restrictions to use by non-academics: none \\
 \ \\
 Examples: \\
-iReport about iReport published history: http://galaxy.ctmm-trait.nl/u/saskia-hiltemann/h/gcc2014-ireport-about-ireport, or tinyurl.com/llrzz9w \\
-Clinical Genetics iReport published history: http://galaxy.ctmm-trait.nl/u/andrew-stubbs/h/ireportgeneticreportchr21 \\
+iReport about iReport published history: \url{http://galaxy.ctmm-trait.nl/u/saskia-hiltemann/h/gcc2014-ireport-about-ireport}, or \url{tinyurl.com/llrzz9w} \\
+Clinical Genetics iReport published history: \url{http://galaxy.ctmm-trait.nl/u/andrew-stubbs/h/ireportgeneticreportchr21} \\
 
 %Tool shed repository for iReport: https://toolshed.g2.bx.psu.edu/view/saskia-hiltemann/ireport \\
 %GitHub repository: https://github.com/shiltemann/iReport \\

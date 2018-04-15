@@ -28,20 +28,18 @@ DOI: \url{10.1093/bioinformatics/btt252} \\
 
 \section*{Abstract}
 
-\textbf{Summary:} We present iFUSE (integrated FUSion gene Explorer), an online visualization tool that provides a fast and informative view of structural variation data and prioritizes those breaks likely representing fusion genes. \color{black} This application uses calculated breakpoints to determine fusion genes based on the latest annotation for genomic sequence information, and where relevant the structural variation (SV) events are annotated with predicted RNA and protein sequences. iFUSE takes as input either a Complete Genomics (CG) junction file, a FusionMap \cite{ge2011fusionmap} fusion detection report file, or a file already analysed and annotated by the iFUSE application on a previous occasion.
-
-\textbf{Results:} We demonstrate the utility of iFUSE with case studies from tumour-normal SV detection derived from Complete Genomics whole-genome sequencing results.
-
+\textbf{Summary:} We present iFUSE (integrated FUSion gene Explorer), an online visualization tool that provides a fast and informative view of structural variation data and prioritizes those breaks likely representing fusion genes. \color{black} This application uses calculated breakpoints to determine fusion genes based on the latest annotation for genomic sequence information, and where relevant the structural variation (SV) events are annotated with predicted RNA and protein sequences. iFUSE takes as input either a Complete Genomics (CG) junction file, a FusionMap \cite{ge2011fusionmap} fusion detection report file, or a file already analysed and annotated by the iFUSE application on a previous occasion. \\
+\textbf{Results:} We demonstrate the utility of iFUSE with case studies from tumour-normal SV detection derived from Complete Genomics whole-genome sequencing results. \\
 \textbf{Availability:} iFUSE is available as a web service at \url{http://ifuse.erasmusmc.nl}
 
 
 \section*{Introduction}
 
 Structural variation analysis is a common requirement in the study of cancer where many fusion genes have been implicated in the progression of cancer \cite{mitelman2007impact, kumar2008recurrent}
-The use of next-generation sequencing for fusion gene detection in cancer \cite{edgren2011identification, ge2011fusionmap, mcpherson2011defuse}, structural variation in non-cancerous diseases \cite{rareallele, rareallele2} and in normal genomes \cite{1000Genomes} has expanded knowledge of the importance of these events.
-In a recent study the use of \textit{de novo} assembly in association with SV detection suggests that SVs account for more diversity between individuals than do single nucleotide polymorphisms (SNPs) \cite{li}. Complete Genomics uses \textit{de novo} assembly during SV, single nucleotide variation (SNV) and copy number variation (CNV) determination \cite{carnevali}.
+The use of next-generation sequencing for fusion gene detection in cancer \cite{edgren2011identification, ge2011fusionmap, mcpherson2011defuse}, structural variation in non-cancerous diseases \cite{sanders2011multiple, levy2011rare} and in normal genomes \cite{10002010map} has expanded knowledge of the importance of these events.
+In a recent study the use of \textit{de novo} assembly in association with SV detection suggests that SVs account for more diversity between individuals than do single nucleotide polymorphisms (SNPs) \cite{li2011structural}. Complete Genomics uses \textit{de novo} assembly during SV, single nucleotide variation (SNV) and copy number variation (CNV) determination \cite{carnevali2012computational}.
 
-Traditionally, for a given SV, a user can visualize the individual (sides of the) breaks in viewers such as IGV \cite{igv, igv2}, but not the resulting event or fusion gene as a whole, and must manually retrieve the sequence of the resulting event based on the exons from both genes of the proposed fusion gene and determine the orientation and frame of the predicted transcript and encoded polypeptide sequences. Other applications also offer visualisation, but with the caveat that the user must process their data within the application, e.g inGAP-SV \cite{ingap-sv}, or that a bioinformatician is required to render the visualization using e.g. Circos \cite{circos}. Our aim is to deliver a web-based application that allows scientists to visualize all detected SV events and fusion genes determined in their results and to provide the concomitant candidate transcripts and polypeptide sequences associated with the detected fusion genes (Fig \ref{fig:screenshot}). No other application exists at the moment to categorize and visualize the candidate fusion genes, and determine the proposed sequence for gDNA, RNA and polypeptides from standard SV files.
+Traditionally, for a given SV, a user can visualize the individual (sides of the) breaks in viewers such as IGV \cite{thorvaldsdottir2013integrative,robinson2011integrative}, but not the resulting event or fusion gene as a whole, and must manually retrieve the sequence of the resulting event based on the exons from both genes of the proposed fusion gene and determine the orientation and frame of the predicted transcript and encoded polypeptide sequences. Other applications also offer visualisation, but with the caveat that the user must process their data within the application, e.g inGAP-SV \cite{qi2011ingap}, or that a bioinformatician is required to render the visualization using e.g. Circos \cite{krzywinski2009circos}. Our aim is to deliver a web-based application that allows scientists to visualize all detected SV events and fusion genes determined in their results and to provide the concomitant candidate transcripts and polypeptide sequences associated with the detected fusion genes (\hyperref[fig:screenshot]{Figure \ref*{fig:screenshot}}). No other application exists at the moment to categorize and visualize the candidate fusion genes, and determine the proposed sequence for gDNA, RNA and polypeptides from standard SV files.
 
 \begin{figure}
 \centerline{\includegraphics[width=250pt]{chapters/images/iFUSE/ifusess.jpeg}}
@@ -66,7 +64,7 @@ iFUSE accounts are password protected, the application has been tested for secur
 \section*{Discussion}
 
 
-Two public cancer genomes have been used to demonstrate the utility of iFUSE for the prediction of fusion genes. Genomes were downloaded from Complete Genomics (\href{ftp2.completegenomics.com}{ftp2.completegenomics.com}). The results can be found in Table \ref{tab:results}.
+Two public cancer genomes have been used to demonstrate the utility of iFUSE for the prediction of fusion genes. Genomes were downloaded from Complete Genomics (\href{ftp2.completegenomics.com}{ftp2.completegenomics.com}). The results can be found in \hyperref[tab:results]{Table \ref*{tab:results}}.
 
 
 \begin{table}[!t]

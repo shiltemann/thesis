@@ -139,6 +139,7 @@
            \usecounter{enumiv}
            \let\p@enumiv\@empty
            \renewcommand\theenumiv{\@arabic\c@enumiv}}
+           \setcounter{enumiv}{-1}
      \sloppy
      \clubpenalty4000
      \@clubpenalty \clubpenalty
