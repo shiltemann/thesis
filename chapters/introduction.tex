@@ -34,22 +34,10 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
     \label{fig:seqcost}
 \end{figure}
 
-
-
-\verb+<whole-genome>+
-
-\verb+<rna seq>+
-
-\verb+<metagenomics>+
-
-history of microbiolgy: https://courses.lumenlearning.com/boundless-microbiology/chapter/introduction-to-microbiology/
-
-
-
-And now we are moving into third-generation sequencing, single-molecule,
+And now we are moving into third-generation sequencing, single-molecule, long read sequencing
 
 \newpage
-\section{The bioinformatics foundation for the big red button}
+\section{The bioinformatics challenge}
 
 With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
 
@@ -65,6 +53,8 @@ Bioinformatics comes into play at various steps in the analysis process. The fou
 Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation, and must be carefully examined in order to correct for them or assign appropriate confidence levels to results in subsequent analysis steps.
 
 \verb+expand on each point?+
+
+\subsection{Creating high-quality bioinformatics software}
 
 Some concepts important to good software
 
@@ -87,7 +77,7 @@ Most bioinformatics tools are commandline tools, and most biologists are not tra
 Galaxy \cite{afgan2016galaxy} provides a web interface to such tools, bringing analysis tools to the experts equipped to perfor the interpretation of the results.
 
 
-\subsection{Reproducibility}
+\subsection*{Reproducibility}
 \begin{verbatim}
 
 - conda
@@ -108,11 +98,11 @@ Every lab will have had a variation of the following conversation at some point 
 \end{itemize}
 }
 
-And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript.
+And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript. [cite the paper where they tried to reproduce nature papers]
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
-The Galaxy platform
+\subsubsection*{The Galaxy platform}
 
 
 
@@ -131,7 +121,11 @@ https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 
 \subsection{Maintainability}
 
-\subsection{Visualization}
+continuous integrations, functional testing, code review, dependency resolution (conda)
+
+\subsection{Visualization and Reporting}
+
+circos (maybe write the paper and include?), iFUSE, iReport
 
 \subsection{Data Management}
 
@@ -359,6 +353,7 @@ whole genome shotgun
 
 
 \begin{comment}
+history of microbiolgy: https://courses.lumenlearning.com/boundless-microbiology/chapter/introduction-to-microbiology/
 
 <WGS reveals changes outside coding regions, such as one affecting regulation of genes are of importance, and can reveal large scale changes (SVs), fusion genes>
 
