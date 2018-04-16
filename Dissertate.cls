@@ -47,13 +47,16 @@
 \RequirePackage{graphicx}
 \RequirePackage{amssymb}
 \RequirePackage{lettrine}
-%\RequirePackage[super,comma,numbers]{natbib}
+\RequirePackage[sectionbib]{chapterbib}
+\RequirePackage[numbers]{natbib}
 %\renewcommand{\bibnumfmt}[1]{[#1]}
 \RequirePackage[width=6.75in, letterpaper, bottom=3cm, top=3cm]{geometry}
 \RequirePackage{fancyhdr}
 
 \usepackage[titletoc]{appendix}
 \renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
+
+
 
 \RequirePackage{setspace}
 \RequirePackage{booktabs}
@@ -139,7 +142,6 @@
            \usecounter{enumiv}
            \let\p@enumiv\@empty
            \renewcommand\theenumiv{\@arabic\c@enumiv}}
-           \setcounter{enumiv}{-1}
      \sloppy
      \clubpenalty4000
      \@clubpenalty \clubpenalty
