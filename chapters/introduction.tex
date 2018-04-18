@@ -8,6 +8,17 @@
 
 \setlength\parindent{0pt}
 
+\section*{Contents}
+
+\begin{enumerate}
+\item A Brief History of Genomics
+\item The Bioinformatics Challenge
+\item Bioinformatics Best Practices
+\item The Galaxy Platform
+\item Use case 1: Prostate Cancer
+\item Use case 2: Microbiota Analysis
+\end{enumerate}
+
 \section{A Brief History of Genomics}
 
 \begin{comment}
@@ -26,7 +37,7 @@
     - treatment vs prevention
 \end{comment}
 
-In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (Fig. \ref{fig:seqcost}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
+In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
 \begin{figure}[h!]
     \centering
@@ -37,7 +48,6 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
 
 And now we are moving into third-generation sequencing, single-molecule, long read sequencing
 
-\newpage
 \section{The bioinformatics challenge}
 
 With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
@@ -55,28 +65,23 @@ Any errors or biases introduced in each of these steps can have a significant im
 
 \verb+expand on each point?+
 
-\subsection{Creating high-quality bioinformatics software}
+\section{Bioinformatics best practices}
 
 Some concepts important to good software
 
 \begin{enumerate}
     \itemsep-0.5em
-    \item Accessibility (usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
-    \item Reproducibility (conda, docker, galaxy, version control, code notebooks)
-    \item Maintainability (testing, continuous integration, community building)
-    \item Visualization (and reporting)
-    \item Data management (FAIR data, LIMS, PIDs)
+    \item Accessibility of tools and data %(usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
+    \item Reproducibility %(conda, docker, galaxy, version control, code notebooks)
+    \item Maintainability of software %(testing, continuous integration, community buildingi, scalability)
+    \item Visualization and reporting
+    \item Data management and sharing %(FAIR data, LIMS, PIDs)
     \item Training
 \end{enumerate}
 
 
 \subsection{Accessibility}
-Tools should be both easy to install and easy to use.
-
-Most bioinformatics tools are commandline tools, and most biologists are not trained in the use of such, and even for bioinformaticians, running some of these tools can be a challenge as they are often not documented well. Just getting them installed can already be a challenge with all dependencies and OS differences
-
-Galaxy \cite{afgan2016galaxy} provides a web interface to such tools, bringing analysis tools to the experts equipped to perfor the interpretation of the results.
-
+Analysis tools should be both easy to install and easy to use. Most bioinformatics tools are commandline unix tools, and most biologists are not trained in the use of such, and even for bioinformaticians running some of these tools can be a challenge as they are often not documented or maintained well. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step.
 
 \subsection*{Reproducibility}
 \begin{verbatim}
@@ -103,7 +108,6 @@ And this is not just a problem within a single institution; far too often, resul
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
-\subsubsection*{The Galaxy platform}
 
 
 
@@ -135,6 +139,10 @@ circos (maybe write the paper and include?), iFUSE, iReport
 Rapid development of DNA sequencing technologies has made it possible for biomedical disciplines to rival the physical sciences in data production capability. The combined output of today’s sequencing instruments has already surpassed the data generation speed of resources such as the Large Hadron Collider and is rivaling those in the field of astronomy. Yet biology is different from physics (and other quantitative disciplines) in one fundamental aspect: the lack of computational and data analysis training in standard biomedical curricula. Many biomedical scientists do not possess the skills to use or even access existing analysis resources.
 Such paucity of training also negatively impacts the ability of biomedical researchers to collaborate with their statistics and math counterparts, because of the inability to speak each other’s language. In addition, an estimated one-third of biomedical researchers do not have access to proper data analysis support \cite{larcombe2017elixir}. The only operative way to address these deficiencies is with training. The need for such training cannot be overstated: while the majority (>95\%) of researchers work or plan to work with large datasets, most (>65\%) possess only minimal bioinformatics skills and are not comfortable with statistical analyses \cite{larcombe2017elixir}, \cite{williams2017vision}.
 This overwhelming need drives the demand, which, at present, greatly exceeds supply \cite{attwood2017global}. In a recent survey \cite{survey2013embl} over 60\% of biologists expressed a need for more training while only 5\% called for more computing power. Thus one can assume that the true bottleneck of the current data deluge is not storage or processing power, but the knowledge and skills to utilize existing resources.
+
+\section{The Galaxy Project}
+The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-
+
 
 
 \section{Importance of Analysis Software}
