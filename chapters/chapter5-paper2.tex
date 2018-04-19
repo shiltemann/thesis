@@ -2,7 +2,8 @@
 %\setcounter{table}{-1}
 %\setcounter{section}{-1}
 \setcounter{NAT@ctr}{-1}
-
+\phantomsection
+\addcontentsline{toc}{section}{The Bio: MYcrobiota}
 \articletitle{Development and evaluation of a culture-free microbiota profiling platform (MYcrobiota) for clinical diagnostics}
 Stefan Boers\textsuperscript{\ref{affil:emc-microbiology},*},
 Saskia Hiltemann\textsuperscript{\ref{affil:emc-bioinf},*},
@@ -159,7 +160,7 @@ The datasets generated and analyzed during the current study are available in th
 
 \section*{Results}
 
-\subsection{Development of an easy-to-use bioinformatics pipeline}
+\subsection*{Development of an easy-to-use bioinformatics pipeline}
 
 In order to analyze 16S rRNA gene NGS data obtained using micPCR/NGS, we designed a Galaxy-based bioinformatics pipeline for use in clinical diagnostics. This workflow is largely based on the well-established standard operating procedure (SOP) defined by the creators of mothur \cite{kozich2013development}. We have adapted the SOP to our specific use-case by integrating several custom-made tools that allow for the subsampling of large datasets, the averaging over multiple technical replicates, converting the number of obtained sequence reads per OTU to 16S rRNA gene copies per OTU via the use of an IC, and correction for contaminating bacterial DNA via the use of NECs. All results are presented to the user as a single, interactive web report in Galaxy using the iReport tool \cite{hiltemann2014ireport}. The iReport was designed to visualize the resultant microbiota profiles using KRONA \cite{ondov2011interactive}, list quantitative microbiota profiles in OTU tables (with the microbial load per OTU reported as 16S rRNA gene copies), summarize results of diversity calculators, and provide an extensive overview of the quality control measurements during the analysis. Importantly, the iReport is relatively small in size (~ 6 MB per sample for our datasets) that enables easy sharing and storage of 16S rRNA gene NGS results (\hyperref[fig:mycrobiota-pipeline]{Fig. \ref{fig:mycrobiota-pipeline}}).
 

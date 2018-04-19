@@ -3,7 +3,7 @@ Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin moles
 \qauthor{Quoteauthor Lastname}
 \end{savequote}
 
-\chapter{Gmt \& MYcrobiota}
+\chapter{Microbiota Profiling}
 \setcounter{figure}{-1}
 \setcounter{table}{-1}
 \setcounter{section}{-1}
@@ -11,8 +11,9 @@ Nulla facilisi. In vel sem. Morbi id urna in diam dignissim feugiat. Proin moles
 
 
 \newpage
-
-\articletitle{Development and evaluation of a culture-free microbiota profiling platform (MYcrobiota) for clinical diagnostics}
+\phantomsection
+\addcontentsline{toc}{section}{The Informatics: GmT}
+\articletitle{Galaxy mothur Toolset (GmT): a user-friendly application for 16S rRNA gene sequencing analysis using mothur.}
 Saskia Hiltemann\textsuperscript{\ref{affil:emc-bioinf},*},
 Stefan Boers\textsuperscript{\ref{affil:emc-microbiology},*},
 Peter van der spek \textsuperscript{\ref{affil:emc-bioinf}},
@@ -44,7 +45,7 @@ Andrew Stubbs\textsuperscript{\ref{affil:emc-bioinf}}
 
 \section*{Findings}
 
-\subsection{Introduction}
+\subsection*{Introduction}
  rRNA gene profiling analysis can be achieved using an extensive array of sophisticated software including mothur \cite{schloss2009introducing}, QIIME \cite{caporaso2010qiime}, MG-RAST \cite{glass2010using}, and many more \cite{oulas2015metagenomics}. Whilst some of these applications have a graphical user interface (GUI) to provide access to these technologies for the research scientist, their use remains complex for non-bioinformaticians. In this respect, the Galaxy project \cite{afgan2016galaxy} was developed in order to simplify the use of complex command-line software tools. Galaxy offers extensive support for both 16S rRNA gene-based and broader metagenomic analyses, with over 100 tools in the metagenomics section of the Galaxy tool shed, including QIIME \cite{caporaso2010qiime}, KRONA \cite{ondov2011interactive}, PyNAST \cite{caporaso2009pynast}, PICRUSt \cite{langille2013predictive}, Kraken \cite{wood2014kraken}, MetaPhlAn2 \cite{truong2015metaphlan2}, HUMAnN2 \cite{abubucker2012metabolic}, PrinSEQ \cite{schmieder2011quality}, Nonpareil \cite{rodriguez2013nonpareil}, Vegan \cite{dixon2003vegan}, and many more.
 
 mothur is an open-source application that was designed as a single piece of software capable of analysing and comparing microbial communities from 16S rRNA gene data derived from next-generation sequencing (NGS). The creators of mothur did not only provide an extensive set of tools, but also a collection of standard operating procedures (SOPs) that detail the recommended analytical protocol for different types of input data.
@@ -57,10 +58,10 @@ GmT includes tools to produce standard file formats, such as the BIOM format \ci
 
 The Galaxy Training Network (GTN) is a network of people and groups that present Galaxy and Galaxy-based training around the world. The GTN has created a central repository \cite{gtn-repo} for Galaxy training materials. In order to further facilitate the use of GmT to end-users, we have contributed training materials to the GTN that illustrate how to run mothur's MiSeq SOP within Galaxy \cite{gmt-training}. This work has also been incorporated in a larger-scale framework to easily and quickly explore microbiota data in a reproducible and transparent environment \cite{batut2017asaim}.
 
-\subsection{Purpose of this work}
+\subsection*{Purpose of this work}
 The work performed and described in this technical note has four objectives. First to provide end-users and bioinformaticians with easy access to all the mothur tools as the GmT. Second is to provide open-access online training material to demonstrate/complete the mothur SOP in Galaxy.  Third is to deliver an end-to-end workflow for the mothur SOP in Galaxy that is available for upload to any Galaxy that has the GmT installed.  Fourth is to provide a summarization of results in a web report using the iReport Galaxy tool \cite{hiltemann2014ireport}. Our aim is to provide 16S rRNA gene NGS analysis tools and awareness on how to use them in a format that supports FAIR data principles \cite{wilkinson2016fair}.
 
-\subsection{Worked Example}
+\subsection*{Worked Example}
 To illustrate the utility of our toolkit, we present results on example data below. GmT is designed to take short-read 16S rRNA gene NGS data as input and to output a dynamic web report for prokaryotic taxonomical classification using the Galaxy platform.  A GmT workflow follows essentially a four-step process:
 
 \begin{enumerate}
@@ -97,24 +98,24 @@ To compare the output from a single experiment or across multiple experiments we
 
 \section*{Methods}
 
-\subsection{Handling large datasets}
+\subsection*{Handling large datasets}
 Large-scale analyses have become the norm in the field, both large in disk space as in the number of files, and this can pose a challenge for analysis. For large files, Galaxy offers the option of uploading via FTP rather than web transfer. The introduction of the concept of "collections" in Galaxy has enabled users to analyze datasets consisting of a large number of files (>100K) as easily as they would a single file.
 
-\subsection{Galaxy mothur Toolset}
+\subsection*{Galaxy mothur Toolset}
 Many mothur components support parallelization, and our Galaxy wrappers will run these components with the maximum number of CPUs allotted to them by the Galaxy administrator. In order to diagnose potential failures, Galaxy outputs the full standard and error logs, which the users can inspect. Furthermore, we have contributed mothur datatype definitions to the Galaxy core code, meaning that the users will be protected from inputting the wrong datasets and thus reduce the number of errors they will make with the tools. All tools in GmT use only conda dependencies, making their installation in Galaxy a painless experience that requires nothing more than a single press of a button.
 
 The mothur tool wrappers have been submitted to the Intergalactic Utilities Commission (IUC) tool repository \cite{iuc-repo} and are available from the Galaxy Tool Shed \cite{toolshed}. The IUC is a group of community members dedicated to developing and upholding Galaxy tool development best practices and guidelines, thus by contributing our tools to this repo we ensure that the tools will be well-maintained. A metagenomics Galaxy flavour \cite{metagenomics-flavour} is available which contains all components presented here. The full mothur suite has also been installed to Galaxy's main server. \cite{usegalaxy}.
 
-\subsection{KRONA visualization}
+\subsection*{KRONA visualization}
 KRONA \cite{ondov2011interactive} is a data viewer which provides the ability to interactively explore hierarchical data. A Galaxy KRONA wrapper that works directly on mothur data formats was developed for this project.
 
-\subsection{Phinch visualization}
+\subsection*{Phinch visualization}
 Galaxy offers integration with Phinch \cite{bik2014phinch} BIOM format viewer in two ways; as a Galaxy interactive environment (GIE) developed in the context of this project \cite{phinchGIE}, and more recently also as an external display application hosted by the Galaxy team.
 
-\subsection{iReport summarization}
+\subsection*{iReport summarization}
 To facilitate the evaluation of 16S rRNA gene sequencing analysis results, integration with the iReport \cite{hiltemann2014ireport} tool are also provided. This tool creates a web report to present the analysis results in an organized fashion and provides links to external resources such as BLAST searches (\hyperref[ireport]{Figure \ref{ireport}}).
 
-\section{Availability of source code and requirements}
+\section*{Availability of source code and requirements}
 
 \begin{itemize}
 \item Project name: Galaxy mothur Toolset (GMT)
@@ -133,9 +134,9 @@ Docker Flavour (Docker): \url{https://quay.io/repository/shiltemann/galaxy-metag
 
 The data presented here to illustrate our work is the same data used in the training manual, and is available from Zenodo \cite{zenodo-data}
 
-\section{Declarations}
+\section*{Declarations}
 
-\subsection{List of abbreviations}
+\subsection*{List of abbreviations}
 
 \begin{itemize}
 \item \textbf{GIE:} Galaxy interactive environment
@@ -145,13 +146,13 @@ The data presented here to illustrate our work is the same data used in the trai
 \item \textbf{SOP:} Standard Operating Procedure
 \end{itemize}
 
-\subsection{Competing Interests}
+\subsection*{Competing Interests}
 The authors declare that they have no competing interests.
 
-\subsection{Funding}
+\subsection*{Funding}
 This work has received funding from the European Union’s Seventh Framework Programme for Health under grant agreement number 602860 (TAILORED-Treatment; www.tailored-treatment.eu).
 
-\subsection{Author's Contributions}
+\subsection*{Author's Contributions}
 
 SH developed the Galaxy tool wrappers and Phinch interactive environment. SB validated the analysis pipelines. All authors contributed to the manuscript text and approve its contents.
 
