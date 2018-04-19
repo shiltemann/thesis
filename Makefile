@@ -6,6 +6,7 @@ thesis:
 	bibtex chapters/chapter3
 	bibtex chapters/chapter3-paper2
 	bibtex chapters/chapter4
+	bibtex chapters/chapter4-paper2
 	bibtex chapters/chapter5
 	bibtex chapters/chapter5-paper2
 	bibtex chapters/discussion
