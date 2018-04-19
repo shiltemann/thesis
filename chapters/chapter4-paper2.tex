@@ -73,9 +73,11 @@ Experimental validation data for the two public genomes HCC1187 and HCC2218 were
 \small
 \begin{table}[t!]
 \begin{tabular}{lllll}
-          & Sample & Detected & Somatic & Description of variants \\
-          &        &          &         & called nonsomatic       \\\hline
-Illumina  & HCC1187 & 71 of 98 & 53 & 53 of
+          & Sample & Detected & Somatic & Description of variants called somatic \\ \hline
+Illumina  & HCC1187 & 71 of 98 & 53 & 53 of 71 matches survived MN correction; all of these survived DB+ VN correction \\
+Illumina  & HCC2218 & 54 of 64 & 10 & 10 of 54 matches survived MN correction; all of these survived DB+ VN correction \\
+CG        & HCC1187 & 91 of 98 & 91 & All survived MN correction; all of these survived DB+ VN correction \\
+CG        & HCC2218 & 55 of 64 & 55 & All survived MN correction; all of these survived DB+ VN correction \\
 \end{tabular}
 \caption{Number of confirmed somatic SVs (as described in COSMIC database) detected in the tumor samples by CG and Illumina, and the number of these variants that are labeled soatic after corrections with our VN method}
 \label{table:table1}
@@ -84,8 +86,17 @@ Illumina  & HCC1187 & 71 of 98 & 53 & 53 of
 
 \subsection*{SNVs and indels}
 
+For the analysis of SNVs and indels for both the MN method and the VN method, we additionally filter variants for their presence in dbSNP (Sherry et al. 2001), the 1000G (The 1000 Genomes Project Consortium 2010, 2012), and the EVS (http://evs.gs.washington.edu/EVS) using the ANNOVAR tool (Wang et al. 2010).
 
+In annotating with the online databases, we require an exact match of position, as well as a match in variant allele between the cancer sample and the variant described in the database. For dbSNP, we used the set of nonflagged variants (flagged variants are those for which SNPs <1\% minor allele frequency [MAF; or unknown], mapping only once to reference assembly, or flagged as “clinically associated”).
 
+The Illumina FastTrack Cancer Service (http://www.illumina.com/services/whole-genome-sequencing-services/sequencing-service-providers-ign/sequencing-services.ilmn) identified 15,499 somatic SNVs in the HCC1187 sample and 27,823 in HCC2218, after correction with the MN sample. We evaluate performance of our method by correcting the list of all variants found in the tumor sample using our VN set and comparing the remaining variants to those variants determined to be somatic by Illumina's tumor-normal sequencing service.
+
+Two variants are considered a match when they share the same chromosomal position, as well as the same variant allele. Because variants can often be described in various different yet equivalent ways, we used a more advanced correction method for those comparisons involving CG data (the TestVariants tool from CG's tool suite). Detecting these equivalencies is very important for variant comparisons and is discussed in more detail in a later section.
+
+Variants remaining after application of all three filters (MN, database filter, and VN) represent the golden set of true somatic variants (11,409 SNVs for HCC1187 and 20,560 for HCC2218). We determined the number of false-positive somatic variants identified by several filter combinations (Fig. 1; Supplemental Data S2). High-confidence variants determined by the VN method are those variants not present in any of the VN samples, and the position may not be no-called in more than ∼50\% of the samples. This is similar to the MN correction, where typically only those variants are reported that were called reference in the normal sample; tumor variants at positions that are no-called in the normal are usually not reported as (high-confidence) somatic variants.
+
+The VN approach has similar performance to a MN for SNVs and indels and even removes more variants than the associated normal in some cases (Fig. 2). However, be aware that this does not mean it removes all of the same variants as the normal but rather it removes an equally large, but different set of variants. There are always highly personal germline variants that can only be removed by the MN, but similarly, there are also polymorphisms that are only removed by the VN and not the single MN sample.
 
 \cite{ireport}
 
