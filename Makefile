@@ -1,6 +1,7 @@
 thesis:
 	xelatex dissertation.tex
 	bibtex chapters/introduction
+	bibtex chapters/galaxy
 	bibtex chapters/ireport
 	bibtex chapters/training-materials
 	bibtex chapters/ifuse
