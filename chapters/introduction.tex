@@ -11,12 +11,14 @@
 \section*{Contents}
 
 \begin{enumerate}
+\itemsep-0.5em
 \item A Brief History of Genomics
 \item The Bioinformatics Challenge
 \item Bioinformatics Best Practices
 \item The Galaxy Platform
 \item Use case 1: Prostate Cancer
 \item Use case 2: Microbiota Analysis
+\item Scope of this Thesis
 \end{enumerate}
 
 \section{A Brief History of Genomics}
@@ -48,7 +50,7 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
 
 And now we are moving into third-generation sequencing, single-molecule, long read sequencing
 
-\section{The bioinformatics challenge}
+\section{The Bioinformatics Challenge}
 
 With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
 
@@ -61,13 +63,19 @@ Bioinformatics comes into play at various steps in the analysis process. The fou
     \item Aggregation of heterogeneous datasets into a coherent reference data source
 \end{enumerate}
 
-Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation, and must be carefully examined in order to correct for them or assign appropriate confidence levels to results in subsequent analysis steps.
+Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation. Consequently, for each task you may wish to perform there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool will claim superiority over all the others in their publication, and all these claims are usually true; each tool can typically outperform all others under a set of highly-specific hand-picked conditions. While review articles exist which compare and benchmark several related tools, this typically remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. As an example, horrible overlap (variants/SVs as example)
+
+% choice of transcript reference
+Not only the choice of software, but also the choice of reference database can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}. Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve
+
+Lack of clear data format standards also compounds the issue. While some clear standards exist [fasta,VCF], there are
+
 
 \verb+expand on each point?+
 
-\section{Bioinformatics best practices}
+\section{Bioinformatics Best Practices}
 
-Some concepts important to good software
+Some concepts important for good bioinformatics:
 
 \begin{enumerate}
     \itemsep-0.5em
@@ -90,11 +98,13 @@ Analysis tools should be both easy to install and easy to use. Most bioinformati
 - sweave/jupyter notebooks/rmarkdown/knitr
 
 
+\section{Importance of Analysis Software}
 \end{verbatim}
 Every lab will have had a variation of the following conversation at some point in their existence:
 
 \textit{
 \begin{itemize}
+\itemsep-0.5em
 \item \textbf{Alice:} I want to redo analysis X, how was it run the last time? \\
 \item \textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop \\
 \item \textbf{Alice:} Who is Charlie? \\
@@ -104,12 +114,9 @@ Every lab will have had a variation of the following conversation at some point 
 \end{itemize}
 }
 
-And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript. [cite the paper where they tried to reproduce nature papers]
+And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript. [cite the paper where they tried and failed to reproduce nature papers]
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
-
-
-
 
 
 \begin{comment}
@@ -130,7 +137,11 @@ continuous integrations, functional testing, code review, dependency resolution 
 
 \subsection{Visualization and Reporting}
 
-circos (maybe write the paper and include?), iFUSE, iReport
+BIG DATA cannot be opened in excel anymore (despite biologist trying really hard to keep doing this ;))
+
+Visualisation needed!
+
+Circos (maybe write the paper and include?), iFUSE, iReport
 
 \subsection{Data Management}
 
@@ -141,21 +152,10 @@ Such paucity of training also negatively impacts the ability of biomedical resea
 This overwhelming need drives the demand, which, at present, greatly exceeds supply \cite{attwood2017global}. In a recent survey \cite{survey2013embl} over 60\% of biologists expressed a need for more training while only 5\% called for more computing power. Thus one can assume that the true bottleneck of the current data deluge is not storage or processing power, but the knowledge and skills to utilize existing resources.
 
 \section{The Galaxy Project}
-The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-
+The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-quality bioinformatics pipelines.
 
 
 
-\section{Importance of Analysis Software}
-For each task you may wish to perform there will be a number of tools available to do the job, but which is best? Each tool will claim superiority over all the others in their publication, and all these claim are usually true, each tool can usually outperform all other under a set of hand-picked conditions.
-
-review articles may compare several, still an optimization problem (better at subtask A but worse at subtask B)
-
-horrible overlap (variants/SVs as example)
-
-% choice of transcript reference
-Not only the choice of software, but also the choice of reference database can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}.
-
-Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve
 
 \newpage
 \thispagestyle{empty}
@@ -458,6 +458,10 @@ types of SVs: standard, complex, chromothripsis [@stephens2011massive]
 
 
 \end{comment}
+
+\section{Scope of this Thesis}
+Bioinformatics is a vital part of many fields of research. While these may differ greatly in the biology involved, many of the bioinformatics concepts are shared among them. In \hyperref[chapter:general]{Chapter \ref{chapter:general}} we discuss several such widely-applicatble bioinformatics projects. Galaxy for reproducible analysis workflows, iReport for results reporting withing Galaxy. (Circos? myFAIR?)
+
 
 
 \bibliographystyle{ieeetr}
