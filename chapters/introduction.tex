@@ -48,7 +48,14 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
     \label{fig:seqcost}
 \end{figure}
 
+\begin{verbatim}
+- WES
+- WGS
+- RNASeq
+- epigenetics
+
 And now we are moving into third-generation sequencing, single-molecule, long read sequencing
+\end{verbatim}
 
 \section{The Bioinformatics Challenge}
 
@@ -81,80 +88,88 @@ Some concepts important for good bioinformatics:
     \itemsep-0.5em
     \item Accessibility of tools and data %(usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
     \item Reproducibility %(conda, docker, galaxy, version control, code notebooks)
+    \item Interoperability %(data formats, common frameworks, generic, allow for packaging)
     \item Maintainability of software %(testing, continuous integration, community buildingi, scalability)
     \item Visualization and reporting
     \item Data management and sharing %(FAIR data, LIMS, PIDs)
-    \item Training
 \end{enumerate}
 
 
 \subsection{Accessibility}
 Analysis tools should be both easy to install and easy to use. Most bioinformatics tools are commandline unix tools, and most biologists are not trained in the use of such, and even for bioinformaticians running some of these tools can be a challenge as they are often not documented or maintained well. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step.
 
-\subsection*{Reproducibility}
+\subsection{Reproducibility}
 \begin{verbatim}
 
 - conda
+- galaxy
 - sweave/jupyter notebooks/rmarkdown/knitr
 
-
-\section{Importance of Analysis Software}
 \end{verbatim}
+
 Every lab will have had a variation of the following conversation at some point in their existence:
 
-\textit{
 \begin{itemize}
 \itemsep-0.5em
-\item \textbf{Alice:} I want to redo analysis X, how was it run the last time? \\
-\item \textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop \\
-\item \textbf{Alice:} Who is Charlie? \\
-\item \textbf{Bob:} Charlie was our PhD student, they left 6 months ago \\
-\item \textbf{Alice:} How do I get this information now? \\
-\item \textbf{Bob:} ... *crickets* ...
+\item \textit{\textbf{Alice:} I want to redo analysis X, how was it run the last time?} \\
+\item \textit{\textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop} \\
+\item \textit{\textbf{Alice:} Who is Charlie?} \\
+\item \textit{\textbf{Bob:} Charlie was our PhD student, they left 6 months ago..} \\
+\item \textit{\textbf{Alice:} How do I get this information now?} \\
+\item \textit{\textbf{Bob:} ... *crickets* ...}
 \end{itemize}
-}
+
 
 And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript. [cite the paper where they tried and failed to reproduce nature papers]
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
 
-\begin{comment}
+\begin{verbatim}
 "forensic bioinformatics" -> have to figure out by trial and error what was done
 
 https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-017-0377-6
-
 https://www.biostars.org/p/52561/
-
 https://www.nature.com/naturejobs/science/articles/10.1038/nj7396-137a
 https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 
-\end{comment}
+\end{verbatim}
+
+\subsection{Interoperability}
+\begin{verbatim}
+file format standards, common frameworks, good documentation, open-source,
+allow for packaging (don't deliver code as VMs etc),
+\end{verbatim}
 
 \subsection{Maintainability}
 
-continuous integrations, functional testing, code review, dependency resolution (conda)
+\begin{verbatim}
+continuous integration, functional testing, code review, dependency resolution (conda)
+\end{verbatim}
 
 \subsection{Visualization and Reporting}
 
-BIG DATA cannot be opened in excel anymore (despite biologist trying really hard to keep doing this ;))
+\begin{verbatim}
+BIG DATA cannot be opened in excel anymore (despite biologists best efforts ;))
 
 Visualisation needed!
 
 Circos (maybe write the paper and include?), iFUSE, iReport
+\end{verbatim}
 
 \subsection{Data Management}
-
-\subsection{Training}
-\begin{comment}can I plagiarize my own papers? :P VV\end{comment}
-Rapid development of DNA sequencing technologies has made it possible for biomedical disciplines to rival the physical sciences in data production capability. The combined output of today’s sequencing instruments has already surpassed the data generation speed of resources such as the Large Hadron Collider and is rivaling those in the field of astronomy. Yet biology is different from physics (and other quantitative disciplines) in one fundamental aspect: the lack of computational and data analysis training in standard biomedical curricula. Many biomedical scientists do not possess the skills to use or even access existing analysis resources.
-Such paucity of training also negatively impacts the ability of biomedical researchers to collaborate with their statistics and math counterparts, because of the inability to speak each other’s language. In addition, an estimated one-third of biomedical researchers do not have access to proper data analysis support \cite{larcombe2017elixir}. The only operative way to address these deficiencies is with training. The need for such training cannot be overstated: while the majority (>95\%) of researchers work or plan to work with large datasets, most (>65\%) possess only minimal bioinformatics skills and are not comfortable with statistical analyses \cite{larcombe2017elixir}, \cite{williams2017vision}.
-This overwhelming need drives the demand, which, at present, greatly exceeds supply \cite{attwood2017global}. In a recent survey \cite{survey2013embl} over 60\% of biologists expressed a need for more training while only 5\% called for more computing power. Thus one can assume that the true bottleneck of the current data deluge is not storage or processing power, but the knowledge and skills to utilize existing resources.
+\begin{verbatim}
+maybe leave out unless including myFAIR paper?
+\end{verbatim}
 
 \section{The Galaxy Project}
 The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-quality bioinformatics pipelines.
 
-
+\section{Training}
+\begin{verbatim}can I plagiarize my own papers? :P VV\end{verbatim}
+Rapid development of DNA sequencing technologies has made it possible for biomedical disciplines to rival the physical sciences in data production capability. The combined output of today’s sequencing instruments has already surpassed the data generation speed of resources such as the Large Hadron Collider and is rivaling those in the field of astronomy. Yet biology is different from physics (and other quantitative disciplines) in one fundamental aspect: the lack of computational and data analysis training in standard biomedical curricula. Many biomedical scientists do not possess the skills to use or even access existing analysis resources.
+Such paucity of training also negatively impacts the ability of biomedical researchers to collaborate with their statistics and math counterparts, because of the inability to speak each other’s language. In addition, an estimated one-third of biomedical researchers do not have access to proper data analysis support \cite{larcombe2017elixir}. The only operative way to address these deficiencies is with training. The need for such training cannot be overstated: while the majority (>95\%) of researchers work or plan to work with large datasets, most (>65\%) possess only minimal bioinformatics skills and are not comfortable with statistical analyses \cite{larcombe2017elixir}, \cite{williams2017vision}.
+This overwhelming need drives the demand, which, at present, greatly exceeds supply \cite{attwood2017global}. In a recent survey \cite{survey2013embl} over 60\% of biologists expressed a need for more training while only 5\% called for more computing power. Thus one can assume that the true bottleneck of the current data deluge is not storage or processing power, but the knowledge and skills to utilize existing resources.
 
 
 \newpage

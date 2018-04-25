@@ -9,7 +9,7 @@ Write awesome discussion here!
 
 Discuss current limitations and possible future remedies/directions
 
-\section{The Bio, Futuromics}
+\section{The Bio: Futuromics}
 
 \subsection{Single-cell Sequencing}
 
@@ -21,30 +21,49 @@ do not consider cancer cells in isolation but combine with surrounding tissue/im
 
 
 \section{The Informatics}
+\begin{verbatim}
+- bigger better more RAM/CPU to keep up with the ever increasing data sizes, cloudification
+- make it usable - the biologists have the knowledge for interpretation, software should be
+  usable by them, not just bioinformaticians, Galaxy/docker/conda etc helps with this
+- make it maintainable as developers by adhering to coding best-practices and through the
+  use of continuous integration strategies>
+- training is vital, the more complex these data and methods get, the harder it will be to
+  draw accurate conclusions>
+- quantum computing? blockchain? the future or just hype?
+\end{verbatim}
 
-<bigger better more RAM/CPU to keep up with the ever increasing data sizes>
-
-<make it usable - the biologists have the knowledge for interpretation, software should be usable by them, not just bioinformaticians, Galaxy/docker/conda etc helps with this>
-
-<make it maintainable as developers by adhering to coding best-practices and through the use of continuous integration strategies>
-
-<training is vital, the more complex these methods get, the harder it will be to draw accurate conclusions>
-
-<quantum computing?>
-
-
-\section{The state of Academia}
+\section{Academia}
 
 The \textit{publish or perish} attitude in academia is bad; too many tools not maintained after first publication because a bioinformaticians worth seems to be determined solely by the number of first- or last-authorships of publications and the amount of funds obtained through grants. This leads a to huge replication of efforts, with many groups developing software to solve the exact same problem just because either the existing tools were inaccessible, or analysis not reproducible and not maintained, in large part because most bioinformaticians working in academia do not get time allocated for such tasks.
 
-paywalled journals need to die
+\begin{verbatim}
+- Open Science, open software, open data, open all the things!
 
-peer review process should also be open (anonymous upon request, but open)
+- Q: in academia often judged on number of papers you publish, but are citations each year
+     to existing papers also valued? this would encourage maintainance of tools more, if
+     50 new citations to your tool that year is considered just as good as a new first/last
+     authorship?
 
-do we even need journals?
+- Paywalled journals need to die
+  - even abused by Scott Pruitt to screw over the environment:
 
+- Peer review process should also be open (anonymous if desired by referees, but open)
+  - allow for multiple updates to paper? like code in github, if you've updated the tools you
+    write about, or analysed additional samples, or even if just URLs change, make it easier
+    to submit new versions, with open peer review, enable re-reviews of each new version,
+    --> like F1000 model
+  - or blind peer review, referees and journtal editors don't know the authors when making
+    their decision so cannot be biased (some of worst tools I've encountered are from
+    hot-shot names in big fancy journals)
 
-just testing a citation: iReport \cite{hiltemann2014ireport}.
+- Do we even need journals?
+
+- science communication: Every publication should be accompanied by a short description for
+  layman readers, media often grossly misinterprets results, do better about science
+  communication
+\end{verbatim}
+
+just testing a citation: \cite{hiltemann2014ireport}.
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
