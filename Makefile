@@ -17,7 +17,7 @@ view:
 	okular dissertation.pdf &
 
 watch:
-	while inotifywait -r -e modify . ; do make thesis; done
+	while inotifywait -r -e modify --exclude "\.swp" . ; do make thesis; done
 
 clean:
 	rm **/*.aux **/*.blg **/*.bbl *.aux *.log *.out *.toc
