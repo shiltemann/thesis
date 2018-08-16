@@ -39,7 +39,7 @@
     - treatment vs prevention
 \end{comment}
 
-In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated it's potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates -outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
+In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated its potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates - outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
 \begin{figure}[h!]
     \centering
@@ -48,64 +48,70 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
     \label{fig:seqcost}
 \end{figure}
 
-\begin{verbatim}
-- WES
-- WGS
-- RNASeq
-- epigenetics
+But DNA is only one part of the story. Shortly after the publication of the human genome, high-througput techniques to also sequence the transcriptome emerged (RNA-Seq), allowing for the identification and quantification of gene transcripts, and provide information about post-transcriptional mutations and other complexities such as alternative splicing \cite{wang2009rna}. Similarly, the study of epigenetics is revealing that non-coding DNA, far from the once-termed \textit{"junk DNA"}, is part of an intricate and complex regulatory system controlling the expression of genes.
 
-And now we are moving into third-generation sequencing, single-molecule, long read sequencing
-\end{verbatim}
+We are now moving into the era of third-generation sequencing, where single-cell, long-read, and often real-time sequencing will allow for even more accurate determination of nucleotide sequence, providing more accurate resolution even in highly diverse and complex samples such as tumours or metagenomic samples.
+
 
 \section{The Bioinformatics Challenge}
 
-With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted to development of the software able to handle these big and highly complex datasets.
+With huge amounts of data now being generated at relatively low cost, and compute resources being available even on moderate budgets, the challenge has shifted the sequencing technologies, to development of the analysis software able to handle these big and highly complex datasets.
 
-Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are:
-\begin{enumerate}
-    \itemsep-0.5em
-    \item Base calling and quality scoring, typically done by software integrated into sequencing machines
-    \item Mapping and/or assembling of the short reads, and variant calling
-    \item Annotation, data integration, and visualisation
-    \item Aggregation of heterogeneous datasets into a coherent reference data source
-\end{enumerate}
+Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are 1) Base calling and quality scoring, typically done by software integrated into sequencing machines 2) Mapping and/or assembling of the short reads, and variant calling 3) Annotation, data integration, and visualisation, and 4) Aggregation of heterogeneous datasets into a coherent reference data source. Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation.
 
-Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation. Consequently, for each task you may wish to perform there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool will claim superiority over all the others in their publication, and all these claims are usually true; each tool can typically outperform all others under a set of highly-specific hand-picked conditions. While review articles exist which compare and benchmark several related tools, this typically remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. As an example, horrible overlap (variants/SVs as example)
+\subsection{Decisions, Decisions}
+Any bioinformatics pipeline involves a lot of choices; the tool itself, the parameter settings, and any reference datasets
 
-% choice of transcript reference
+% choice of tool
+For each task you may wish to perform there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool's publication usually includes a benchmark showing it outperforms all its competitors, and typically it does, under a set of highly-specific hand-picked conditions. While impartial review articles which compare and benchmark several related tools do exist, this typically remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. [As an example, horrible overlap (variants/SVs as example)]
+
+% choice of parameters
+Once a choice of tool is made, there are still the parameter settings to consider. While many tools define sensible defaults, fine-tuning the parameters to your specific experiment setup and analysis goals can be highly beneficial [cite that papers that shows benefits of departing from default settings]
+
+% choice of reference data
 Not only the choice of software, but also the choice of reference database can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}. Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve
 
-Lack of clear data format standards also compounds the issue. While some clear standards exist [fasta,VCF], there are
+\subsection{Standardisation}
+Lack of clear data format standards also compounds the issue. While some clear standards exist [fasta,VCF], there are many cases that lack such a standard, hindering the interoperability of different tools. Because bioinformatics is such a quickly changing field, with software ever trying to keep up with the fast-paced evolution of sequencing technologies, there often simply is no time for standards to emerge organically before becoming outdated, and with a lack of an authoratative body to prescribe standards, this may be a problem without a solution that must simply be navigated as best as possible.
+
+\subsection{Open Science}
+Many journals require authors to submit datasets to public repositories in order to allow other scientists to reproduce their findings. With bioinformatics now a fundamental part of any publication, a clear description of the analysis pipeline is also required for true reproducibility, but the majority of scientific publication do not contain all the information required to reproduce the in-silico experiment [cite]. Making analysis software open-source and adhering to a set of bioinformatics best-practices can improve the reproducibility of bioinformatics analysis pipelines.
 
 
-\verb+expand on each point?+
+% some (partial) solutions to the above challenges, spoilers: open software, open science, open everything
+\subsection{Bioinformatics Best Practices}
+Since bioinformaticians are primarily academics -who are typically being judged on their publications, not their code-, the quality of bioinformatics tools is highly variable and tool authors often struggle to find the time and resources to maintain their code. The open-source community is instrumental in this respect, allowing the most popular and useful tools to be taken up by the community which can collectively maintain and update bioinformatics software. Adhering to a set of best-practices guidelines can greatly reduce this maintenance burden, and increase the chances of tools being taken up by the community. [also good for science reproducibility etc]
 
-\section{Bioinformatics Best Practices}
-
-Some concepts important for good bioinformatics:
-
+Following bioinformatics best-practices may help optimize the following pillars of bioinformatics:
 \begin{enumerate}
     \itemsep-0.5em
     \item Accessibility of tools and data %(usability) of tools (documentation, open source, github etc, galaxy, galaxy, dependency management, docker)
     \item Reproducibility %(conda, docker, galaxy, version control, code notebooks)
     \item Interoperability %(data formats, common frameworks, generic, allow for packaging)
     \item Maintainability of software %(testing, continuous integration, community buildingi, scalability)
-    \item Visualization and reporting
+    %\item Visualization and reporting
     \item Data management and sharing %(FAIR data, LIMS, PIDs)
 \end{enumerate}
 
 
-\subsection{Accessibility}
-Analysis tools should be both easy to install and easy to use. Most bioinformatics tools are commandline unix tools, and most biologists are not trained in the use of such, and even for bioinformaticians running some of these tools can be a challenge as they are often not documented or maintained well. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step.
+\subsubsection{Accessibility}
+Most bioinformatics tools are commandline unix tools, while most biologists are not trained in the use of such, and even for the experienced bioinformatician, running some of these tools can be a challenge due to lack of documentation or quality of the tool. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step.
 
-\subsection{Reproducibility}
-\begin{verbatim}
+Accessibility also includes high-quality documentation of the tool, both for developers and end-users, and ideally training materials to educate users in the proper use of tool and warn about possible pitfalls and biases.
+
+[Open source, documentation, training?]
+
+[segue to Galaxy?]
+
+\subsubsection{Reproducibility}
+
+A cor
+
+\begin{comment}
 
 - conda
 - galaxy
 - sweave/jupyter notebooks/rmarkdown/knitr
-
-\end{verbatim}
 
 Every lab will have had a variation of the following conversation at some point in their existence:
 
@@ -125,7 +131,6 @@ And this is not just a problem within a single institution; far too often, resul
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
 
-\begin{verbatim}
 "forensic bioinformatics" -> have to figure out by trial and error what was done
 
 https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-017-0377-6
@@ -133,7 +138,7 @@ https://www.biostars.org/p/52561/
 https://www.nature.com/naturejobs/science/articles/10.1038/nj7396-137a
 https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 
-\end{verbatim}
+\end{comment}
 
 \subsection{Interoperability}
 \begin{verbatim}
@@ -147,15 +152,7 @@ allow for packaging (don't deliver code as VMs etc),
 continuous integration, functional testing, code review, dependency resolution (conda)
 \end{verbatim}
 
-\subsection{Visualization and Reporting}
 
-\begin{verbatim}
-BIG DATA cannot be opened in excel anymore (despite biologists best efforts ;))
-
-Visualisation needed!
-
-Circos (maybe write the paper and include?), iFUSE, iReport
-\end{verbatim}
 
 \subsection{Data Management}
 \begin{verbatim}
@@ -164,6 +161,17 @@ maybe leave out unless including myFAIR paper?
 
 \section{The Galaxy Project}
 The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-quality bioinformatics pipelines.
+
+\section{Visualisation and Reporting}
+
+\begin{comment}
+BIG DATA cannot be opened in excel anymore (despite biologists best efforts ;))
+
+Visualisation needed!
+
+Circos (maybe write the paper and include?), iFUSE, iReport
+\end{comment}
+
 
 \section{Training}
 \begin{verbatim}can I plagiarize my own papers? :P VV\end{verbatim}
