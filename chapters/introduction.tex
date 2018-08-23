@@ -105,28 +105,15 @@ Accessibility also includes high-quality documentation of the tool, both for dev
 
 \subsubsection{Reproducibility}
 
-A cor
+A cornerstone of the scientific method is reproducibility. Experiments should be described in sufficient detail to allow for their reproduction and independent verification during peer review. In reality however, this remains a big challenge, and the majority of publications can not be reliably reproduced based on the information provided in publication []. This holds for both the wetlab experiment and the in-silico downstream data analysis. Reproducing bioinformatics analyses often becomes an exercise in \textit{"forensic bioinformatics"}, trying to piece together the exact procedure used through trial and error and educated guessing. In part this is caused by journals not having clear submission guidelines for bioinformatics pipeline description. [better for wetlab experiment, samples must be submitted to biobanks and raw data to online databases]
+
+Even when the full source code has been made available, reproducibility of the entire dependency chain of all software and system libraries used remains problematic. Every package in this dependency may potentially affect the end result. [Findability of all packages, CRAN regularly changes URL breaking things] This is where package managers such as conda and pypi offer some improvement, aiming to guarantee that any package available today, will still be available tomorrow, and that changes to packages never overwrite old version.
+
+[Galaxy]
+[not just for peer review, for good science]
 
 \begin{comment}
 
-- conda
-- galaxy
-- sweave/jupyter notebooks/rmarkdown/knitr
-
-Every lab will have had a variation of the following conversation at some point in their existence:
-
-\begin{itemize}
-\itemsep-0.5em
-\item \textit{\textbf{Alice:} I want to redo analysis X, how was it run the last time?} \\
-\item \textit{\textbf{Bob:} I don't know, Charlie did it, the scripts are on their laptop} \\
-\item \textit{\textbf{Alice:} Who is Charlie?} \\
-\item \textit{\textbf{Bob:} Charlie was our PhD student, they left 6 months ago..} \\
-\item \textit{\textbf{Alice:} How do I get this information now?} \\
-\item \textit{\textbf{Bob:} ... *crickets* ...}
-\end{itemize}
-
-
-And this is not just a problem within a single institution; far too often, results described in journal articles are also impossible to reproduce given the information available in the manuscript. [cite the paper where they tried and failed to reproduce nature papers]
 
 As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
 
