@@ -60,10 +60,10 @@ With huge amounts of data now being generated at relatively low cost, and comput
 Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are 1) Base calling and quality scoring, typically done by software integrated into sequencing machines 2) Mapping and/or assembling of the short reads, and variant calling 3) Annotation, data integration, and visualisation, and 4) Aggregation of heterogeneous datasets into a coherent reference data source. Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation.
 
 \subsection{Decisions, Decisions}
-Any bioinformatics pipeline involves a lot of choices; the tool itself, the parameter settings, and any reference datasets
+Any bioinformatics pipeline involves a lot of choices; the tool itself, the parameter settings, and any reference datasets. Each of these decisions may impact the outcome and should be carefully considered. [As an example, horrible overlap (variants/SVs as example)]
 
 % choice of tool
-For each task you may wish to perform there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool's publication usually includes a benchmark showing it outperforms all its competitors, and typically it does, under a set of highly-specific hand-picked conditions. While impartial review articles which compare and benchmark several related tools do exist, this typically remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. [As an example, horrible overlap (variants/SVs as example)]
+For each task you may wish to perform there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool's publication usually includes a benchmark showing it outperforms all its competitors, and typically it does, but only under a set of highly-specific hand-picked conditions. While impartial review articles which compare and benchmark several related tools do exist, this typically remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. Which of these tool is then most suitable usually depends largely on the exact experimental setup and research question. In practice however, the ease of installation and use of a tool also plays a significant role. A tool that is theoretically superior but difficult to install usually is abandoned for other, more usable alternatives, as evidenced by the citation statistics of easy-to-use tools as compared to their less user-friendly counterparts \cite{roberts2004new}.
 
 % choice of parameters
 Once a choice of tool is made, there are still the parameter settings to consider. While many tools define sensible defaults, fine-tuning the parameters to your specific experiment setup and analysis goals can be highly beneficial [cite that papers that shows benefits of departing from default settings]
@@ -95,36 +95,30 @@ Following bioinformatics best-practices may help optimize the following pillars 
 
 
 \subsubsection{Accessibility}
-Most bioinformatics tools are commandline unix tools, while most biologists are not trained in the use of such, and even for the experienced bioinformatician, running some of these tools can be a challenge due to lack of documentation or quality of the tool. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step.
+Most bioinformatics tools are commandline unix tools, and biologists are not typically trained in the use of such. Even for the experienced bioinformatician, running some of these tools can be a challenge due to lack of documentation or quality of the tool. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e. the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step \cite{kumar2007bioinformatics}.
 
-Accessibility also includes high-quality documentation of the tool, both for developers and end-users, and ideally training materials to educate users in the proper use of tool and warn about possible pitfalls and biases.
+Creating user-friendly software is not a trivial task. Application linking (also referred to as wrapping), can ease this burden for the tool developer. In such an approach, existing user-friendly interfaces host third-party software packages -at miniumum effort to the developer of the hosted software- and thereby offer a layer of abstraction to the end-user that shields them from the implementation details of the tool and provides a uniform usage paradigm for all tools, regardless of their differences behind the scenes. Examples of such hosting frameworks in the context of bioinformatics are Galaxy \cite{}, Taverna \cite{}, [more?].
 
-[Open source, documentation, training?]
-
-[segue to Galaxy?]
+Accessibility also includes high-quality documentation of the tool, both for developers and end-users, and ideally some form of training manual to educate users in the proper use of tool and warn about possible pitfalls and biases.
 
 \subsubsection{Reproducibility}
 
-A cornerstone of the scientific method is reproducibility. Experiments should be described in sufficient detail to allow for their reproduction and independent verification during peer review. In reality however, this remains a big challenge, and the majority of publications can not be reliably reproduced based on the information provided in publication []. This holds for both the wetlab experiment and the in-silico downstream data analysis. Reproducing bioinformatics analyses often becomes an exercise in \textit{"forensic bioinformatics"}, trying to piece together the exact procedure used through trial and error and educated guessing. In part this is caused by journals not having clear submission guidelines for bioinformatics pipeline description. [better for wetlab experiment, samples must be submitted to biobanks and raw data to online databases]
+A cornerstone of the scientific method is reproducibility of results. Experiments should be described in sufficient detail to allow for their reproduction and independent verification by fellow scientists. In reality however, this remains a big challenge, and many publications can not be reliably reproduced based on the information provided in publication []. In some cases This holds not only for the wetlab experiment, but also for the in-silico downstream data analysis. Reproducing bioinformatics analyses often becomes an exercise in \textit{"forensic bioinformatics"}; trying to piece together the exact procedure used through trial and error and educated guessing. In part this is caused by journals not having clear submission guidelines for bioinformatics pipeline description as they do for the physical samples. The latter are commonly required to be submitted to biobanks before submission, and the raw datasets generated from them to be stored in online repositories. No such requirements are generally imposed on the downstream analysis, or when they are these requirements are not strict enough to ensure true reproducibility. This is not without consequences; in some cases this has lead to clinical trials being started based on incorrect conclusions not revealed during peer review due to lack of reproducibility \cite{baggerly2009reproducible}.
 
-Even when the full source code has been made available, reproducibility of the entire dependency chain of all software and system libraries used remains problematic. Every package in this dependency may potentially affect the end result. [Findability of all packages, CRAN regularly changes URL breaking things] This is where package managers such as conda and pypi offer some improvement, aiming to guarantee that any package available today, will still be available tomorrow, and that changes to packages never overwrite old version.
+% dependency management
+But even if the full source code were made available, reproducibility of the entire dependency chain of all software and system libraries used remains problematic. Every package in this dependency tree has the potential to influence the final result. While reproducibility is a high priority in the scientific community, this isn't the same for software developers in general, and many packages will simply be removed when an update has been made available. This is where package managers such as Conda \cite{gruning2017bioconda} or GNU Guix \cite{courtes2013functional} offer some improvement, by allowing specific versions of tools to be installed, and mandating that any changes made to a package must be submitted as a new version, and existing version remain available and unchanged indefinitely. This ensures that the stack of software obtained when installing a tool at a specific version will yield identical results today as it will a year from now.
 
-[Galaxy]
-[not just for peer review, for good science]
+% provenance
+Once the correct set of software is obtained, the provenance of how the tools were applied to the data must also be logged. This includes the sequence and interplay of different tool executions, with the full parameter settings and input and reference data used at every step. Keeping a lab journal of the in-silico experiment is a good start, but too error-prone as a manual process. Projects such as Jupyter Notebooks \cite{kluyver2016jupyter} for Python, or Sweave \cite{leisch2002sweave} and KnitR \cite{xie2014knitr} for R, allow for the mixing of text and tools to create interactive journal articles if you will, where the calculations are embedded within the manuscript, and these calculations can be examined and rerun or adjusted with ease. A drawback of this of course comes when tools require a lot of resources or are not all written in the same language, as is typically the case for NGS analyses. Workflow platforms such as Galaxy \cite{} automatically keep track of provenance for the user and have the advantage of supporting a wide range of tools.
+
 
 \begin{comment}
-
-
-As data analysis becomes an increasingly important part of any scientific study, it becomes more and more important to make research easily reproducible.
-
-
 "forensic bioinformatics" -> have to figure out by trial and error what was done
 
 https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-017-0377-6
 https://www.biostars.org/p/52561/
 https://www.nature.com/naturejobs/science/articles/10.1038/nj7396-137a
 https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
-
 \end{comment}
 
 \subsection{Interoperability}
