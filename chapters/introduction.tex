@@ -89,8 +89,8 @@ Following bioinformatics best-practices may help optimize the following pillars 
     \item Reproducibility %(conda, docker, galaxy, version control, code notebooks)
     \item Interoperability %(data formats, common frameworks, generic, allow for packaging)
     \item Maintainability of software %(testing, continuous integration, community buildingi, scalability)
-    %\item Visualization and reporting
-    \item Data management and sharing %(FAIR data, LIMS, PIDs)
+    \item Visualization and reporting
+    %\item Data management and sharing %(FAIR data, LIMS, PIDs)
 \end{enumerate}
 
 
@@ -128,30 +128,25 @@ allow for packaging (don't deliver code as VMs etc),
 \end{verbatim}
 
 \subsection{Maintainability}
+In bioinformatics, the emphasis for scientific accomplishments is placed on scientific publications, not on software products. As a result, many tool developers struggle to find the time and resources to maintain their software beyond its release. Since scientific research depends increasingly on these pieces pf software, decreasing the burden of tool maintainence is valuable and worthwhile pursuit. Furthermore, many tools are written by small research groups or single individuals who are simply unable to perform the maintainence without support. By making tools open-source, the entire bioinformatics community is able to step up as co-developer, allowing them to discover bugs and suggest fixes or enhancements. Code sharing platforms like GitHub \cite{} and BitBucket \cite{} facilitate this community-driven approach to software maintainance.
+
+Using code versioning such frameworks such as git \cite{} or mercurial \cite{} ensures precise tracking of changes and ability to revert to any previous state at minimal effort, and facilitates merging of that Incorporating tests at every phase of development can further decrease the maintenance effort. Unit tests ensure that small code modules show expected behaviour at all times. Functional tests ensure that these different units of code always yield the desired result when working in conjunction. Code quality checks can help streamline the code itself and increase readability, benefiting future development. Continuous integration is the paradigm whereby changes to the mainline code are incorporated incrementally and continually, and thoroughly tested at every stage.
 
 \begin{verbatim}
-continuous integration, functional testing, code review, dependency resolution (conda)
+versioning continuous integration, functional testing, code review, dependency resolution (conda)
 \end{verbatim}
 
+\subsection{Visualisation and Reporting}
 
+As scientists become increasingly reliant on large and complex computational analyses in their research, the final analysis result datasets become similarly complex and have  often grown beyond the realm of what can be manually viewed and interpreted, both in terms of the number of files and their sizes, as in terms of complexity. Analysis results therefore require summation and visualisation and must be presented to the domain expert in a comprehensible and accesible manner. Such a report should also contain detailed descriptions of the methods used and assumptions made and citations to any third-party tools employed, as an understanding of these factor can assist in interpretation \cite{kumar2007bioinformatics}.
 
-\subsection{Data Management}
-\begin{verbatim}
-maybe leave out unless including myFAIR paper?
-\end{verbatim}
+For genomics data, visualisation tools such as Circos \cite{circos} [list more examples] enable the integration of various output datasets, often in the order of millions of lines each, to be summarized in a single image. While some resolution may be lost in such visualisations, they do enable the easy identification of areas of interest and guide the interpretation by pointing experts in the direction of further inspection.
+
 
 \section{The Galaxy Project}
 The Galaxy project \cite{afgan2016galaxy} provides a graphical web-based interface to commandline bioinformatics tools, bringing the data analysis to the domain experts equipped to perform the interpretation of the results. With its heavy focus on accessibility and reproducibility, Galaxy is an important component in creating high-quality bioinformatics pipelines.
 
-\section{Visualisation and Reporting}
 
-\begin{comment}
-BIG DATA cannot be opened in excel anymore (despite biologists best efforts ;))
-
-Visualisation needed!
-
-Circos (maybe write the paper and include?), iFUSE, iReport
-\end{comment}
 
 
 \section{Training}
