@@ -12,6 +12,6 @@ git pull github
 make thesis
 
 # sycn with owncloud for Andrew
-rsync -av --rsh='ssh -i /home/saskia/.ssh/id_rsa -p 42 -v' . saskia@bioinf-galaxian:/home/saskia/thesis/
+rsync -av --delete --exclude=".*\.swp" --rsh='ssh -i /home/saskia/.ssh/id_rsa -p 42 -v' . saskia@bioinf-galaxian:/home/saskia/thesis/
 
 whoami
