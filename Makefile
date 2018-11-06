@@ -17,7 +17,7 @@ view:
 	okular dissertation.pdf &
 
 watch:
-	while inotifywait -r -e modify --exclude ".*.sw." . ; do make thesis; done
+	while inotifywait -r -e modify --exclude ".*.sw." --exclude ".git/*" . ; do make thesis; done
 
 clean:
 	rm **/*.aux **/*.blg **/*.bbl *.aux *.log *.out *.toc
