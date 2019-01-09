@@ -13,6 +13,7 @@
 \begin{enumerate}
 \itemsep-0.5em
 \item A Brief History of Genomics
+\item A Primer on Sequencing
 \item The Bioinformatics Challenge
 \item Bioinformatics Best Practices
 \item The Galaxy Platform
@@ -24,10 +25,10 @@
 \section{A Brief History of Genomics}
 
 \begin{comment}
-Set the stage, lot's of data being generated, need to keep up on the analysis side as well
+Set the stage, lots of data being generated, need to keep up on the analysis side as well
 \end{comment}
 
-In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated its potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs have continued to decrease at exponential rates - outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
+In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, next-generation massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated its potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs continued to decrease at exponential rates - outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
 \begin{figure}[h!]
     \centering
@@ -38,45 +39,27 @@ In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the 
 
 But DNA is only one part of the story. Shortly after the publication of the human genome, high-throughput techniques emerged to also sequence the transcriptome (RNA-Seq), allowing for the identification and quantification of gene transcripts, and providing information about post-transcriptional mutations and other complexities such as alternative splicing \cite{wang2009rna}. Similarly, the study of epigenetics is revealing that non-coding DNA, far from the once-termed \textit{"junk DNA"}, is part of an intricate and complex regulatory system controlling the expression of genes \cite{zuckerkandl2007combinatorial}.
 
-We are now moving into the era of third-generation sequencing, where single-cell, long-read, and often real-time sequencing will allow for even more accurate determination of nucleotide sequence, providing more accurate resolution even in highly diverse and complex samples such as tumours or metagenomic samples. All these technological advances have led to a deluge of data that must be managed and analysed, typically by bioinformaticians.
+And now we are now moving into the era of third-generation sequencing, where single-cell \cite{gawad2016single}, long-read \cite{koren2015one}, and often real-time sequencing \cite{flusberg2010direct} are allowing for ever more accurate determination of nucleotide sequence, providing increased resolution even in highly diverse and complex samples such as tumours or metagenomic samples. All these technological advances have led to a deluge of data that must be managed and analysed, typically by bioinformaticians.
 
 
 \section{The Bioinformatics Challenge}
 
-With huge amounts of data now being generated at relatively low cost \cite{chen2014big}, and compute resources being available even on moderate budgets, the challenge in genomic research has shifted from the sequencing technologies, to the development of the software tools capable of analysing these big and highly complex datasets, in order to gain new understanding of the underlying biological systems.
-
-\begin{comment}
-Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are 1) Base calling and quality scoring, typically done by software integrated into sequencing machines 2) Mapping and/or assembling of the short reads, and variant calling 3) Annotation, data integration, and visualisation, and 4) Aggregation of heterogeneous datasets into a coherent reference data source. Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation.
-\end{comment}
-
-\begin{comment}
-% skip this section I think, to nitty-gritty
-
-\subsection{Decisions, Decisions}
-% choice of tool
-For each analysis task there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool's publication usually includes a benchmark showing it outperforms all its competitors, and typically it does, but only under a set of highly-specific hand-picked conditions. While impartial review articles which compare and benchmark several related tools do exist \cite{lim2012review,hasan2015performance} [TODO:add more examples], the problem remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. Which of these tools is most suitable usually depends largely on the exact experimental setup and research question. In practice however, the ease of installation and use of a tool also plays a significant role in the choice of software. A tool that is theoretically superior but difficult to install usually is abandoned for other, more usable alternatives, as evidenced by the citation statistics of easy-to-use tools as compared to their less user-friendly counterparts \cite{roberts2004new}.
-
-% choice of reference data
-Not only the choice of software, but also the choice of reference data can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}. Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve. [Choice of reference genome, impacts results, hard to compare across reference genomes]
-\end{comment}
-
-\subsection{Ever-changing landscape}
-Sequencing technologies are evolving at a staggering pace, and with them so must the software necessary to analyse and understand the data. As a consequence, new tools are developed continually and existing tools must be updated regularly to remain relevant. Typically there simply is no time for standards and consensus pipelines to emerge organically before new technologies make them obsolete. Therefore, there will be a multitude of tools available for any given task, and the challenge is to find the right tool for the job, and knowing when to use existing tools and when to develop new tools.
-
-Lack of clear standards does not only apply to tools, but also to file formats, and this poses a major hurdle in data analysis. While some clear data format standards exist [fasta, VCF], there are many cases that lack such a standard, hindering the interoperability of different tools. When creating pipelines from existing tools, many file transformation steps are required as a \textit{glue} between steps.
+With huge amounts of data now being generated at relatively low cost \cite{chen2014big}, and compute resources being available even on moderate budgets, the challenge in genomic research has shifted from the sequencing technologies, to the analysis and interpretation of these big and highly complex datasets, and the development of the software required to do so, in order to gain new understanding of the underlying biological systems. This poses a significant challenge, both technologically and scientifically.
 
 \subsection{Data Storage}
- - lots of data
- - patient privacy
+ \begin{comment} https://qumulo.com/blog/genomic-sequencing-qf2-storage/ \end{comment}
+Sequencing data is being generate at a rate of X petabytes per year (find citation), and all this data must be stored somewhere. But there is more to data storage than buying a hard disk and copying data. The data must be backed up to prevent data loss, it must be made available for use in an efficient way (I/O matters), data must be organised and tracked in a usable manner, and any solution must be able to scale to the exponential trend of growth both in size and number of files generated. Furthermore, data storage must comply with privacy and security requirements, especially important in the case of human genetic data.
 
-\subsection{Specialists}
+\subsection{Ever-changing landscape}
+Sequencing technologies are evolving at a staggering pace, and with them so must the software tools necessary to analyse and understand the data. Therefore, new tools are developed continually and existing tools must be updated regularly to remain relevant. As a consequence, there typically simply is not enough time for community standards and consensus pipelines to emerge organically before new technologies make them obsolete. Because of this, there usually are a multitude of tools available for any given task, each with their own set of advantages and disadvantages, and the challenge is to find the right tool for your particular situation, and knowing when to use existing tools and when the development of novel tools is in order.
 
-All of these challenges have resulted in bioinformatics becoming a highly specialzed field, which in itself poses a new challenge by the fact that the domain knowledge (biology) and the bioinformatics know-how do not reside in a single individual, and the interpretation of the data cannot always be done by the person performing the data
+\subsection{Standardisation}
+Such a lack of clear standards does not only apply to software tools, but also to file formats, and this poses a major hurdle in data analysis. While some clear data format standards exist [fastq, VCF], there are many cases that lack such a standard, hindering the interoperability of different tools. And even the more established file formats such as fastq and VCF allow for a variety of flavours, e.g. different fastq quality encoding schemes, which are not indicated inside the file format specification itself, but may influence downstream results. Thus, when creating analysis pipelines from existing tools, many file transformation steps are typically required as a kind of \textit{glue} between steps.
 
-has become such a specialized field, domain expertise and bioinformatics expertise needed for analysis usually not in 1 person, need to work together, empower domain scientists to perform their own analysis
+\subsection{The Specialist Bioinformatician}
+All of these challenges have resulted in bioinformatics becoming a highly specialized field, which in itself poses a new challenge given the observation that the domain knowledge (biology) and the informatics know-how more and more often do not reside in a single individual, and the interpretation of the data cannot always be done by the person performing the data analysis and vice versa. Instead, close communication between the two fields is required, and the domain experts should be empowered to perform their own data analyses as much as possible.
 
-\subsection{Open Science}
-Many journals require authors to submit datasets to public repositories in order to allow other scientists to reproduce their findings. With bioinformatics now a fundamental part of any publication, a clear description of the analysis pipeline is also required for true reproducibility, but the majority of scientific publication do not contain all the information required to reproduce the in-silico experiment [cite]. Making analysis software open-source and adhering to a set of bioinformatics best-practices can improve the reproducibility of bioinformatics analysis pipelines.
+\verb+informatician needs to shine a light in the black box that is the wetlab, domain expert needs to become comfortable with the informatics, since this has become an integral part of any analysis+
 
 
 % some (partial) solutions to the above challenges, spoilers: open software, open science, open everything
@@ -93,6 +76,10 @@ Following bioinformatics best-practices may help optimize the following pillars 
     \item Visualization and reporting
     %\item Data management and sharing %(FAIR data, LIMS, PIDs)
 \end{enumerate}
+
+
+\subsection{Open Science}
+Many journals require authors to submit datasets to public repositories in order to allow other scientists to reproduce their findings. With bioinformatics now a fundamental part of any publication, a clear description of the analysis pipeline is also required for true reproducibility, but the majority of scientific publication do not contain all the information required to reproduce the in-silico experiment [cite]. Making analysis software open-source and adhering to a set of bioinformatics best-practices can improve the reproducibility of bioinformatics analysis pipelines.
 
 
 \subsubsection{Accessibility}
@@ -204,23 +191,6 @@ single puzzle, the box contains several, they are all variations of the image on
 
 \newpage
 \section{Use case 1: Prostate Cancer}
-
-\begin{comment}
-    describe some of the major developments over time and what that meant for cancer research in particular
-
-    Sources / outline:
-    - From Human genome to cancer genome: the first decade. [@wheeler2013human]
-    - U.S. declaration of war on cancer 1971 \url{https://en.wikipedia.org/wiki/War_on_Cancer}
-    - Sequencing human genome 1990-2003, time line: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
-    - WES – large scale [@wood2007genomic] → confirmed known oncogenes
-    - WGS – large SVs
-    - augment with cDNA sequencing (RNASeq) → gene expression, splicing, fusions, ..
-    - augment with epigenetics (chromatin modification)
-
-    - some cancers can be cured, but rarely after metastases
-    - treatment vs prevention
-\end{comment}
-
 
 \subsection{Background}
 \epigraph{3in}{The time has come in America when the same kind of concentrated effort that split the atom and took man to the moon should be turned toward conquering this dread disease.}{President Richard Nixon}

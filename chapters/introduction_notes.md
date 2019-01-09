@@ -1,22 +1,49 @@
 # Notes on papers
 
+grace hopper quotes: https://www.thoughtco.com/grace-hopper-quotes-3530092
+
+
 ## structure
 
-themes:
+theme: Bioinformatics for Everyone
 
-1) big red button - automation, pipelines, bioinformatics best practices, visualisation, training
-2) jigsaw genome - solving the puzzles
+1) Brief History of Genomics
 
+2) Intro to sequencing
+   - central dogma
+   - sequencers and data
 
-1) bioinformatics practices
+3) Bioinformatics challenges
+
+4) Bioinformatics best practices/accessibility
  - pipelines, automation, reproducibility
  - visualisation, reporting
  - FAIR data
  - training
 
-2) prostate cancer
+5) Use case 1: Prostate cancer
 
-3) microbiota
+6) Use case 2: Microbiota
+
+
+## Bioinformatics Challenge
+
+
+Bioinformatics comes into play at various steps in the analysis process. The four main analysis tiers \cite{kulski2016next} to consider are 1) Base calling and quality scoring, typically done by software integrated into sequencing machines 2) Mapping and/or assembling of the short reads, and variant calling 3) Annotation, data integration, and visualisation, and 4) Aggregation of heterogeneous datasets into a coherent reference data source. Any errors or biases introduced in each of these steps can have a significant impact on downstream analyses and interpretation.
+
+...
+
+
+% skip this section I think, to nitty-gritty
+
+% choice of tool
+For each analysis task there will be a number of tools available to do the job, but discerning which best fits your needs can be a challenge. Each tool's publication usually includes a benchmark showing it outperforms all its competitors, and typically it does, but only under a set of highly-specific hand-picked conditions. While impartial review articles which compare and benchmark several related tools do exist \cite{lim2012review,hasan2015performance} [TODO:add more examples], the problem remains a multi-objective optimization problem, with no single tool performing better in all respects to its competitors. Which of these tools is most suitable usually depends largely on the exact experimental setup and research question. In practice however, the ease of installation and use of a tool also plays a significant role in the choice of software. A tool that is theoretically superior but difficult to install usually is abandoned for other, more usable alternatives, as evidenced by the citation statistics of easy-to-use tools as compared to their less user-friendly counterparts \cite{roberts2004new}.
+
+% choice of reference data
+Not only the choice of software, but also the choice of reference data can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}. Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve. [Choice of reference genome, impacts results, hard to compare across reference genomes]
+
+
+
 
 
 ## Large scale projects
@@ -32,6 +59,9 @@ ENCODE
 
 ### timeline
 (fig 1 has nice graphical timeline)
+
+Sequencing human genome 1990-2003, time line: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
+
 
 1986: human reference genome project announced
 1990-2003: human reference genome project
@@ -55,6 +85,24 @@ chin et al 2011: large-scale variations observed using WGS
 chromatin modifications in cancer context in infancy (in 2013) but promising
 
 2011: tumor evolution inferred by single cell sequencing
+
+---
+ describe some of the major developments over time and what that meant for cancer research in particular
+
+    Sources / outline:
+    - From Human genome to cancer genome: the first decade. [@wheeler2013human]
+    - U.S. declaration of war on cancer 1971 \url{https://en.wikipedia.org/wiki/War_on_Cancer}
+    - Sequencing human genome 1990-2003, time line: \url{http://web.ornl.gov/sci/techresources/Human_Genome/project/timeline.shtml}
+    - WES – large scale [@wood2007genomic] → confirmed known oncogenes
+    - WGS – large SVs
+    - augment with cDNA sequencing (RNASeq) → gene expression, splicing, fusions, ..
+    - augment with epigenetics (chromatin modification)
+
+    - some cancers can be cured, but rarely after metastases
+    - treatment vs prevention
+
+---
+
 
 ### Mutation patterns
 
