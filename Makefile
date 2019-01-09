@@ -5,7 +5,7 @@ view:
 	okular dissertation.pdf &
 
 watch:
-	while inotifywait -r -e modify --exclude  '.*(\.swp|\.swo|~)' . ; do $(MAKE) thesis; done
+	while inotifywait -r -e modify --exclude  '.*(\.swp|\.swo|\.swn|~)' . ; do $(MAKE) thesis; done
 
 clean:
 	@# Should do the same thing as below, but keeping both in case.
