@@ -13,7 +13,7 @@
 \begin{enumerate}
 \itemsep-0.5em
 \item A Brief History of Genomics
-\item A Primer on Sequencing
+\item A Primer on Sequencing (?)
 \item The Bioinformatics Challenge
 \item Bioinformatics Best Practices
 \item The Galaxy Platform
@@ -25,9 +25,25 @@
 \section{A Brief History of Genomics}
 
 \begin{comment}
-Set the stage, lots of data being generated, need to keep up on the analysis side as well
+Set the stage, lots of data being generated, need to keep up on the analysis side as well.
+
+- More specifically mention 1st generation, next gen, 3rd gen
 \end{comment}
 
+DNA. The blueprint of life. These long double-stranded helical molecules are present in all living cells on earth\footnote{As far as currently known. Some viruses contain only RNA, but these are often not considered "alive".} and encode the proteins which drive the functioning, regulation, structure and replication of the cells and tissues that make up an organism.
+
+\subsection{The Source code of Life}
+Any computer program, no matter how complex, can be described as a long series of just two characters, `0` and `1`, known as \emph{bits}. However, knowing the sequence of bits alone is not enough to understand what these programs do; for this we also need to know the details about how they are being interpreted by the machine on which they are executed. In much the same way, DNA uses just 4 different elements, called \emph{bases} or \emph{nucleotides}, to encode its blueprint for the cell. These 4 building blocks are adenine, cytosine, guanine and thymine, usually referred to simply by their first letters, `A` `C` `T` and `G`. These bases combine together in pairs (\emph{"base pairs"}), with `A` matching to `T` and `C` mathing to `G` in the double-strand helix configuration \ref{fig:dnastructure}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{chapters/images/introduction/dna-structure.jpeg}
+    \caption{Structure of DNA}
+    \label{fig:dnastructure}
+\end{figure}
+
+
+\subsection{Sequencing}
 In 1990, the Human Genome Project \cite{olson1993human} set out to sequence the entire 3.2-billion-basepair-long human genome, an effort culminating in 2003 with the publication of the first human \textit{reference genome} \cite{international2004finishing}. Not only did this provide invaluable insights into human genetics, but it also paved the way for the next era in genetic research; something which would completely transform the field of genetic research. Over the next several years, next-generation massively parallel sequencers were developed by companies like Roche454 and Illumina, dramatically cutting the cost and time required to sequence a human genome, and for the first time demonstrated its potential utility in clinical and diagnostic settings. Through sustained technological advancements over the following years, these costs continued to decrease at exponential rates - outstripping even the pace predicted by Moore's law (\hyperref[fig:seqcost]{Fig. \ref{fig:seqcost}}) - and the long dreamed-about \textit{\$1,000 dollar genome} \cite{thousanddollargenome} \cite{sequencingcostsNHGRI} has now become a reality.
 
 \begin{figure}[h!]
@@ -46,15 +62,16 @@ And now we are now moving into the era of third-generation sequencing, where sin
 
 With huge amounts of data now being generated at relatively low cost \cite{chen2014big}, and compute resources being available even on moderate budgets, the challenge in genomic research has shifted from the sequencing technologies, to the analysis and interpretation of these big and highly complex datasets, and the development of the software required to do so, in order to gain new understanding of the underlying biological systems. This poses a significant challenge, both technologically and scientifically.
 
-\subsection{Data Storage}
- \begin{comment} https://qumulo.com/blog/genomic-sequencing-qf2-storage/ \end{comment}
-Sequencing data is being generate at a rate of X petabytes per year (TODO: find citation), and all this data must be stored somewhere. But there is more to data storage than buying a hard disk and copying data. The data must be backed up to prevent data loss, it must be made available for use in an efficient way (I/O matters), data must be organised and tracked in a usable manner, and any solution must be able to scale to the exponential trend of growth both in size and number of files generated. Furthermore, data storage must comply with privacy and security requirements, especially important in the case of human genetic data.
-
 \subsection{Ever-changing landscape}
 Sequencing technologies are evolving at a staggering pace, and with them so must the software tools necessary to analyse and understand the data. Therefore, new tools are developed continually and existing tools must be updated regularly to remain relevant. As a consequence, there typically simply is not enough time for community standards and consensus pipelines to emerge organically before new technologies make them obsolete. Because of this, there usually are a multitude of tools available for any given task, each with their own set of advantages and disadvantages, and the challenge is to find the right tool for your particular situation, and knowing when to use existing tools and when the development of novel tools is in order.
 
 \subsection{Standardisation}
 Such a lack of clear standards does not only apply to software tools, but also to file formats, and this poses a major hurdle in data analysis. While some clear data format standards exist [fastq, VCF], there are many cases that lack such a standard, hindering the interoperability of different tools. And even the more established file formats such as fastq and VCF allow for a variety of flavours, e.g. different fastq quality encoding schemes, which are not indicated inside the file format specification itself, but may influence downstream results. Thus, when creating analysis pipelines from existing tools, many file transformation steps are typically required as a kind of \textit{glue} between steps.
+
+\subsection{Data Storage}
+ \begin{comment} https://qumulo.com/blog/genomic-sequencing-qf2-storage/ \end{comment}
+Sequencing data is being generate at a rate of X petabytes per year (TODO: find citation), and all this data must be stored somewhere. But there is more to data storage than buying a hard disk and copying data. The data must be backed up to prevent data loss, it must be made available for use in an efficient way (I/O matters), data must be organised and tracked in a usable manner, and any solution must be able to scale to the exponential trend of growth both in size and number of files generated. Furthermore, data storage must comply with privacy and security requirements, especially important in the case of human genetic data.
+
 
 \subsection{The Specialist Bioinformatician}
 All of these challenges have resulted in bioinformatics becoming a highly specialized field, which in itself poses a new challenge given the observation that the domain knowledge (biology) and the informatics know-how more and more often do not reside in a single individual, and the interpretation of the data cannot always be done by the person performing the data analysis and vice versa. Instead, close communication between the two fields is required, and the domain experts should be empowered to perform their own data analyses as much as possible.
