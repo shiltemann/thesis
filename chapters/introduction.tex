@@ -227,44 +227,33 @@ Tumor cells evolve from normal cells through the acquisition and accumulation of
     \item tissue invasion and metastasis
 \end{itemize}
 
-Each of these steps overcomes one of the body's anti-cancer defense mechanisms. This evolution into malignancy is an almost darwinian process where the mutations acquired are random, but those cells that have gained mutations which are advantageous for survival will be able to replicate and thrive and accumulate further mutations. Distinguishing the mutations that impart a strategic advantage and thereby \emph{drive} a tumour's progression, from the often huge number of less harmful \emph{passenger} mutations accumulated over the lifetime of a cancer cell is no easy task. The optimal course of treatment for a patient often depends on the mutations present and how the cell functions are subsequently impacted by those mutations. However, many different mutations may lead to the same disruptions of key pathways, therefore we must evaluate mutations not just at the DNA level but in the broader context of their functional impact on the cell's internal processes.
+Each of these steps overcomes one of the body's anti-cancer defense mechanisms. This evolution into malignancy is an almost darwinian process where the mutations acquired are random, but those cells that have gained mutations which are advantageous for survival will be able to replicate and thrive and accumulate further mutations. Distinguishing the mutations that impart a strategic advantage and thereby \emph{drive} a tumour's progression, from the often huge number of less harmful \emph{passenger} mutations accumulated over the lifetime of a cancer cell is no easy task. The optimal course of treatment for a patient often depends on the mutations present and how the cell functions are subsequently impacted by those mutations. %However, many different mutations may lead to the same disruptions of key pathways, therefore we must evaluate mutations not just at the DNA level but in the broader context of their functional impact on the cell's internal processes.
 
 
 
 \subsection{Cancer's Complexities}
 
-Determining the exact genetic sequence of healthy individuals is already quite a challenging endeavor; trying to extend this to cancer genomes takes this challenge to the extreme. There are several complexities present in cancer geneomes that make accurate determination of the genetic changes and their downstream impacts a difficult task:
-
-\begin{enumerate}
-    \itemsep-0.5em
-    \item Small variants
-    \item Structural variations
-    \item Clonality
-    \item Temporal Evolution
-    \item others? Epigenetics? transcriptome level complexities?
-\end{enumerate}
-
-In the following sections we will discuss each of these complexities and explore the biological and informatics challenges posed by them.
+Determining the exact genetic sequence of healthy individuals is already quite a challenging endeavor; trying to extend this to cancer genomes takes this challenge to the extreme. There are several complexities present in cancer geneomes that make accurate determination of the genetic changes and their downstream impacts a difficult task. In the following sections we will discuss some of these complexities and explore the biological and informatics challenges they pose.
 
 \subsubsection{The Bio}
 \paragraph{Small variants} comprise the simplest class of mutations; those consisting of alterations of just a handful of bases, for instance the \emph{substitution}, \emph{deletion} or \emph{insertion} of one or more nucleotides.
 
-The impact of such mutations depends on where in the genome they occur. Single nucleotide variants (SNVs) in exonic regions can range from having no effect on the resulting protein (silent) to changing an amino acid in the protein to a different amino acid (missense mutations), to changing a codon into a stop codon (nonsense mutation) which nearly always results in a nonfunctional protein. If this happens in a protein that is vital to the functioning of the cell this can have disastrous consequences <some examples of SNVs causing serious problems/phenotypes> <conserved regions, cell's mechanisms for preventing such fatal flaws>
+The impact of such mutations depends on where in the genome they occur. Single nucleotide variants (SNVs) in exonic regions can range from having no effect on the resulting protein (silent), to changing an amino acid in the protein to a different amino acid (missense mutations), to changing a codon into a stop codon (nonsense mutation) which nearly always results in a nonfunctional protein. If this happens in a protein that is vital to the functioning of the cell this can have disastrous consequences <some examples of SNVs causing serious problems/phenotypes> <conserved regions, cell's mechanisms for preventing such fatal flaws>
 
 These simple variations were the first to be extensively studied and found to contribute ..
 
 While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health, for example 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of TERT (Horn et al. 2013; Huang et al. 2013).
 
-\paragraph{Structural variations} are larger-scale mutations, involving rearrangement of segments of DNA of more than roughly 50 bp. These often do not involve the coding sequences directly, and can therefore only observed through whole-genome sequencing. Such structural variations can lead to changes in regulation,
+\paragraph{Structural variations} (SVs) are larger-scale mutations involving rearrangement of segments of DNA of more than roughly 50 bp. In some cases, these rearrangements can cause (parts of) two genes that are usually separated by some distance on the genome to come together to form new hybrid genes, which may be transcribed into fusion proteins, and which have a potentially disastrous effect on cell processes. The text book example of such a gene fusion is the so-called Philedelphia fusion frequently observed in leukemia \cite{TODO}. In this Philedephia chromosome, a translocation between chromosomes 9 and 22 leads to a fusion of the BCR and ABL1 genes. This fusion gene is expressed, and the aberrent fusion protein causes disruptions to key signalling pathways governing the cell cycle, causing the cells to divide uncontrollably and thereby drive tumor progression. Accurate detection of such structural variations is crucial, as they may serve as diagnostic markers \cite{nowell1960chromosome,nowell1961chromosome} or even therapeutic targets \cite{druker2001activity, druker2001efficacy}.
 
-<fusion genes>
+SVs often occur outside coding regions, but this does not diminish their potention for great impact, for instance by disruption of the regulatory mechanisms of tumour supressor genes or oncogenes \cite{TODO}. These types of SVs not involving coding regions directly, may only be detected through whole-genome sequencing.
+
+%Numerous fusion genes have been found to play a role in tumorigenesis \cite{TODO},
+%in prostate cancer the TMPRSS2-ERG fusion is present in roughly 40\% of tumours, \cite{TODO}
+
+\paragraph{Clonality} refers to the phenomenon that cells in different physical areas in a tumour may be genetically very distinct. As a cell obtains a mutation that is beneficial to proliferation, it will generate a new \textig{clone} of genetically similar cells while other tumour cells may follow a different evolutionary path and created genetically different sub clones. When sequencing a tumour, DNA from different cells -and thus potentially very different genomes- is mixed together
 
 
-\paragraph{Clonality}
-
-
-\paragraph{Temporal Evolution}
-\paragraph{Epigenetics}
 
 \subsubsection{The Informatics}
 
