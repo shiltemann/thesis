@@ -251,9 +251,12 @@ SVs often occur outside coding regions, but this does not diminish their potenti
 
 \paragraph{Clonality} refers to the phenomenon that cells in different physical areas in a tumour may be genetically very distinct. As a cell obtains a mutation that is beneficial to proliferation, it may instigate a new cluster, or \textit{clone}, of genetically similar cells while in other areas of the tumour cells may follow a different evolutionary path and create genetically different subclones. When sequencing a tumour, DNA from different cells -and thus potentially very different genomes- is mixed together and sequenced as one. Reconstructing the different clonal genomes from this data is immensely challenging.
 
-
+\paragraph{Further complexities} in the analysis of cancer genomes include the temporally evolving nature of tumours; performing the same sequencing experiment on the same tumour at different points in time will often yield a very different picture as the composition of the tumour and the acquired mutations will have changed. This further complicates the process of comparing different samples and elucidating key characteristics that have the potential to aid in the diagnosis and treatment of patients. Furthermore, studies in epigenetics have shown that tumorigenesis is not solely driven by mutations in nucleotide sequence, but secondary alterations such as DNA methylation may have an equal if not greater impact \cite{TODO}.
 
 \subsubsection{The Informatics}
+
+All these complexities in the biology of cancer gemomes translate to complexities of the downstream informatics analysis pipelines.
+
 
 We know that changes in sequence and structure of DNA contributes to cancer development. But how do we describe these properties? Any two healthy individuals differ greatly in their DNA sequence; it's what makes us us. How to denote these differences is a non-trivial problem, as is determining which of these differences are just part of the natural variation between individuals and which are ones detrimental to our health and functioning.
 
@@ -267,8 +270,11 @@ poor concordance between variant callers: https://genomemedicine.biomedcentral.c
 Currently variations in DNA are described relative to a \emph{reference genome}; a sequence intended to represent the \emph{average} human genome, which was constructed by taking the most frequently observed nucleotide at any given  position in the genome
 <discuss some drawbacks/things to realize: based on relatively small set of samples, not optimally diverse set of individuals>
 
+\begin{comment}
 As we have seen, the choice of software can impact downstream analysis, and variant calling is no exception. Different aligners employ different mapping strategies, which leads to different variant calls for the same observed sequence depending on the choice of algorithm, complicating variant comparisons between studies \cite{zook2014integrating}. While there do exist tools to canonicalise some of these differing representations \cite{vcflib}, complex variants remain that do not have a single obvious standard form (Figure \ref{fig:variant-multiple-representations}).
 But even for the simpler cases, there is not always a clear consensus on how to standardise representation. Consider for instance the case where an adenine nucleotide has been inserted, transforming the sequence \verb+TAAG+ to \verb+TAAAG+. Do we describe the insertion to have happened at position 1 (after the \verb+T+), position 2 (between the two \verb+A+s), or at position 3 (before the \verb+G+)? While this particular case is easily solved by agreeing on a convention of either left-aligning or right-aligning these variants, such community agreement does not currently exist, with most next-generation analysis tools opting for left-alignment, while certain variant databases such as HGVS [TODO cite] still recommend (but do not enforce) alignment to the position nearest the 3\` end of the gene \cite{hgvs-position}, which translates to right-alignment in genomic coordinates for reverse strand genes. Furthermore, once variants have been submitted to online databases, information about surrounding variants observed in the same sample is often not kept, making it impossible to resolve equivalency of variant representations going forward.
+\end{comment}
+
 
 \begin{figure}[h!]
     \centering
