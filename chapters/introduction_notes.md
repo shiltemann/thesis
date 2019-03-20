@@ -21,9 +21,13 @@ theme: Bioinformatics for Everyone
  - FAIR data
  - training
 
-5) Use case 1: Prostate cancer
+5) Bioinformatics for Everybody
+ - Galaxy
+ - Training
 
-6) Use case 2: Microbiota
+6) Use case 1: Prostate cancer
+
+7) Use case 2: Microbiota
 
 
 ## Bioinformatics Challenge
@@ -43,6 +47,10 @@ For each analysis task there will be a number of tools available to do the job, 
 Not only the choice of software, but also the choice of reference data can hugely impact analysis results and interpretation. In variant annotation for instance, two of the most widely used transcript set reference databases are RefSeq \cite{} and ENSEMBL \cite{}, however, choosing one or the other was found to lead to wildly different variant effect predictions, with concordance as low as 44\% for putative loss-of-function variants \cite{mccarthy2014choice}. Performing RNASeq and actually sequencing the transcripts instead of predicting will help to improve. [Choice of reference genome, impacts results, hard to compare across reference genomes]
 
 
+\begin{comment}
+As we have seen, the choice of software can impact downstream analysis, and variant calling is no exception. Different aligners employ different mapping strategies, which leads to different variant calls for the same observed sequence depending on the choice of algorithm, complicating variant comparisons between studies \cite{zook2014integrating}. While there do exist tools to canonicalise some of these differing representations \cite{vcflib}, complex variants remain that do not have a single obvious standard form (Figure \ref{fig:variant-multiple-representations}).
+But even for the simpler cases, there is not always a clear consensus on how to standardise representation. Consider for instance the case where an adenine nucleotide has been inserted, transforming the sequence \verb+TAAG+ to \verb+TAAAG+. Do we describe the insertion to have happened at position 1 (after the \verb+T+), position 2 (between the two \verb+A+s), or at position 3 (before the \verb+G+)? While this particular case is easily solved by agreeing on a convention of either left-aligning or right-aligning these variants, such community agreement does not currently exist, with most next-generation analysis tools opting for left-alignment, while certain variant databases such as HGVS [TODO cite] still recommend (but do not enforce) alignment to the position nearest the 3\` end of the gene \cite{hgvs-position}, which translates to right-alignment in genomic coordinates for reverse strand genes. Furthermore, once variants have been submitted to online databases, information about surrounding variants observed in the same sample is often not kept, making it impossible to resolve equivalency of variant representations going forward.
+\end{comment}
 
 
 
