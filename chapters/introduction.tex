@@ -369,65 +369,17 @@ advanced in cancer research specifically from next generation methods: [@meyerso
 \end{comment}
 
 
-
-
-
-
-
-\begin{comment}
-
-types of SVs: standard, complex, chromothripsis [@stephens2011massive]
-
-- well-known examples
-    - TMPRSS ERG
-    - ABL gene on chr9, chronic myeloid leukema, translocation between chr9 and 22,
-       changes regulation, promotor becomes promotor of BCR gene on chr22
-      [Heisterkamp et al 1983]
-
-#### usefulness in biomarker and treatment development
-
-- Gleevec, targeting BCR-ABL fusion gene [@druker2001efficacy]
-- Herceptin, targeting ERBB2 amplification [@kauraniemi2004effects]
-
-
-#### SV Tools and databases
-
-~~~
-- catalogued in Mitleman database [Mitelman 2003]
-- COSMIC
-- ..
-~~~
-
-## Clonality
-
-## Temporal evolution
-
-## etc..
-~~~
-<Informatics/analysis methods>
- - History of methodologies (gwas, ..)
- - NGS: Huge datasets, excel and manual analyses no longer suffice
- - Cancer: Germline correction, drivers vs passengers
-
-<Limitations of current methods>
- - imperfect data
- - disagreements and biases per lab/informatics technique
-
-<Challenges in tumour genome reconstruction>
-→ explain in biology section, here describe why that complicates things
-
- - Normal Contamination
- - Clonality detection
- - Event Chains detection
- - Temporal evolution detection
-
-
-\end{comment}
-
 \section{Scope of this Thesis}
-Bioinformatics is a vital part of many fields of research. While these may differ greatly in the biology involved, many of the bioinformatics concepts are shared among them. In \hyperref[chapter:general]{Chapter \ref{chapter:general}} we discuss several such widely-applicatble bioinformatics projects. Galaxy for reproducible analysis workflows, iReport for results reporting withing Galaxy. (Circos? myFAIR?)
 
+Bioinformatics has become and integral part of any biomedical research, and vast amounts of -omics data are being generated. In contrast to other big-data producing fields such as astronomy, biologists are not typically trained in programming and command-line usage, which are essential skills for running bioinformatics analyses. In order to empower researchers in the biomedical field to analyse their own datasets, we
 
+\textbf{Chapter 1} discusses the continued utility of the Galaxy platform to facilitate accessible, reproducible research.
+
+In \textbf{Chapter 2} we discuss the infrastructure we created for a community-driven central repository of training materials using Galaxy as the teaching platform.
+
+In \textbf{Chapter 3} we showcase tools created for the enhanced visualisation and reporting of the results of bioinformatics pipelines (iReport and Circos)
+
+In the remaining chapters, we illustrate this open and accessible approach to bioinformatics through a set of use cases. Each chapter contains a paper about a bioinformatic tool developed, and a paper about the biological study it enabled. \textbf{Chapter 4}
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
