@@ -6,5 +6,7 @@
 *.bbl
 *.blg
 *.swp
+*.swo
 *.fls
 *.fdb_latexmk
+cronout.txt
