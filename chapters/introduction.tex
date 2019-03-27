@@ -178,7 +178,7 @@ With its focus on accessibility and user-friendliness, the Galaxy platform is al
 \begin{center}
 
 \color{white}{
-\Large Use Case 1: Prostate Cancer \normalsize
+\Large The Jigsaw Genome \normalsize
 \vspace{2cm}
 
 
@@ -310,7 +310,7 @@ Cost of sequencing has now dropped enough that it has become feasible to sequenc
 \newpage
 
 
-\section{Use case 2: Microbiota}
+\section{Use case 2: Microbiota profiling}
 
 \begin{comment}
 
@@ -323,17 +323,26 @@ informal history of microbiology: https://www.bioexplorer.net/history_of_biology
 
 \subsection{The Bio}
 
-Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the \emph{blueprint of life}. But these cells aren't the only source of genetic material in our bodies; each one of us harbour a vast amount of micro-organisms in various parts of our bodies. Estimates put the number of of microbial cells as equal to or slightly outnumbering human cells \cite{sender2016outnumbered}. These microorganisms can influence our metabolism, impact our health and immunity, and modify drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential third-party plugin. For this reason, the microbiome is often referred to as our \emph{second genome} \cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study.
+Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the blueprint of life, but these cells aren't the only source of genetic material in our bodies; each one of us harbour a vast amount of micro-organisms in various parts of our bodies. Estimates put the number of of microbial cells as equal to or slightly outnumbering human cells \cite{sender2016outnumbered}. These microorganisms influence our metabolism, impact our health and immunity, and can change drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential third-party plugin. For this reason, the microbiome is often referred to as our \emph{second genome} \cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study. Links between the microbiome composition and diseases have been demonstrated in a number of diseases \cite{cho2012human} including psoriasis \cite{gao2008substantial}, obesity \cite{turnbaugh2006obesity, ley2005obesity}, and colorectal cancer \cite{castellarin2012fusobacterium,kostic2012genomic}, though in many cases a causal link remains to be proven.
 
-<TODO: some examples of microbiota impacting health/disease
+TODO: some examples of microbiota impacting health/disease
+
+TODO: Human Microbiome Project
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{chapters/images/mycrobiota/microbiome.jpg}
+    \caption{Presence of microbiota at different anatomical site in the human body and in different compositions}
+    \label{fig:microbiome}
+\end{figure}
 
 \subsection{The Informatics}
 
-Sequencing the human microbiome comes with its own unique set of challenges. Because the microbiome typically consists of a large number of different organisms, we cannot map to a single reference genome. it is like with cancer, multiple huge jigsaws
+Sequencing the human microbiome comes with its own unique set of challenges. Because the microbiome typically consists of a large number of different organisms, this situation is akin to solving a hundreds or thousands of jigsaw puzzles simultaneously with all the pieces mixed together in a single box. Depending on the experimental setup, different approaches may be used to sequence the microbiome, such as amplicon or whole-genome sequencing.
 
-\paragraph{16S rRNA sequencing} is used in situations where we are primarily interested in the \emph{composition} of the microbiome; we only want to know which species of organisms are present, and are less concerned about the exact genome sequence or any mutations present. Consider for example when a patient has an infection and, depending on the species of bacteria present, we have different courses of treatment available (e.g. antibiotics).
+\paragraph{16S rRNA amplicon sequencing} is used in situations where we are primarily interested in the \emph{composition} of the microbiome; we are only interested in discovering which species of organisms are present, and are less concerned about their exact genome sequences or mutations present. Consider for example patients with a bacterial infection which, depending on the exact type of bacteria present, may call for treatment with different antibiotics. For such cases, we do not sequence the entire genome of the microorganisms, but only a single gene of each genome. The 16S rRNA is ideally suited for this purpose because it is present in all bacteria, but contains enough variability between different species to be able to distinguish between them. Because we sequence a much smaller stretch of DNA, this approach is much cheaper than were we to sequence all DNA.
 
-For such cases, we do not sequence the whole genome of the microorganisms, but only a single gene of each genome. The 16S rRNA is ideally suited for this purpose because it is present in all bacteria, but contains enough variability between different species to be able to distinguish between them. Because we sequence a much smaller stretch of DNA, this approach is much cheaper than were we to sequence all DNA. Before the advent of sequencing, and as often still sufficient, bacteria from such samples are cultured in a petrie dish in order to identify the strains present, but with sequencing costs decreasing, 16S sequencing has become a viable alternative, with the added advatage that it is not restricted to aerobic organisms or other constraints imposed but the culture process.
+Before the advent of sequencing, and as is often still sufficient, bacteria from such samples are cultured in a Petri dish in order to identify the strains present, but with sequencing costs decreasing, 16S sequencing has become a viable alternative, with the added advantage that it is not restricted to aerobic organisms or suffer from other constraints imposed but the culturing process such as selection bias from the culture medium.
 
 \paragraph{Whole-genome shotgun sequencing} is used in cases when we are interested not only in the composition of the microbiome, but also in the \emph{functional} characteristics. For example, antibiotic resistance of bacteria has become a major concern in recent years. Bacteria evolve and obtain mutations that make antibiotics less effective, and identifying these mutations may also influence diagnostics and treatment options.
 
