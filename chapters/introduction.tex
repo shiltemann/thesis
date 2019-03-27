@@ -48,7 +48,7 @@ With huge amounts of data now being generated at relatively low cost \cite{chen2
 
 
 \subsection{Large data, small reads}
-Current sequencing techniques cannot simply read all the nucleotides of an entire chromosome at once; instead, the chromosomes are cut into tiny pieces of a few hundred bases, and each of those small fragments is sequenced. The full genome must then be reconstructed from those short sequences (reads). Think of this as solving a jigsaw puzzle with billions of pieces. To complicate matters further, the nucleotides determined by the sequencer (\emph{base calls}) are not always correct. Furthermore, we don't sequence just one cell, but combine material from a large number of cells together. And of course the genome itself contains complications such as repetitive regions, that complicate the reconstruction further. In the case of human DNA, we have the reference genome as a guide, and can use this as a scaffold to map each of the reads to. For other organisms however, such a reference genome does not exist, and the short reads must be assembled \emph{de-novo) to reconstruct the genome. Think of this as solving a jigsaw puzzle with billions of pieces, but without the picture on the box to guide you.
+Current sequencing techniques cannot simply read all the nucleotides of an entire chromosome at once; instead, the chromosomes are cut into tiny pieces of a few hundred bases, and each of those small fragments is sequenced. The full genome must then be reconstructed from those short sequences reads. Think of this as solving a jigsaw puzzle with billions of pieces. To complicate matters further, the nucleotides determined by the sequencer (\emph{base calls}) are not always correct. Furthermore, we don't sequence just one cell, but combine material from a large number of cells together. And of course the genome itself contains complications such as repetitive regions, that complicate the reconstruction further. In the case of human DNA, we have the reference genome as a guide, and can use this as a scaffold to map each of the reads to. For other organisms however, such a reference genome does not exist, and the short reads must be assembled \emph{de-novo} to reconstruct the genome. Think of this as solving a jigsaw puzzle with billions of pieces, but without the picture on the box to guide you.
 
 
 \subsection{Ever-changing landscape}
@@ -322,56 +322,20 @@ informal history of microbiology: https://www.bioexplorer.net/history_of_biology
 \end{comment}
 
 \subsection{The Bio}
-first complete bacterial genomes published in 1995  \cite{land2015insights}
 
-16S rRNA
+Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the \emph{blueprint of life}. But these cells aren't the only source of genetic material in our bodies; each one of us harbour a vast amount of micro-organisms in various parts of our bodies. Estimates put the number of of microbial cells as equal to or slightly outnumbering human cells \cite{sender2016outnumbered}. These microorganisms can influence our metabolism, impact our health and immunity, and modify drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential third-party plugin. For this reason, the microbiome is often referred to as our \emph{second genome} \cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study.
 
-whole genome shotgun
+<TODO: some examples of microbiota impacting health/disease
 
 \subsection{The Informatics}
 
+Sequencing the human microbiome comes with its own unique set of challenges. Because the microbiome typically consists of a large number of different organisms, we cannot map to a single reference genome. it is like with cancer, multiple huge jigsaws
 
-\begin{comment}
-history of microbiolgy: https://courses.lumenlearning.com/boundless-microbiology/chapter/introduction-to-microbiology/
+\paragraph{16S rRNA sequencing} is used in situations where we are primarily interested in the \emph{composition} of the microbiome; we only want to know which species of organisms are present, and are less concerned about the exact genome sequence or any mutations present. Consider for example when a patient has an infection and, depending on the species of bacteria present, we have different courses of treatment available (e.g. antibiotics).
 
-<WGS reveals changes outside coding regions, such as one affecting regulation of genes are of importance, and can reveal large scale changes (SVs), fusion genes>
+For such cases, we do not sequence the whole genome of the microorganisms, but only a single gene of each genome. The 16S rRNA is ideally suited for this purpose because it is present in all bacteria, but contains enough variability between different species to be able to distinguish between them. Because we sequence a much smaller stretch of DNA, this approach is much cheaper than were we to sequence all DNA. Before the advent of sequencing, and as often still sufficient, bacteria from such samples are cultured in a petrie dish in order to identify the strains present, but with sequencing costs decreasing, 16S sequencing has become a viable alternative, with the added advatage that it is not restricted to aerobic organisms or other constraints imposed but the culture process.
 
-<epigenetics>
-
-<potential of developing treatments from all this knowledge>
-
-sources:
-- Hallmarks of cancer: the next generation [@hanahan2011hallmarks]
-- Chromosome aberrations in solid tumors [@albertson2003chromosome]
-
-~~~
-low-resolution methods:
-- fluorescent in sit hybridisation FISH [Pinkel et al 1988, Thompon and Gray, 1993]
-- chromosome painting [Jauch et al, 1992]
-- spectral karyotyping [Schrock et al 1996]
-- comparative genome hybridisation CGH [Kallioneimi 1992]
-
-- arrays
-
-high-throughput:
- - LOH [@hampton1996simultaneous]
- - GWAS
-
- - 2003 still infeasible to sequence entire tumor genome, so
-   ESP (end sequencing profiling) used [Volik et al 2003]
-       (- BAC library from tumor, sequence ends, map to reference)
-    → reconstruction from ESP data [Rapael et al 2003]
-
-now: WGS
-- NGS: DNA short reads
-- NGS: RNA Seq
-- NGS: Paired end mapping [@korbel2007paired]
-- limitations of current methods
-~~~
-
-advanced in cancer research specifically from next generation methods: [@meyerson2010advances]
-
-\end{comment}
+\paragraph{Whole-genome shotgun sequencing} is used in cases when we are interested not only in the composition of the microbiome, but also in the \emph{functional} characteristics. For example, antibiotic resistance of bacteria has become a major concern in recent years. Bacteria evolve and obtain mutations that make antibiotics less effective, and identifying these mutations may also influence diagnostics and treatment options.
 
 
 \section{Scope of this Thesis}
@@ -382,9 +346,18 @@ Bioinformatics has become and integral part of any biomedical research, and vast
 
 In \textbf{Chapter 2} we discuss the infrastructure we created for a community-driven central repository of training materials using Galaxy as the teaching platform.
 
-In \textbf{Chapter 3} we showcase tools created for the enhanced visualisation and reporting of the results of bioinformatics pipelines (iReport and Circos)
+In \textbf{Chapter 3} we showcase tools created for the enhanced visualisation and reporting of the results of bioinformatics pipelines (iReport and Circos) (TODO: finish Circos paper, if not, add iReport to first chapter?)
 
-In the remaining chapters, we illustrate this open and accessible approach to bioinformatics through a set of use cases. Each chapter contains a paper about a bioinformatic tool developed, and a paper about the biological study it enabled. \textbf{Chapter 4}
+In the remaining chapters, we illustrate this open and accessible approach to bioinformatics through a set of use cases. Each chapter contains a paper about a bioinformatic tool developed, and a paper about the biological study it enabled.
+
+\textbf{Chapter 4} discusses the iFUSE tool developed for the detection and visualisation of fusion genes and Cancer, and how this was used to detect chromothripsis and several fusion genes in the VCaP prostate cancer cell line.
+
+In \textbf{Chapter 5} we illustrate the Complete Genomics Galaxy Annotation Toolkit (CGtag) and its subsequent use in the developement of a virtual normal approach to somatic variant detection.
+
+In \textbf{Chapter 6} we developed Galaxy mothur Toolkit (GmT), a suite of 125+ Galaxy tools, and used this to develop the MYcrbiota pipeline for microbiota profiling in sepsis patients for Streeklab Haarlem.
+
+
+
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
