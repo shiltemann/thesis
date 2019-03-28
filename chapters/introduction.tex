@@ -1,3 +1,10 @@
+\begin{savequote}[75mm]
+"This job is a great scientific adventure. But it's also a great human adventure. Mankind has made giant steps forward. However, what we know is really very, very little compared to what we still have to know."
+\qauthor{Fabiola Gianotti}
+\end{savequote}
+
+
+
 \chapter{Introduction}
 \label{introduction}
  % start numberings at 0 because (computer) science
@@ -8,10 +15,14 @@
 
 \setlength\parindent{0pt}
 
+\begin{justify}
 
 \section{The Source Code of Life}
 
 DNA. The blueprint of life. These long double-stranded helical molecules are present in all living cells on earth\footnote{As far as currently known. Some viruses contain only RNA, but these are often not considered "alive".} and encode the proteins which drive the functioning, structure and replication of the cells and tissues that make up an organism. In many ways, DNA is also analogous to computer code; any computer program, no matter how complex, can be described as a long series of just two characters, \verb+0+ and \verb+1+, known as \emph{bits}. Knowing the sequence of these bits and, crucially, the details about how they are being interpreted by the machine on which they are executed, enables us to understand and predict the functions they encode. In much the same way, DNA uses just 4 different elements, called \emph{bases} or \emph{nucleotides}, to encode its blueprint for the cell. These 4 building blocks are adenine, cytosine, guanine and thymine, usually referred to simply by their first letters, \verb+A+, \verb+C+, \verb+T+ and \verb+G+. These bases combine together in pairs (\emph{base pairs}), with \verb+A+ always matching to \verb+T+ and \verb+C+ being complementary to \verb+G+ along a sugar phosphate backbone in their double-helix configuration (Figure \ref{fig:dnastructure}).
+
+\end{justify}
+
 
 \begin{wrapfigure}{r}{210pt}
 %\begin{figure}[h!]
@@ -24,7 +35,7 @@ DNA. The blueprint of life. These long double-stranded helical molecules are pre
 
 In humans, DNA is organised into 23 pairs of chromosomes, with a total length of over 3 billion base pairs. About 1\% of this DNA make up \emph{genes}; stretches of DNA which directly encode protein molecules. When these genes are expressed, the gene sequence is transcribed to a messenger molecule (\emph{mRNA}) which is subsequently translated into a protein molecule. The function of the remaining 99\% of the genome long remained a mystery, and was even referred to as \emph{junk DNA}. More recent studies have revealed that many of these stretches of non-coding DNA play an important role in the regulation of the expression of genes, stimulating or prohibiting the translation of genes to proteins and thereby influencing the functioning of the cell. For any two individuals, the vast majority of their DNA sequence will be identical, but small variations in the remaining locations of the genome are what make each of us unique. But it is also what can make us sick. Studying this natural variation in the genome sequence helps us unravel the mechanisms of life and disease.
 
-
+\begin{justify}
 \subsection{A Brief History of Genome Sequencing}
 Friedrich Miescher was the first to isolate DNA molecules (which he termed \emph{nuclein}) in 1869. However, the molecule remained relatively understudied until Rosalind Franklin used X-ray crystallography to inspect the molecule's structure \cite{elkin2003rosalind}. Watson and Crick famously used this data to postulate the double-helix model of DNA in 1953 \cite{watson1953molecular}. This model illustrated for the first time that DNA molecules were ideally suited for replication, and solidified the idea that DNA, and not protein as was previously thought, was the primary carrier of hereditary information. Simultaneously, Frederick Sanger had developed techniques to sequence proteins, and later RNA and DNA molecules. This was the start of first generation of genome sequencing, and the first full gene was sequenced in 1972, followed by the first full genome in 1976 (bacteriophage ϕX174, 5386 nucleotides long) \cite{sanger1977dna}. These early techniques were only suitable for relatively small sections of DNA, and more technological advances would be required before larger genomes could be fully sequenced.
 
@@ -323,7 +334,7 @@ informal history of microbiology: https://www.bioexplorer.net/history_of_biology
 
 \subsection{The Bio}
 
-Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the blueprint of life, but these cells aren't the only source of genetic material in our bodies (Figure \ref{fig:microbiome}); each one of us harbour a vast amount of micro-organisms in various parts of our bodies. Estimates put the number of of microbial cells as equal to or slightly outnumbering human cells \cite{sender2016outnumbered}. These microorganisms influence our metabolism, impact our health and immunity, and can change drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential third-party plugin. For this reason, the microbiome is often referred to as our \emph{second genome} \cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study. Links between the microbiome composition and diseases have been demonstrated in a number of diseases \cite{cho2012human} including psoriasis \cite{gao2008substantial}, obesity \cite{turnbaugh2006obesity, ley2005obesity}, and colorectal cancer \cite{castellarin2012fusobacterium,kostic2012genomic}, though in many cases a causal link remains to be proven.
+Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the blueprint of life, but these cells aren't the only source of genetic material in our bodies each one of us harbour a vast amount of micro-organisms at various anatomical locations (Figure \ref{fig:microbiome});. Estimates put the number of of microbial cells as equal to or slightly outnumbering human cells \cite{sender2016outnumbered}. These microorganisms influence our metabolism, impact our health and immunity, and can change drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential third-party plugin. For this reason, the microbiome is often referred to as our \emph{second genome} \cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study. Links between the microbiome composition and diseases have been demonstrated in a number of diseases \cite{cho2012human} including psoriasis \cite{gao2008substantial}, obesity \cite{turnbaugh2006obesity, ley2005obesity}, and colorectal cancer \cite{castellarin2012fusobacterium,kostic2012genomic}, though in many cases a causal link remains to be proven.
 
 \begin{figure}[h!]
     \centering
@@ -363,6 +374,7 @@ In \textbf{Chapter 6} we developed Galaxy mothur Toolkit (GmT), a suite of 125+ 
 
 
 
+\end{justify}
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
