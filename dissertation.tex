@@ -53,9 +53,13 @@
 %\abstractpage
 \dedicationpage
 
+\begin{justify}
 \include{frontmatter/foreword}
 \include{frontmatter/stellingen}
-%\include{frontmatter/scope}
+\end{justify}
+
+%TODO: remove
+\include{frontmatter/scope}
 
 \setlength\cftparskip{-5pt}
 \setlength\cftbeforechapskip{0pt}
@@ -78,6 +82,7 @@
 
 % include each chapter...
 \include{chapters/introduction}
+\begin{justify}
 \include{chapters/chapter_technical}
   \include{chapters/galaxy}
   \include{chapters/ireport}
@@ -104,7 +109,7 @@
 
 \acknowledgments
 \singlespacing
-
+\end{justify}
 % the back matter
 \clearpage
 %\bibliography{references}
