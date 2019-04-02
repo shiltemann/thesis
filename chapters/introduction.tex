@@ -128,26 +128,18 @@ https://www.nature.com/nm/journal/v13/n11/full/nm1107-1276b.html
 \subsection{Interoperability}
 
 % standards
-The aforementioned lack of data format standards hinders the interoperability of tools. Even in cases where file formats are somewhat standardized, variations in the exact implementations may still require careful consideration within a pipeline. Consider for example the FASTQ format; this is a relatively simple format, just 4 lines per sequence read, but the fourth line, the line containing quality score, is the source of some divergence in the format. A range of ASCII characters is used to encode numerical values indicating a PHRED-like quality score of the base call, but the range and start position of this character range comes in different flavours. Furthermore, because these ranges overlap, it is not always possible to deduce which convention was used unless some quality encoding are present in the file that only appear in one of the conventions. It is or crucial importance to know the encoding scheme used for any datasets entering your pipeline. Ideally this specification would be part of the data format, e.g. as a file header, but for FASTQ and many other formats this is not the case.
+The aforementioned lack of data format standards hinders the interoperability of tools. Even in cases where file formats are somewhat standardized, variations in the exact implementations may still require careful consideration within a pipeline. Consider for example the FASTQ format; this is a widely used and relatively simple format, it consists of 4 lines per sequence read, but the line containing quality score, is the source of some divergence in the format. A range of ASCII characters is used to encode numerical values indicating a PHRED-like quality score of the base call, but the range and start position of this character set comes in different flavours. Furthermore, because these ranges overlap, it is not always possible to deduce which convention was used unless some quality encoding are present in the file that only appear in one of these conventions. It is of crucial importance to know the encoding scheme used for any datasets entering your pipeline or low-quality reads could be mistaken for high-quality reads and vice versa. Ideally such specifications would be part of the data format itself, e.g. as a file header, but for FASTQ and many other formats this is not the case.
 
 Similar widespread variations in standard formats include chromosomal location (0-based or 1-based numbering, open or closed) and chromosome names (with or without a \verb+chr+ prefix) or gene names (many different naming schemes). These issues are not hard to deal with on a conceptual level, but in practise can easily lead to inaccurate results if not carefully taken into account by the creator of the pipeline.
 
-Such concerns exist on the more purely informatics side of bioinformatics as well. Take the example of bash scripts, many OS-dependent syntax variations can hinder interoperability, but by taking care to comply with POSIX standards, such concerns can be mitigated.
+Such concerns also exist on the more purely informatics side of bioinformatics as well. Take the example of bash scripts, many OS-dependent syntax variations can hinder interoperability, but by taking care to comply with POSIX standards, such concerns can be mitigated.
 
 % technical interoperability
-Furthermore, different tools may be written in different programming languages and/or designed for different operating systems, and it can be a challenge to combine these into a single analysis. Luckily, tool developers can undertake steps to make their tools more interoperable. Package managers such as Bioconda \cite{gruning2017bioconda} will compile software from its source for different operating systems.
+Going beyond file formats, different tools may be written in different programming languages and/or designed for different operating systems, and it can be a challenge to combine these into a single analysis. Luckily, tool developers can undertake steps to make their tools more interoperable. Package managers such as Bioconda \cite{gruning2017bioconda} will compile software from its source for a variety of different operating systems.
 
 % documentation!
 Vitally, precise documentation of any assumptions made in the code is indispensable, and making source code open further facilitates this transparency and interoperability.
 
- Tool developers should therefore take care to explicitly state any assumptions they make about the input data in their documentation.
-
-
-
-\begin{comment}
-file format standards, common frameworks, good documentation, open-source,
-allow for packaging (don't deliver code as VMs etc),
-\end{comment}
 
 \subsection{Maintainability}
 Since scientific research depends increasingly on software, decreasing the burden of tool maintenance is valuable and worthwhile pursuit. Furthermore, many tools are written by small research groups or single individuals who are simply unable to perform the necessary maintenance without support. By making tools open-source, the entire bioinformatics community is able to step up as co-developer, allowing them to discover bugs and contribute fixes or enhancements. Code sharing platforms like GitHub \cite{url-github} and BitBucket \cite{url-bitbucket} facilitate this community-driven approach to software maintenance.
