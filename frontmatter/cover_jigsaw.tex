@@ -1,0 +1,35 @@
+\begin{titlepage}
+%\usepackage{tikz}
+\tikz[remember picture,overlay]
+\node[opacity=0.1,inner sep=0pt] at (current page.center){
+    \includegraphics[width=\paperwidth,height=\paperheight]{frontmatter/images/puzzle-texture.jpg}
+};
+%\clearpage
+
+% top band
+\begin{tikzpicture}[remember picture,overlay]
+  %\fill[title1] ($(current page.north west)-(0cm,3cm)$) rectangle (current page.east);
+   \shade[left color=title1,right color=title2] (-3,-1) rectangle (\paperwidth, 3);
+
+% bottom band
+   \shade[left color=title2,right color=title4] (-3,-22) rectangle (\paperwidth, -18);
+\end{tikzpicture}
+
+
+\begin{center}
+
+\vspace{-3.5cm}
+\Huge \color{white}{\textbf{ \uppercase{Bioinformatics for Everyone}}} \\
+
+\large \sc{ \color{white}{demystifying bioinformatics through open and accessible community-driven practices}}\\
+
+\vspace{1.5cm}
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{frontmatter/images/cover-puzzle-helix-export.png} \\
+\end{figure}
+
+\vspace{1.5cm}
+\Huge \color{white}{Saskia Hiltemann}
+\end{center}
+
+\end{titlepage}
