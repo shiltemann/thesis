@@ -1,10 +1,12 @@
 \begin{titlepage}
 %\usepackage{tikz}
-\tikz[remember picture,overlay]
-\node[opacity=0.4,inner sep=0pt] at (current page.center){
-    \includegraphics[width=\paperwidth,height=\paperheight]{frontmatter/images/puzzle-texture.jpg}
-};
+%\tikz[remember picture,overlay]
+%\node[opacity=0.4,inner sep=0pt] at (current page.center){
+    %\includegraphics[width=\paperwidth,height=\paperheight]{frontmatter/images/puzzle-texture.jpg}
+%};
 %\clearpage
+
+\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{frontmatter/images/cover-puzzle.png}};
 
 % top band
 \begin{tikzpicture}[remember picture,overlay]
@@ -24,15 +26,9 @@
     \color{white}{\textbf{ \sc{The Jigsaw Genome}}} \\
 \endgroup
 
-
 \large \sc{ \color{white}{demystifying bioinformatics through open and accessible community-driven practices}}\\
 
-\vspace{1.5cm}
-\begin{figure}[h!]
-\includegraphics[scale=0.6]{frontmatter/images/cover-puzzle-helix-export.png} \\
-\end{figure}
-
-\vspace{2cm}
+\vspace{19cm}
 \begingroup
     \fontsize{36pt}{12pt}\selectfont
     \color{white}{Saskia Hiltemann}
