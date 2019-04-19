@@ -7,9 +7,8 @@ import colorsys
 
 inv_color_variance = 10
 hue = float(sys.argv[2])
-saturation = (0.5, 0.7)
-saturation = (0.7, 1.0)
-value = (0.6, 1.0)
+saturation = (float(sys.argv[3]), float(sys.argv[4]))
+value = (float(sys.argv[5]), float(sys.argv[6]))
 
 
 def hsv2rgb(h,s,v):
