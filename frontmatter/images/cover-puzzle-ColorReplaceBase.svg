@@ -28,15 +28,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="535.06013"
-     inkscape:cy="515.96846"
+     inkscape:cx="313.0286"
+     inkscape:cy="510.31161"
      inkscape:document-units="mm"
      inkscape:current-layer="layer7"
      showgrid="false"
-     inkscape:window-width="1916"
-     inkscape:window-height="1076"
+     inkscape:window-width="1920"
+     inkscape:window-height="1120"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      fit-margin-top="5"
      fit-margin-left="5"
@@ -232,7 +232,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <dc:creator>
           <cc:Agent>
             <dc:title>Galactic Girlfriends</dc:title>
@@ -5765,21 +5765,7 @@
            x="-363.45288"
            y="160.70518"
            style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
-         id="flowPara17824-7"
-         style="font-size:74.66666412px;text-align:center;text-anchor:middle">Saskia Hiltemann</flowPara><flowPara
-         id="flowPara17826-9">Goddess of Knowledge</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot17839-2"
-       style="font-style:normal;font-weight:normal;font-size:30px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="matrix(0.26458333,0,0,0.26458333,7.8930595,8.9301701)"><flowRegion
-         id="flowRegion17841-0"><rect
-           id="rect17843-2"
-           width="816.37793"
-           height="133.64322"
-           x="0"
-           y="78.680801" /></flowRegion><flowPara
-         id="flowPara17845-3"
-         style="font-size:48px">My World Changing Dissertation</flowPara></flowRoot>  </g>
+         id="flowPara17826-9" /></flowRoot>  </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
