@@ -1,7 +1,6 @@
 \setcounter{NAT@ctr}{-1}
 
-\phantomsection
-\addcontentsline{toc}{section}{The Informatics: GmT}
+\phantomsection\addcontentsline{toc}{section}{The Informatics: GmT}
 \articletitle{Galaxy mothur Toolset (GmT): a user-friendly application for 16S rRNA gene sequencing analysis using mothur.}
 Saskia Hiltemann\textsuperscript{\ref{affil:emc-bioinf},*},
 Stefan Boers\textsuperscript{\ref{affil:emc-microbiology},*},
@@ -13,9 +12,9 @@ Andrew Stubbs\textsuperscript{\ref{affil:emc-bioinf}}
 \small
 \begin{enumerate}
 \itemsep-0.5em
-\item Department of Bioinformatics, Erasmus Medical Center, Rotterdam, The Netherlands. \label{affil:emc-bioinf}
-\item Department of Medical Microbiology and Infectious Diseases, Erasmus Medical Centre, Rotterdam, The Netherlands \label{affil:emc-microbiology}
-\item Department of Molecular Biology, Regional Laboratory of Public Health Kennemerland, Haarlem, The Netherlands. \label{affil:streeklabhaarlem}
+\item Department of Bioinformatics, Erasmus Medical Center, Rotterdam, The Netherlands.\label{affil:emc-bioinf}
+\item Department of Medical Microbiology and Infectious Diseases, Erasmus Medical Centre, Rotterdam, The Netherlands\label{affil:emc-microbiology}
+\item Department of Molecular Biology, Regional Laboratory of Public Health Kennemerland, Haarlem, The Netherlands.\label{affil:streeklabhaarlem}
 \end{enumerate}
 
 {\color{chaptergrey}{Published in:}} GigaScience \\
@@ -60,9 +59,9 @@ The Galaxy platform provides the users with standard data upload functionality f
 \item \textbf{Collection Creation}.
 For multi-sample and/or paired-end datasets a Galaxy collection must be created in the Galaxy interface. Here datasets can also be assigned to groups. Galaxy will make intelligent suggestions for pairings of datasets based on the file names.
 
-\item \textbf{16S rRNA gene analysis}. mothur has been wrapped as a tool suite in Galaxy. Required steps included for a full \textit{end-to-end} 16S rRNA gene sequencing analysis consist of read-pair merging (mothur command: make.contigs), trimming of primer sequences (trim.seqs), additional quality control (screen.seqs), alignment of sequences to a (customized) reference alignment (align.seqs, screen.seqs), removal of chimeric sequences (chimera.uchime), classifying sequences using a Bayesian classifier in combination with a reference database such as SILVA or GreenGenes (classify.seqs), and clustering of sequences into operational taxonomic units (OTUs) at a predefined percentage - usually 97 percent - of similarity (dist.seqs, cluster, and classify.otu) (\hyperref[end-to-end]{Figure~\ref{end-to-end}}).
+\item \textbf{16S rRNA gene analysis}. Mothur has been wrapped as a tool suite in Galaxy. Required steps included for a full \textit{end-to-end} 16S rRNA gene sequencing analysis consist of read-pair merging (mothur command: make.contigs), trimming of primer sequences (trim.seqs), additional quality control (screen.seqs), alignment of sequences to a (customized) reference alignment (align.seqs, screen.seqs), removal of chimeric sequences (chimera.uchime), classifying sequences using a Bayesian classifier in combination with a reference database such as SILVA or GreenGenes (classify.seqs), and clustering of sequences into operational taxonomic units (OTUs) at a predefined percentage - usually 97 percent - of similarity (dist.seqs, cluster, and classify.otu) (\hyperref[end-to-end]{Figure~\ref{end-to-end}}).
 
-\item \textbf{Experimental Summary and Reporting}. iReport in combination with KRONA is used to deliver an HTML report in Galaxy~\cite{ondov2011interactive}. The iReport consists of multiple tabs to group results topically (e.g.\ taxonomy, rarefaction, diversity, quality control) and is highly customizable and easily tailored to an end-user's specific use-case. The entire report may be downloaded from the Galaxy interface to be viewed or shared offline.
+\item \textbf{Experimental Summary and Reporting}.\ iReport in combination with KRONA is used to deliver an HTML report in Galaxy~\cite{ondov2011interactive}. The iReport consists of multiple tabs to group results topically (e.g.\ taxonomy, rarefaction, diversity, quality control) and is highly customizable and easily tailored to an end-user's specific use-case. The entire report may be downloaded from the Galaxy interface to be viewed or shared offline.
 
 %The interactive iReport consists of three tabs. The first tab (Taxonomy) visualizes and lists the resultant microbiota profiles with a direct linkage of each representative sequence derived from each OTU detected to the NCBI database that allows for additional BLASTN searches. The second tab (Diversity) summarizes the results of 3 diversity calculators (Chao1, Shannon, and Simpson). The third tab (Quality Control) provides an extensive overview of the quality control measurements during the bioinformatics analysis. All results tables presented within the iReport, as well as all representative sequences derived from each OTU measured, can be downloaded that allows user to (further) process or check the quality of the 16S rRNA gene sequencing analysis using their own software programs.
 
@@ -73,15 +72,13 @@ To compare the output from a single experiment or across multiple experiments we
 \begin{figure}[t!]
 \centering
 \includegraphics[scale=0.5]{chapters/images/gmt/Figure1.png}
-\caption{Conceptual view of the GmT mothur MiSeq SOP pipeline.}
-\label{end-to-end}
+\caption{Conceptual view of the GmT mothur MiSeq SOP pipeline.}\label{end-to-end}
 \end{figure}
 
 \begin{figure}[t!]
 \centering
 \includegraphics[scale=0.5]{chapters/images/gmt/ireport.png}
-\caption{\textbf{Example iReport.} This web report contains the interactive KRONA visualization, the (multi-sample) OTU table, rarefaction plots, diversity calculations, differential abundance analysis, and an extensive overview of the quality control measurements taken during the analysis.\@ iReports are highly customizable and can be easily tailored to fit specific use-cases and end-user needs.}
-\label{ireport}
+\caption{\textbf{Example iReport.} This web report contains the interactive KRONA visualization, the (multi-sample) OTU table, rarefaction plots, diversity calculations, differential abundance analysis, and an extensive overview of the quality control measurements taken during the analysis.\@ iReports are highly customizable and can be easily tailored to fit specific use-cases and end-user needs.}\label{ireport}
 \end{figure}
 
 
@@ -115,7 +112,7 @@ To facilitate the evaluation of 16S rRNA gene sequencing analysis results, integ
 \item Galaxy Metagenomics
 Docker Flavour (Docker): \url{https://quay.io/repository/shiltemann/galaxy-metagenomics}, \url{https://github.com/shiltemann/galaxy-metagenomics}
 \item Phinch interactive environment: \url{https://github.com/shiltemann/phinch-galaxy-ie}
-\item Operating system(s): Unix (Platform independent with Docker)
+\item Operating system: Unix (Platform independent with Docker)
 \item License: GNU GPL v3
 \end{itemize}
 

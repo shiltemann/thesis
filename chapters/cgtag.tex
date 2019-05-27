@@ -55,7 +55,7 @@ CGATools is an open-source project to provide tools for downstream analysis of C
 \begin{table}[t!]
 \small
 \begin{tabular}{l|l|l}
-\textbf{Function} & \textbf{CGATool}  & \textbf{Description} \\ \hline
+\textbf{Function} & \textbf{CGATool}  & \textbf{Description} \\ \toprule
 Variant detection & CGATools ListVariants & Lists the non-redundant set of small variations found in an \\
                   &                       & arbitrary number of genomes.\\
 Variant detection & CGATools TestVariants & Determine which variants are found in which genomes given \\
@@ -91,8 +91,7 @@ File manipulation & Strip header          & Remove header from files.\\
 File manipulation & File concatenation    & Concatenate 2 files (e.g.\ for restoring header).\\
 
 \end{tabular}
-\caption{Overview of CGTag tools available in NBIC/CTMM-TraIT Galaxy and the NBIC tool shed}
-\label{table:tools}
+\caption{Overview of CGTag tools available in NBIC/CTMM-TraIT Galaxy and the NBIC tool shed}\label{table:tools}
 \end{table}
 \normalsize
 
@@ -108,8 +107,7 @@ To provide users with enhanced filtering capabilities, we have integrated severa
 \begin{figure}[t!]
 \centering
 \includegraphics[scale=1.5]{chapters/images/cgtag/fig1-plotter.png}
-\caption{\textbf{Generic Genomic data plotting tool.} Output from our generic genomic data plotter used to plot B-allele frequency from Illumina 1M SNParray data. Plot with two tracks; tumour (red) and normal (black). Output can be (top) a whole genome overview (shown here in part), or (middle) a single chromosome, or (bottom) a subregion of a chromosome defined by the user (here chr16, 60MB-end). Many parameters such as the colour and sizes of the data points may be adjusted by the user as required.}
-\label{fig:plotter}
+\caption{\textbf{Generic Genomic data plotting tool.} Output from our generic genomic data plotter used to plot B-allele frequency from Illumina 1M SNParray data. Plot with two tracks; tumour (red) and normal (black). Output can be (top) a whole genome overview (shown here in part), or (middle) a single chromosome, or (bottom) a subregion of a chromosome defined by the user (here chr16, 60MB-end). Many parameters such as the colour and sizes of the data points may be adjusted by the user as required.}\label{fig:plotter}
 \end{figure}
 
 
@@ -122,8 +120,7 @@ To support fusion gene analysis we have created a custom Circos tool which uses 
 \begin{figure}[t!]
 \centering
 \includegraphics[scale=2]{chapters/images/cgtag/fig2-circos.png}
-\caption{\textbf{Circos Integrative Plot Tool.} Circos plots for (left) whole genome, (middle) overview or all chromosomes in single images, and (right) for a single chromosome.  Each chromosome is represented in the outer ring and then from outer to inner rings represent copy number variation (with regions of gain depicted in green and loss in red), B-allele frequency, SNP density and the intra- and interchromosomal rearrangements are on the inside and depicted in black and red lines, respectively.  Impacted genes track (red gene symbols) are displayed outside the outer chromosome ring and only on the single chromosome plot.}
-\label{fig:circos}
+\caption{\textbf{Circos Integrative Plot Tool.} Circos plots for (left) whole genome, (middle) overview or all chromosomes in single images, and (right) for a single chromosome.  Each chromosome is represented in the outer ring and then from outer to inner rings represent copy number variation (with regions of gain depicted in green and loss in red), B-allele frequency, SNP density and the intra- and interchromosomal rearrangements are on the inside and depicted in black and red lines, respectively.  Impacted genes track (red gene symbols) are displayed outside the outer chromosome ring and only on the single chromosome plot.}\label{fig:circos}
 \end{figure}
 
 
@@ -149,7 +146,7 @@ The use of shared resources does have drawback as well. We have experienced a mo
 \textbf{Project home page:} http://galaxy-demo.trait-ctmm.cloudlet.sara.nl\\
 \textbf{Operating system:} Linux (Galaxy and CGtag)\\
 \textbf{Programming language:} Python (Galaxy and CGtag), R (CGtag), Bash (CGTag) \\
-\textbf{Other requirements:} Circos~\cite{url-circos}, GNUplot~\cite{url-gnuplot}, Complete Genomics open source Toolset~\cite{url-cgatools}  and dependencies therein);  see documentation for a comprehensive list of optional dependencies, based on workflow requirements.\\
+\textbf{Other requirements:} Circos~\cite{url-circos}, GNUplot~\cite{url-gnuplot}, Complete Genomics open source Toolset~\cite{url-cgatools}  and dependencies therein; see documentation for a comprehensive list of optional dependencies, based on workflow requirements.\\
 \textbf{License:} GPL v3\\
 \textbf{Any restrictions to use by non-academics:} ANNOVAR license must be obtained before it can be used\\
 published page: http://galaxy.ctmm-trait.nl/u/saskia-hiltemann/p/cgtag \\
@@ -161,7 +158,7 @@ condel: \url{http://toolshed.nbic.nl/view/saskia-hiltemann/condel} \\
 file manipulation tools: \url{http://toolshed.nbic.nl/view/saskia-hiltemann/file\_manipulation} \\
 generic genomic data plotter: \url{http://toolshed.nbic.nl/view/saskia-hiltemann/genomic\_data\_plotter} \\
 mutation assessor: \url{http://toolshed.nbic.nl/view/saskia-hiltemann/mutation\_assessor}\\
-NOTE: these tools can be installed to both Cloudman Galaxy instances or non-Cloudman Galaxy instances alike (via the tool shed or manually from the command line).
+NOTE:\ these tools can be installed to both Cloudman Galaxy instances or non-Cloudman Galaxy instances alike (via the tool shed or manually from the command line).
 
 \section*{Availability and supporting data}
 
