@@ -1,8 +1,7 @@
 % reset references counter
 \setcounter{NAT@ctr}{-1}
 
-\phantomsection
-\addcontentsline{toc}{section}{The Informatics: iFUSE}
+\phantomsection\addcontentsline{toc}{section}{The Informatics: iFUSE}
 \articletitle{iFUSE: integrated fusion gene explorer}
 Saskia Hiltemann \textsuperscript{1}, Elizabeth A. McClellan\textsuperscript{2}, Jos van Nijnatten\textsuperscript{2}, Sebastiaan Horsman\textsuperscript{2}, Ivo Palli\textsuperscript{2}, Ines Teles Alves\textsuperscript{1,3}, Thomas Hartjes\textsuperscript{1}, Jan Trapman\textsuperscript{3}, Peter van der Spek\textsuperscript{2}, Guido Jenster\textsuperscript{1}, and Andrew Stubbs\textsuperscript{2}
 
@@ -19,7 +18,7 @@ DOI: \url{10.1093/bioinformatics/btt252} \\
 
 \section*{Abstract}
 
-\textbf{Summary:} We present iFUSE (integrated FUSion gene Explorer), an online visualization tool that provides a fast and informative view of structural variation data and prioritizes those breaks likely representing fusion genes. \color{black} This application uses calculated breakpoints to determine fusion genes based on the latest annotation for genomic sequence information, and where relevant the structural variation (SV) events are annotated with predicted RNA and protein sequences. iFUSE takes as input either a Complete Genomics (CG) junction file, a FusionMap~\cite{ge2011fusionmap} fusion detection report file, or a file already analysed and annotated by the iFUSE application on a previous occasion. \\
+\textbf{Summary:} We present iFUSE (integrated FUSion gene Explorer), an online visualization tool that provides a fast and informative view of structural variation data and prioritizes those breaks likely representing fusion genes. \color{black} This application uses calculated breakpoints to determine fusion genes based on the latest annotation for genomic sequence information, and where relevant the structural variation (SV) events are annotated with predicted RNA and protein sequences.\ iFUSE takes as input either a Complete Genomics (CG) junction file, a FusionMap~\cite{ge2011fusionmap} fusion detection report file, or a file already analysed and annotated by the iFUSE application on a previous occasion. \\
 \textbf{Results:} We demonstrate the utility of iFUSE with case studies from tumour-normal SV detection derived from Complete Genomics whole-genome sequencing results. \\
 \textbf{Availability:} iFUSE is available as a web service at \url{http://ifuse.erasmusmc.nl}
 
@@ -48,7 +47,7 @@ The input file is validated and then analyzed using R, after which a graphical r
 
 The input files uploaded to iFUSE are annotated in R using information retrieved from UCSC gene tables and the input files. The resulting output file can be retrieved from iFUSE for manual inspection, and can also be used directly as input to iFUSE.
 
-Example input files can be downloaded from the downloads section of the iFUSE website and users can test the application without registration by selecting the option to start an anonymous session. Any files uploaded by the user will be deleted at the end of the anonymous session.
+Example input files can be downloaded from the downloads section of the iFUSE website and users can test the application without registration by selecting the option to start an anonymous session. Any files uploaded by the user will be deleted at the end of the anonymous session.\
 
 iFUSE accounts are password protected, the application has been tested for security risks such as SQL injections, and our servers undergo periodical CERT vulnerability scans (http://www.cert.org). Furthermore, when a user deletes a file via the iFUSE web interface, it is purged completely from our systems.
 
