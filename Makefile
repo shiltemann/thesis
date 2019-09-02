@@ -1,6 +1,8 @@
-thesis: clean
-	convert frontmatter/images/cover-puzzle.svg frontmatter/images/cover-puzzle.png
+thesis: clean frontmatter/images/cover-puzzle.png
 	latexmk -xelatex dissertation.tex
+
+frontmatter/images/cover-puzzle.png:
+	convert frontmatter/images/cover-puzzle.svg frontmatter/images/cover-puzzle.png
 
 view:
 	okular dissertation.pdf &
