@@ -10,6 +10,8 @@ view:
 watch:
 	while inotifywait -r -e modify --exclude  '(frontmatter/images/.*|\.git/.*|cronout.txt|.*(\.swp|\.swo|\.swn|\.fdb_latexmk|~))'  . ; do $(MAKE) thesis; done
 
+cover:
+	cd frontmatter/images/ && ./build.sh && convert option-3.svg cover-puzzle.png
 check:
 	lacheck dissertation.tex
 
