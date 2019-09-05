@@ -116,7 +116,7 @@ Many tools produce images as output, which can also be displayed by iReport. Use
 \end{figure}
 
 \paragraph*{Content item: Tables}
-iReport can also display tables. The input must be a tab-delimited file from the users' Galaxy history, and the first nonempty line not starting with a hash symbol (\verb+#+) is assumed to contain the column headers. The jQuery library \emph{DataTables}~\cite{url-datatables} is used to create tables which can be searchable, sortable and paginated, if requested by the user. There is an option to create hyperlinks within the columns of a table by providing a column number, a URL prefix and a URL suffix. This is illustrated in \hyperref[fig:collinks]{Figure~\ref*{fig:collinks}}, where the first column contains gene names and by including the GeneCards~\cite{genecardspaper,url-genecards} URL prefix \verb+http://www.genecards.org/cgi-bin/carddisp.pl?gene=+. This generates a hyperlink to the corresponding GeneCards entry for every item in the column in the table.
+iReport can also display tables. The input must be a tab-delimited file from the users' Galaxy history, and the first nonempty line not starting with a hash symbol (\verb+#+) is assumed to contain the column headers. The jQuery library \emph{DataTables}~\cite{url-datatables} is used to create tables which can be searchable, sortable and paginated, if requested by the user. There is an option to create hyperlinks within the columns of a table by providing a column number, a URL prefix and a URL suffix. This is illustrated in \hyperref[fig:collinks]{Figure~\ref*{fig:collinks}}, where the first column contains gene names and by including the GeneCards~\cite{genecardspaper,url-genecards} URL prefix \verb+http://www.genecards.org/+ \verb+cgi-bin/carddisp.pl?gene=+. This generates a hyperlink to the corresponding GeneCards entry for every item in the column in the table.
 
 %% weblinks from table columns
 \begin{figure}[h!]
@@ -190,8 +190,10 @@ License: GNU GPL \\
 Any restrictions to use by non-academics: none \\
 \ \\
 Examples: \\
-iReport about iReport published history: \url{http://galaxy.ctmm-trait.nl/u/saskia-hiltemann/h/gcc2014-ireport-about-ireport}, or \url{tinyurl.com/llrzz9w} \\
-Clinical Genetics iReport published history: \url{http://galaxy.ctmm-trait.nl/u/andrew-stubbs/h/ireportgeneticreportchr21} \\
+iReport about iReport published history:
+\url{http://galaxy.ctmm-trait.nl/u/saskia-hiltemann/h/gcc2014-ireport-about-ireport}, or \url{tinyurl.com/llrzz9w} \\
+Clinical Genetics iReport published history:
+\url{http://galaxy.ctmm-trait.nl/u/andrew-stubbs/h/ireportgeneticreportchr21} \\
 
 %Tool shed repository for iReport: https://toolshed.g2.bx.psu.edu/view/saskia-hiltemann/ireport \\
 %GitHub repository: https://github.com/shiltemann/iReport \\
