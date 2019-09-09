@@ -11,7 +11,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Dissertate}[2014/01/24 v1.0 Dissertate Class]
-\LoadClass[12pt, oneside, letterpaper]{book}
+\LoadClass[10pt, oneside]{book}
 
 % some definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
@@ -50,7 +50,7 @@
 \RequirePackage[sectionbib]{chapterbib}
 \RequirePackage[numbers]{natbib}
 %\renewcommand{\bibnumfmt}[1]{[#1]}
-\RequirePackage[width=6.75in, letterpaper, bottom=3cm, top=3cm]{geometry}
+%\RequirePackage[width=6.75in, letterpaper, bottom=3cm, top=3cm]{geometry}
 \RequirePackage{fancyhdr}
 
 \usepackage[titletoc]{appendix}
