@@ -22,6 +22,8 @@
 %\vspace{-1em}\begin{flushright}{#4}\end{flushright}}\vspace{2em}
 %\end{minipage}}
 
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
 
 \newcommand\epigraph[3]{
     \vspace{1em}\begin{center}
@@ -35,6 +37,7 @@
     \end{minipage}
     \end{center}
 }
+
 
 
 %\newcommand\anonymousepigraph[2]{
@@ -61,6 +64,7 @@
 % the front matter
 %\include{frontmatter/cover}
 \include{frontmatter/cover_jigsaw}
+\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
 %\include{frontmatter/cover3}
 \input{frontmatter/personalize}
@@ -98,6 +102,7 @@
 \setcounter{chapter}{-1}
 
 % include each chapter...
+
 \include{chapters/introduction}
 \begin{justify}
 \include{chapters/chapter_technical}
@@ -116,6 +121,7 @@
   \include{chapters/gmt}
   \include{chapters/mycrobiota}
 \include{chapters/discussion}
+
 \begin{appendices}
     \include{endmatter/glossary}
     \include{endmatter/summary}

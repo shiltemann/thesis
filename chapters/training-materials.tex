@@ -1,6 +1,14 @@
 % reset references counter
 \setcounter{NAT@ctr}{-1}
 
+\chapter*{}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[height=10em]{frontmatter/images/chapter-header-training.png}
+\end{figure}
+\vspace{-4cm}
+
 \articletitle{Community-driven data analysis training \\ for biology}
 Bérénice Batut\textsuperscript{\ref{affil:freiburg}*},
 Saskia Hiltemann\textsuperscript{\ref{affil:emc2}*},
@@ -40,6 +48,9 @@ Björn Grüning\textsuperscript{\ref{affil:freiburg}}
 
 * Bérénice Batut and Saskia Hiltemann contributed equally to this work.
 
+\textbf{Published in:} Cell Systems, April 2018 \\
+DOI: \url{https://doi.org/10.1016/j.cels.2018.05.012}
+
 \small
 \begin{enumerate}
 \itemsep-0.5em
@@ -64,8 +75,7 @@ Björn Grüning\textsuperscript{\ref{affil:freiburg}}
 \end{enumerate}
 \normalsize
 
-Published in: Cell Systems, April 2018 \\
-DOI: \url{https://doi.org/10.1016/j.cels.2018.05.012} \\
+
 
 \section*{Abstract}
 The primary problem with the explosion of biomedical datasets is not the data itself, not computational resources, and not the required storage space, but the general lack of trained and skilled researchers to manipulate and analyze these data. Eliminating this problem requires development of comprehensive educational resources. Here we present a community-developed and driven training framework that enables modern, interactive learning of life sciences data analysis as well as facilitating easy development of tutorials. The key feature of our system is that it is not a static but a continuously improved collection of tutorials. By coupling tutorials with a web-based analysis framework, biomedical researchers can learn by performing computation themselves through a web-browser without the need to install software or search for example datasets. Our ultimate goal is to expand the breadth of training materials to include fundamental statistical and data science topics and to precipitate a complete re-engineering of undergraduate and graduate curricula in life sciences.
@@ -85,10 +95,13 @@ Our goal is to develop an infrastructure that facilitates data analysis training
 \subsection*{Interactive learning tailored to research problems}
 
 \begin{table}{}
-    \begin{tabular}{llp{10cm}}
+    \begin{tabular}{llp{8cm}}
     \hline
+    \ \\
     \textbf{Topic} & \textbf{Target} & \textbf{Tutorials} \\
+    \ \\
     \hline
+    \ \\
     Galaxy Server administration &  Admin & Galaxy Database schema, Docker and Galaxy, Advanced customisation of a Galaxy instance \\
 
     Assembly &  Biol & Introduction to Genome Assembly, De Bruijn Graph Assembly, Unicycler Assembly \\

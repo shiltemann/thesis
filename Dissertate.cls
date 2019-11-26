@@ -11,7 +11,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Dissertate}[2014/01/24 v1.0 Dissertate Class]
-\LoadClass[10pt, oneside]{book}
+\LoadClass[10pt, twoside]{book}
 
 % some definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
@@ -132,7 +132,7 @@
 \setlength\mybibindent{0pt}
 \makeatletter
 \renewenvironment{thebibliography}[1]
-    {\chapter*{\bibname}%
+    {\section*{\bibname}%
      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
      \list{\@biblabel{\@arabic\c@enumiv}}
           {\settowidth\labelwidth{\@biblabel{999}}
