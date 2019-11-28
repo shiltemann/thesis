@@ -18,6 +18,13 @@
 \def\degreemonth#1{\gdef\@degreemonth{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\advisor#1{\gdef\@advisor{#1}}
+\def\rector#1{\gdef\@rector{#1}}
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\def\titledutch#1{\gdef\@titledutch{#1}}
+\def\subtitledutch#1{\gdef\@subtitledutch{#1}}
+\def\placeofbirth#1{\gdef\@placeofbirth{#1}}
+\def\defensedate#1{\gdef\@defensedate{#1}}
+\def\defensetime#1{\gdef\@defensetime{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\field#1{\gdef\@field{#1}}
 \def\university#1{\gdef\@university{#1}}

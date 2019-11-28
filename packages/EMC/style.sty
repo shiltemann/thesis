@@ -100,22 +100,33 @@
 \renewcommand{\maketitle}{
 	\thispagestyle{empty}
 	\vspace*{\fill}
-	\vspace{100pt}
-	\begin{center}
-	\Huge \textcolor{midgrey}{\thetitle} \normalsize \\
-	\vspace{25pt}
-	by \\
-	\vspace{15pt}
-	\theauthor\\
-	\vspace{135pt}
-	\textsc{a dissertation submitted in partial fulfillment\\
-	of the requirements for the degree of \\
-	\vspace{8pt}
-	\@degree \\
-	\@department \\
-	\@university \\
 	\vspace{10pt}
-	\@degreemonth, \@degreeyear}
+	\begin{center}
+	\huge \thetitle \\
+    \large \@subtitle \\
+	\vspace{25pt}
+  	\huge \@titledutch \\
+    \large \@subtitledutch \\
+	\vspace{100pt}
+    \textbf{Proefschrift} \\
+	%\textsc{
+    \vspace{20pt}
+    ter verkrijging van de graad van doctor aan de \\
+    Erasmus Universiteit Rotterdam \\
+    op gezag van de rector magnificus \\
+	\vspace{20pt}
+	\@rector \\
+	\vspace{20pt}
+	en volgens besluit van de College voor Promoties. \\
+    De openbare verdediging zal plaatsvinden op \\
+    \@defensedate, om \@defensetime uur \\
+    \vspace{15pt}
+    door \\
+    \vspace{15pt}
+    \theauthor \\
+    \vspace{15pt}
+    geboren te \@placeofbirth
+    %}
 	\end{center}
 	\vspace*{\fill}
 }
