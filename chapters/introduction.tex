@@ -161,6 +161,21 @@ With -omics research becoming increasingly computational in nature, and many res
 
 With its focus on accessibility and user-friendliness, the Galaxy platform is not only a great workflow management system, but also an ideal environment for teaching. Trainees are shielded from the minutiae of the implementation details of the underlying tools, and need nothing more than a browser to execute the tutorials. Because Galaxy can host any command-line tools and the tools available in the tool shed cover a wide range of topics, creation and maintenance of a set of training materials must be a collaborative community effort, with content being created by a large number of people with expertise in the various topics.
 
+\subsection{Bioinformatics in the Clinic}
+
+With the decreasing costs of next-generation sequencing, and the increased accessibility of the tools and compute resources required for analysis, bioinformatics is increasingly being incorporated directly into the clinic. In contrast to research applications, clinical bioinformatics directly informs disease management and patient care.
+Therefore, careful validation of all tools and pipelines is required. Furthermore, there is great need for standardisation of pipelines to ensure a uniform standard of care across clinics.
+To this end, a set of 17 best-practice recommendations for the validation of clinical NGS-based bioinformatics pipelines have recently been published by the Association of Molecular Pathology (with support from the College of American Pathologists and the American Medical Informatics Association) \cite{roy2018standards}.
+While these recommendations focus on variant analysis, most guidelines are appilcable more broadly. These guidelines include practical recommendations for the design, development, and operation of the analysis pipelines, with an additional emphasis on the importance of properly trained and qualified molecular professionals.
+These clinical guidelines recommend that laboratories perform their own validation, led by a medical professional well-trained in NGS interpretation. The validation process should closely mimic the real-world scenarios faced by the lab. Validation should occur both on each component of the bioinformatics pipeline individually, as well as the full end-to-end functionality of the pipeline as a whole.
+Additionally, the set of QC metrics employed to determine the performance of the pipeline must be evaluated as part of the validation process.
+Furthermore, validation must ensure that pipelines are compliant with any applicable lab accreditation standards, as well as comply with the relevant laws concerning data security with regards to patient identifiable data.
+Moreover, clinicians must be alerted to any unintended or unauthorized changes to data files.
+Finally, since there is a general lack of standardization in bioinformatics, clinical validation must specify and ensure standardization of nomenclature throughout the pipeline. This entire process of validation must be repeated whenever any component in the pipeline is altered.
+
+Many of these recommendations have significant overlap with general bioinformatics best-practice guidelines. For example, bioinformatics best-practices call for extensive code review and unit- and functional testing, as well continuous-integration testing, standardisation of file formats and nomenclature, and data security and integrity checks. And by adhering to these bioinformatics guidelines from day 1 of development of any tools and pipelines, we ease the burden of clinical validation, and increase the likelihood of adoption of tools and pipelines within the clinic. Furthermore, the need for training of medical professionals in NGS interpretation cannot be understated.
+
+
 \subsection{Use Cases}
 The following sections describe the two real-world research areas where bioinformatics is of great importance; cancer genomics and clinical microbiota profiling. In both examples, implementation of the bioinformatics concepts and best practices described above provide valuable benefits to the research scientists.
 
