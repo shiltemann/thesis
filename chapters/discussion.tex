@@ -173,8 +173,18 @@ Galaxy has established itself as a user-friendly data analysis platform for rese
 Furthermore, to increase its appeal among bioinformaticians, further steps may be taken to improve interoperability with other workflow management systems such as Nextflow \cite{di2017nextflow}, SnakeMake \cite{koster2012snakemake} and the many other existing workflow management systems \cite{workflow-engines}.
 Initiatives such as CWL (Common Workflow Language) \cite{amstutz2016common} exist to improve interoperability between these existing systems. Galaxy has been working towards supporting import and export of CWL-specified workflows, and if such a workflow data standard becomes widely accepted it could allow for workflows to be shared between different workflow systems, reducing duplicated efforts within the bioinformatics community.
 
+\subsubsection{Training}
+As bioinformatics and data analysis skills increasingly becoming prerequisites for scientific research, scalable and flexible educational resources are required for the training of researchers and clinicians dealing with these datasets.
+Delivery of training in remote or economically underprivileged areas poses additional challenges; such communities often lack experienced local instructors as well as the technical infrastructure required for large data analysis.
+The Galaxy platform provides a step towards alleviating the latter, by allowing its users to access powerful computer resources with nothing more than a web browser. One way to address the lack of access to experienced instructors in geographically or economically isolated areas is the delivery of hybrid trainings.
+In such an approach, instructors do not travel, but teach in front of a camera, and a live feed is streamed to one or more satellite locations. Each of these locations consists of a classroom with students and local supporting instructors who can communicate with the primary instructors. In the Gallantries project \cite{gallantries} we recently prototyped such an approach for delivery of Galaxy workshops.
+With both Galaxy itself and the associated training materials being freely available on the internet, this approach greatly reduced the effort and cost of workshop organisation.
+Instructors could be enlisted from various geographical locations without the funds and time usually required for travel. Within the Gallantries pilot project we tested this approach through 2 workshops with 5 satellite locations, and instructors residing in 4 different locations.
+In the coming years we will continue developing and scaling up this hybrid training approach for Galaxy. Furthermore, this project was a collaboration between the Galaxy and Carpentries \cite{wilson2006software} communities, optimally utilizing the combined knowledge and experience these two communities represent, and fostering closer ties between distinct but complementary scientific training communities.
+
+
 \subsection{Bioinformatics in the Clinic}
-As sequencing becomes faster and more affordable, and bioinformatics pipelines become more accessible, NGS pipelines are becoming increasingly valuable for clinical applications.
+As sequencing becomes faster and more affordable, and bioinformatics pipelines become more accessible, NGS pipelines are becoming increasingly valuable for direct clinical applications.
 Commercial solutions are often expensive, untransparant, and hard to customize to the clinics specific experimental setup and needs. Here Galaxy represents a viable alternative. Galaxy is designed primarily for research applications, but in order to make Galaxy more suitable for use in the clinic, several enhancements can be considered.
 Firstly, where a high degree of flexibility is desirable in a research context, for clinical application the pipelines should be fixed, immutable.
 Therefore, a second, workflow-based user view to Galaxy is needed. In this user perspective, clinicians would be presented with a simplified interface, containing only their personal set of preconfigured workflows.
@@ -185,14 +195,6 @@ We have discussed both these points with the Galaxy core team, and they are part
 
 Furthermore, training is a vital component in bringing Galaxy to the clinic. This training should focus on familiarizing clinicians with the Galaxy system and interface, as well as the operational details of their workflows, and interpretation of the results. Bioinformatics pipelines  are often perceived as a \emph{black box} by non-expert users, but a basic understanding of the inner-workings of the analysis pipelines are often crucial for optional interpretation of results. Training is the best way to shine a light in this black box, and illuminate bioinformatics.
 
-\subsubsection{Training}
-As bioinformatics and data analysis skills increasingly becoming prerequisites for scientific research, scalable and flexible educational resources are required for the training of researchers and clinicians dealing with these datasets.
-Delivery of training in remote or economically underprivileged areas poses additional challenges; such communities often lack experienced local instructors as well as the technical infrastructure required for large data analysis.
-The Galaxy platform provides a step towards alleviating the latter, by allowing its users to access powerful computer resources with nothing more than a web browser. One way to address the lack of access to experienced instructors in geographically or economically isolated areas is the delivery of hybrid trainings.
-In such an approach, instructors do not travel, but teach in front of a camera, and a live feed is streamed to one or more satellite locations. Each of these locations consists of a classroom with students and local supporting instructors who can communicate with the primary instructors. In the Gallantries project \cite{gallantries} we recently prototyped such an approach for delivery of Galaxy workshops.
-With both Galaxy itself and the associated training materials being freely available on the internet, this approach greatly reduced the effort and cost of workshop organisation.
-Instructors could be enlisted from various geographical locations without the funds and time usually required for travel. Within the Gallantries pilot project we tested this approach through 2 workshops with 5 satellite locations, and instructors residing in 4 different locations.
-In the coming years we will continue developing and scaling up this hybrid training approach for Galaxy. Furthermore, this project was a collaboration between the Galaxy and Carpentries \cite{wilson2006software} communities, optimally utilizing the combined knowledge and experience these two communities represent, and fostering closer ties between distinct but complementary scientific training communities.
 
 % Open science! Open science! Open science!
 \subsubsection{Open Science}
