@@ -253,6 +253,7 @@ The impact of such mutations depends on where in the genome they occur. Single n
 
 While variants within the coding sequence are most likely to have an impact on cell health, small variants \emph{outside} the coding sequence can also have drastic impact on health~\cite{zhang2015non}. For example, 70\% of melanomas exhibit a point mutation in one of two positions in the promoter region of \emph{TERT}~\cite{horn2013tert,huang2013highly}, suggesting such somatic point mutations in regulatory regions may play a role in tumorigenesis. Therefore, whole-genome sequencing may reveal valuable information not detected using exome sequencing.
 
+
 \paragraph{Structural Variants (SVs)} are larger-scale mutations involving rearrangement of segments of DNA of more than roughly 50 bp. In some cases, these rearrangements can cause (parts of) two genes that are usually separated by some distance on the genome to come together to form new hybrid genes. In some cases, these fusion genes may be transcribed into fusion proteins, with a potentially disruptive effect on cell processes. The text book example of such a gene fusion is the so-called Philadelphia fusion frequently observed in leukemia~\cite{de1982cellular,heisterkamp1990acute}. In this Philadelphia chromosome, a translocation between chromosomes 9 and 22 leads to a fusion of the \emph{BCR} and \emph{ABL1} genes. This fusion gene is expressed, and the aberrant fusion protein causes disruptions to key signalling pathways governing the cell cycle, causing the cells to divide uncontrollably and thereby drive tumor progression. Accurate detection of such structural variations is crucial, as they may serve as diagnostic markers~\cite{nowell1960chromosome,nowell1961chromosome} or even therapeutic targets~\cite{druker2001activity,druker2001efficacy}.
 
 SVs most often occur outside coding regions, but this does not diminish their capacity for great impact, for instance by disruption of the regulatory mechanisms of tumour suppressor genes or oncogenes~\cite{yi2018patterns}. These types of SVs not involving coding regions directly, may only be detected through whole-genome sequencing using paired-end sequencing. In rare cases, a phenomenon known as \emph{chromothripsis} may occur. In contrast to the more common gradual acquisition of mutations over time, chromothripsis involves a shattering of (part of) a chromosome in a single catastrophic event, and the subsequent imprecise stitching back together of the genetic sequence by the cell's repair mechanisms. This results in a cluster of thousands of SVs in a confined genomic region. Chromothripsis occurs in about approximately 2\%-3\% of cancer genomes, with a significantly increased rate incidence in some cancer types~\cite{luijten2018}. Identification and reconstruction of such highly rearranged cancer genomes in order to predict their effects remains an open challenge~\cite{yang2016chromothripsis,govind2014}.
@@ -264,9 +265,32 @@ SVs most often occur outside coding regions, but this does not diminish their ca
 %Numerous fusion genes have been found to play a role in tumorigenesis~\cite{TODO},
 %in prostate cancer the TMPRSS2-ERG fusion is present in roughly 40\% of tumours,~\cite{TODO}
 
-\paragraph{Clonality} refers to the phenomenon that cells in different physical areas in a tumour may be genetically very distinct. As a cell obtains a mutation that is beneficial to proliferation, it may instigate a new cluster, or \textit{clone}, of genetically similar cells while in other areas of the tumour, cells may follow a different evolutionary path and create genetically different sub-clones. When sequencing a tumour, DNA from different cells --and thus potentially very different genomes-- is mixed together and sequenced as one. Reconstructing the different clonal genomes from this data is immensely challenging.
+
+\end{justify}
+
+\paragraph{Tumor heterogeneity} refers to the phenomenon that cells in different physical areas in a tumour may be genetically very distinct. When a tumour cell divides to create two new cells, these daughter cells may acquire new mutations.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+%\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{chapters/images/introduction/heterogeneity.jpg}
+
+    \caption{As tumour cells divide, they may acquire additional mutations. Different areas of the tumour may follow different evolutionary paths, leading to tumour heterogeneity.}
+    \label{fig:heterogeneity}
+%\end{figure}
+\end{wrapfigure}
+
+%image from wiki commons: https://en.wikipedia.org/wiki/Tumour_heterogeneity#Clonal_evolution
+
+
+Over time, this may lead to the formation of different clusters of cells each with a different set of acquired mutations. As a cell obtains a mutation that is beneficial to proliferation, it may instigate a new cluster, or \textit{clone}, of genetically similar cells while in other areas of the tumour, cells may follow a different evolutionary path and create genetically different sub-clones (Figure \ref{fig:heterogeneity}) \cite{swanton2012intratumor}.
+
+When sequencing a tumour, DNA from different cells --and thus potentially very different genomes-- is mixed together and sequenced as one. Reconstructing the different clonal genomes from this data is immensely challenging.
+
 
 \paragraph{Further complexities} in the analysis of cancer genomes include the temporally evolving nature of tumours; performing the same sequencing experiment on the same tumour at different points in time will often yield a very different picture as the composition of the tumour and the acquired mutations will have changed. This further complicates the process of comparing different samples and elucidating key characteristics that have the potential to aid in the diagnosis and treatment of patients. Furthermore, studies in epigenetics have shown that tumorigenesis is not solely driven by mutations in nucleotide sequence, but secondary alterations such as DNA methylation may have an equal if not greater impact~\cite{pacchierotti2015environmental}.
+
+\begin{justify}
 
 \subsubsection{The Informatics}
 
@@ -339,7 +363,7 @@ More recently, researchers have realised the importance of not only studying the
 
 \subsection{The Bio}
 
-Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the blueprint of life. But these cells aren't the only source of genetic material in our bodies; each one of us harbour a vast amount of micro-organisms at various anatomical locations. %(Figure~\ref{fig:microbiome});.
+Every cell in our body contains a copy of our genome in its nucleus, which has been dubbed the blueprint of life. But these cells are not the only source of genetic material in our bodies; each one of us harbour a vast amount of micro-organisms at various anatomical locations. %(Figure~\ref{fig:microbiome});.
 Estimates put the number of microbial cells as equal to or outnumbering human cells~\cite{sender2016outnumbered}. These microorganisms influence our metabolism, impact our health and immunity, and may affect drug efficacy. If our genomes are the blueprint of life, then our microbiomes are an important overlay to this blueprint; or, when we consider the genome as the \emph{source code} of life, the microbiome is an essential \emph{third-party plugin}. For this reason, the microbiome is often referred to as our \emph{second genome}~\cite{grice2012microbiome}, and has emerged in recent years as an important field of biomedical study. Links between the microbiome composition and diseases have been demonstrated in a number of diseases~\cite{cho2012human} including psoriasis~\cite{gao2008substantial}, obesity~\cite{turnbaugh2006obesity, ley2005obesity}, and colorectal cancer~\cite{castellarin2012fusobacterium,kostic2012genomic}, though in many cases a causal link remains to be proven.
 
 \begin{comment}
@@ -370,7 +394,9 @@ While these NGS-based methods are commonplace in research studies, their uptake 
 
 \section{Scope of this Thesis}
 
-Bioinformatics has become and integral part of biomedical research, and vast amounts of \emph{-omics} data are being generated. In contrast to other big-data producing fields such as astronomy, biologists are not typically trained in programming and command-line usage, which are essential skills for running bioinformatics analyses. In order to empower researchers in the biomedical field to analyse their own datasets, our focus in all our endeavors has been on accessibility, training, bioinformatics best practices, and open science. In order to facilitate these goals, some bioinformatics foundations are necessary (chapters 1-3), which we were then able to utilize in our various research projects (chapters 4-6).
+Bioinformatics has become and integral part of biomedical research, and vast amounts of \emph{-omics} data are being generated. In contrast to other big-data producing fields such as astronomy, biologists are not typically trained in programming and command-line usage, which are essential skills for running bioinformatics analyses. The aim of this thesis is to facilitate accessible bioinformatics and to empower researchers in the biomedical field to perform their own day-to-day analyses, without the need to become fully-fledged bioinformaticians themselves. This requires a conscious focus on accessibility, training, bioinformatics best practices, FAIR data principles, and open science in the development of bioinformatics tools and pipelines.
+
+In order to facilitate these goals, some bioinformatics foundations are necessary (chapters 1-3). This foundation could then be utilized and expanded upon to facilitate a range of scientific research projects. We describe three such scientific research projects in the fields of tumour variant analysis and microbiome profiling (chapters 4-6).
 
 \textbf{Chapter 1} describes the continued utility of the Galaxy platform to facilitate accessible, reproducible research. The Galaxy platform removes barriers to bioinformatics analyses for non-bioinformaticians by eliminating the need for programming knowledge. End-users can create and run complex pipelines on dedicated high-performance resources with nothing more than a browser. It also improves scientific reproducibility by capturing the full analysis history and provenance, which can be shared with other users or submitted to journals to support a publication. Visualisation is instrumental to the interpretation of big data analyses. To support interpretation of large datasets withing Galaxy, we created Galactic Circos tool, bringing the popular circular plotting tool to Galaxy. To further increase the utility of the Galaxy platform for research and clinical applications, we developed the iReport Galaxy component, which allows for the summation of heterogeneous pipeline outputs into a single unified, accessible web report.
 
@@ -382,7 +408,11 @@ Galaxy focusses on user-friendliness, but even if tools are easy to use, they st
 
 In the remaining chapters, we illustrate this open and accessible approach to bioinformatics through a set of use cases. Each chapter contains a paper about a bioinformatic tool developed, and a paper about the biological study it enabled.
 
-\textbf{Chapter 3} discribes the iFUSE tool developed for the detection and visualisation of fusion genes and Cancer, and how this was used to detect chromothripsis and several fusion genes in the VCaP prostate cancer cell line.
+In \textbf{Chapter \ref{chapter:fusiongenes}} we set out to detect and characterize structural variants in tumour DNA samples, and study their potential to result in fusion genes and proteins. Fusion genes may severely disrupt the cell's processes, and can serve as important biomarkers for diagnosis \cite{}.
+
+When sequencing tumour samples, especially those with high degrees of genome rearrangements, a large number of structural variants are typically detected. However, not all SVs will result in fusion genes. In order to prioritize those SVs which are most likely to result in fusion genes and gene products, we developed the iFUSE tool (chapter \ref{chapter:ifuse}). iFUSE completely web-based, and also visualizes the fusion genes, predicts their resulting gene and protein sequences, and links out to third party resources (e.g. UCSC), allowing researchers to explore their data in an easy and accessible way, without the need for any specialized bioinformatics skills.
+
+In chapter \ref{chapter:vcap}, we used the iFUSE tool explore structural variants in a widely-used prostate cancer cell line (VCaP). An unusually high number of structural variants were detected in this sample, and after visualisation with the Circos tool (chapter \ref{chapter:circos}), it became clear that most of the SVs were located on the q arm of chromosome 5, indicating the presence of chromothripsis in the VCaP cell line. The iFUSE application was used to determine potential fusion genes, which were subsequently experimentally validated.
 
 In \textbf{Chapter 4} we illustrate the Complete Genomics Galaxy Annotation Toolkit (CGtag) and its subsequent use in the development of a virtual normal approach to somatic variant detection in the absence of normal control NGS data.
 
