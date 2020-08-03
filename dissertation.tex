@@ -59,6 +59,26 @@
 \definecolor{title3}{HTML}{0000b9}
 \definecolor{title4}{HTML}{8080ff}
 
+
+% hyphenation
+\usepackage[british]{babel}
+\babelhyphenation[british]{bio-infor-ma-tician}
+\babelhyphenation[british]{bio-infor-ma-ticians}
+\babelhyphenation[british]{bio-infor-ma-tics}
+\setlength\emergencystretch{3em}
+
+% ensuring certain pages appear on left or right side
+\newcommand*\cleartorightpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}
+  \else\hbox{}\newpage\fi
+}
+
 \begin{document}
 
 % the front matter
@@ -67,10 +87,15 @@
 %\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
 %\include{frontmatter/cover3}
-\input{frontmatter/personalize}
-\maketitle
 
-\copyrightpage
+\setcounter{page}{0}
+
+\input{frontmatter/personalize}
+
+%\maketitle
+
+
+%\ciopyrightpage
 %\abstractpage
 \dedicationpage
 
@@ -98,8 +123,9 @@
 %\doublespacing
 
 
-% start chapter numbering at 0 because (computer) science
+% start chapter and page numbering at 0 because (computer) science
 \setcounter{chapter}{-1}
+
 
 % include each chapter...
 
