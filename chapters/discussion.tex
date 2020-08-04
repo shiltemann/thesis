@@ -61,15 +61,15 @@ Dana publishes her paper. Dana is happy. With researchers in the group now runni
 
 \emph{"Bioinformatics has become too central to biology to be left to specialist bioinformaticians"} notes Lincoln Stein in 2008 \cite{stein2008bioinformatics}.
 And indeed, bioinformatics now plays a vital role in almost every biological and biomedical research project.
-Data is being generated at an exponential rate (while bioinformaticians are not),  and it is not scalable to leave the analysis of all this data to specialist bioinformaticians.
-Much of the discussion around the challenge of scaling to meet the needs of this data deluge tends to focus on the need for scaling compute resources and data storage.
+Data is being generated at an exponential rate, but bioinformaticians are not,  and it is not scalable to leave the analysis of all this data to specialist bioinformaticians.
+Much of the discussion around the challenge of scaling to meet the needs of this data deluge tends to focus on the need for scaling up compute resources and data storage.
 And while these are both very important factors, the much greater challenge lies in scaling not just the analysis itself, but the interpretation of all this data.
 And nobody is better suited for this task than the research scientists themselves. So the question now becomes: \emph{How can we scale the researcher?}
 
 The answer to this question lies in empowering researchers to run their own data analyses again.
-We can do this by shining a light in the black box of bioinformatics.
+The way we do this by shining a light in the black box of bioinformatics.
 This entails making bioinformatics tools and pipelines accessible and easy to use for domain scientists.
-It requires training of researchers not just in how to use these tools, but also basic knowledge about computational methodologies, and any biases these may introduce that can impact the interpretation of results.
+It requires training of researchers not just in how to use these tools, but also basic knowledge about the computational methodologies, and any biases these may introduce that can impact the interpretation of results.
 
 This is not to say there is no role for bioinformaticians. It takes a lot of work to make analysis accessible, but by enabling research scientists to handle their own day-to-day analyses, we free up bioinformaticians to focus on the development of new and better tools and workflows, improving reproducibility and developing and delivering training.
 
@@ -84,22 +84,26 @@ Therefore, in this thesis we set out to develop a user-friendly, open, and FAIR 
 \section{Accessible Bioinformatics}
 
 So how do we make bioinformatics more accessible for non-bioinformaticians?
-We can do this by keeping the FAIR data principles in mind. This involves a range of different efforts in standardisation, reporting.
+We can do this by always keeping the FAIR data principles in mind.
 
-A big pain point in using bioinformatics tools comes already during the installation step. Each tool has custom installation procedure, and may or may not have clear instructions. In order to remedy this, we need to standardise the installation process of tools, and make them run on as many different operating systems as possible. Many frameworks exist to assist in this process. For example, bioconda \cite{gruning2018bioconda} provides a level of abstraction to bioinformatics tools, creating a single installation process for all tools, regardless of the underlying installation procedure. In other words, it handles the installation for you. It also handles installation of all dependencies required by the tools, and detects your operating system and adjusts the installation accordingly. Conda can then be used in container-based approaches such as Docker \cite{}, singularity \cite{}, GNU guix \cite{courtes2013function}, and many others. Each of these solutions falls somewhere on a spectrum of level of reproducibility and ease-of-use.
+- data management
+- standardisation of tools and workflows
+- UI
+- training
+- clinical applications / results reporting
+
+\subsection{Standardisation of tools and workflows}
+% tools installation
+A big pain point in using bioinformatics tools comes already during the installation step. Each tool has custom installation procedure, and may or may not have clear instructions. In order to remedy this, we need to standardise the installation process of tools, and make them run on as many different operating systems as possible. Many frameworks exist to assist in this process. For example, bioconda \cite{gruning2018bioconda} provides a level of abstraction to bioinformatics tools, creating a single installation process for all tools, regardless of the underlying installation procedure. In other words, it handles the installation for you. It also handles installation of all dependencies required by the tools, and detects your operating system and adjusts the installation procedure accordingly. Conda can then be used in container-based approaches such as Docker \cite{}, singularity \cite{}, GNU guix \cite{courtes2013function}, and many others. Each of these solutions falls somewhere on a spectrum of level of reproducibility and ease-of-use. We opted for bioconda in our framework because it has an explicit focus on bioinformatics software. Conda can in turn be used by platforms such as Galaxy to outsource installation of tools, while itself focusing on optimizing the user experience.
+
+% workflows
+Different tools can now be combined into workflows. Again, there exist many different ways to accomplish this, but standardisation is key for reproducibility. Many efforts toward standardised workflow language exist, for example workflow management systems such as CWL \cite{}, NextFlow \cite{}, and Snakemake \cite{}.
 
 
-- conda, docker, cwl/nextflow/snakemake
 
-Furthermore, we need to ensure reproducibility of results. The standardisation of installation procedures is an important step towards this goal. In addition, we need to capture all provaeance of analyses,
+\subsection{User interface}
 
-- standardisation
-- reproducibility
-- user interface
-- results reporting
-- Training
-
-\subsection{Galaxy for open and accessible research}
+With the
 The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} --with the latest update paper \cite{afgan2018galaxy} in \hyperref[chapter:galaxy]{Chapter~\ref{chapter:general}}-- is a framework that enables the empowerment of researchers to run complex data analysis without programming expertise. The Galaxy project is free and open-source and has an active user and community. Galaxy encourages feedback and code contributions from its users to improve and evolve along with the ever-changing landscape that is bioinformatics. \hyperref[chapter:galaxy]{\textbf{Chapter~\ref{chapter:general}}} outlines the ongoing development in the Galaxy framework.
 
 The set of tools wrapped into Galaxy by both the user community and the core development team continues to increase exponentially, and the number of tools in the tool shed has now surpassed 7200. New core features are also continually incorporated into the Galaxy code base in order to facilitate the needs of users. For example, scalability is an important area of development, and continual efforts are made to ensure the platform can keep up with the current \emph{big data} explosion. To this end, several improvement were made to assist users with the handling of large datasets, such as the introduction of dataset collections and the rule-based uploader. Dataset collections allow large numbers of files to be analysed with minimal effort, and the rule-based uploader supports the specification of experimental design files at upload time to import and structure large sets of data files. In terms of server scalability, Galaxy supports integration with a multitude of workload managers and compute infrastructures.
@@ -140,17 +144,53 @@ The concepts and tools described in the previous sections were applied to two se
 \subsection{Cancer Analysis: Fusion Gene Detection}
 \subsubsection{The Bio}
 
-Prostate cancer is one of the most commonly diagnosed cancer types in men, and while many patients present with an indolent form of the disease, others develop a highly aggressive tumour type, and overall, prostate cancer is among the top 10 leading causes of cancer-related deaths in men~\cite{jemal2010global}. Cancer is a disease of the genome, where accumulation of mutations over time drive the progression of the illness. Genome sequencing approaches can be used to extensively explore these genomic alterations in cancer, including small variants and larger structural variants (SVs), within or ouside genes.
+Cancer is a disease of the genome, where DNA mutations accumulate over time and wreak havoc on the cell. Our best hope in defeating this disease lies in the full characterization of the cancer cell, not only in terms of their observed mutational signatures, but also the mechanisms behind these mutational landscapes.
 
-While mutations that affect the protein-coding regions of the genome have been widely studied, the impact of non-coding mutations and structural variants in cancer remain largely undefined~\cite{cuykendall2017non,khurana2016role}. The advent of whole-genome sequencing techniques has enable the characterization of SVs and other mutations not detectable by exome-based approaches. Fusion genes may arise when structural variants (SVs) occur within two different genes, causing the creation of hybrid genes with the potential to produce hybrid proteins that may disrupt vital cell functions.  For example, the presence of the \emph{TMPRSS2-ERG} gene fusion is observed in approximately 50\% of prostate cancer patients and many other less frequent fusions have also been identified~\cite{tomlins2005recurrent}. Detection of fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
+While small-scale mutations that affect the protein-coding regions of the genome have been widely studied, the impact of non-coding mutations and large-scale structural variants (SVs) in cancer remain largely undefined~\cite{cuykendall2017non,khurana2016role}. Now that whole-genome sequencing has become more available and affordable, a comprehensive characterization of SVs has become possible.
 
-Chromothripsis is a phenomenon observed primarily in cancer cells, that involves the shattering and subsequent imprecise repair of one or more chromosomes in a single catastrophic event. Chromothripsis is characterized by the observation of 1) large numbers of chromosomal rearrangements on a localized parts of the genome, 2) alternations between a small number of different copy number states, and 3) alternation between regions displaying a loss of heterozygosity (LOH) and those with preserved heterozygosity~\cite{maher2012chromothripsis}.
+Large-scale genomic rearrangements have the potential to lead to the generation of hybrid genes known as fusion genes.
+Accurate detection of such fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
+Prostate cancer was among the first solid tumours demonstrated to harbour frequent large-scale genomic rearrangements, demonstrated by the discovery of the \emph{TMPRSS2-ERG} fusion gene, which was found to be present in approximately 50\% of all prostate cancers \cite{tomlins2005recurrent}. Subsequent studies have shown that point-mutations occur relatively infrequently in prostate cancer as compared to structural variations and extensive copy-number variation, suggesting that it is these large-scale genomic rearrangements that are the primary driver of prostate cancer progression \cite{taylor2010integrative,rubin2011common}.
 
-Chapter \ref{chapter:fusiongenes} describes the identification of chromothripsis in the 5q arm of the VCaP cell line. A very large number of SVs were detected, and copy number varied primarily between two copy number states states, with only sporadic occurrences of a third state. This alternation between a small number of copy number states suggest the rearrangements were precipitated by a single catastrophic event.
+Understanding the mechanisms behind the acquisition of these structural variations will provide valuable insights into tumor progression.
+While historically the acquisition of mutations in tumour cells has been thought of as a gradual and incremental process, subsequent insights have uncovered several mutational processes capable of generating large numbers of mutations in a single event \cite{cortes2020comprehensive,willis2015}.
+Kataegis (from the greek word for thunderstorm) represents a \emph{mutation storm} of localised hypermutations, and has been observed in multiple cancer types \cite{nik2012mutational,davis2014somatic}.
+Chromothripsis is a shattering of the genome -often an entire chromosome or chromosome arm-, followed by a highly erroneous repair step \cite{stephens2011massive,maher2012chromothripsis}.
+Chromoplexy (from the Greek \emph{pleko}, which means to weave) is a phenomenon where large chains of rearrangements affecting multiple chromosomes occur \cite{shen2013chromoplexy}. All these mechanisms challenge the classical view of cancer progression as a gradual and step-wise process.
 
-The 573 rearrangements involving this part of chromosome 5 were then investigated for their potential to lead to the formation of fusion genes using the iFUSE application also presented in Chapter \ref{chapter:fusiongenes}. Out of this large number of rearrangements, only 18 were found to occur between two different genes at a consistent orientation. These fusion gene candidates were confirmed via sequencing using custom PCR. This allowed 16 out of 18 fusion candidates to be confirmed on the DNA level, although only 5 of these were also measured on the mRNA level, suggesting instability of the fusion transcripts or down-regulation of the expression of these fusion genes.
+In chapter \ref{chapter:vcap} we showed that chromothripsis also occurs in prostate cancer, by describing the identification of chromothripsis in the 5q arm of the VCaP cell line. A very large number of SVs were detected, and copy number varied primarily between two copy number states states, with only sporadic occurrences of a third state. This alternation between a small number of copy number states suggest the rearrangements were precipitated by a single catastrophic event.
+Other studies have also observed chromothripsis in other prostate cancer samples \cite{wu2012poly,Baca2013}.
 
-Overall, this research has shown that any studies involving this commonly used prostate cancer cell line should take the presence of chromothripsis on chromosome 5q into account. Furhtermore, this study highlights the potential utility of this cell line as a model for research on chromothripsis.
+Such a high degree of genomic rearrangement has the potential of contributing to cancer progression e.g. through activation of oncogenes, or inactivation of tumor surpressor genes.
+To investigate this further, we investigated the 573 rearrangements involving the impacted region of chromosome 5 for their potential to lead to the formation of fusion genes, using the iFUSE application presented in Chapter \ref{chapter:ifuse}.
+Out of this large number of rearrangements, a relatively small number (18) were found to occur between two different genes at a consistent orientation, with only 2 predicted to be in-frame by the iFUSE application.
+Out of the 18 fusion candidates identified, 16 were confirmed on the DNA level using custom PCR.
+Only 5 of these were also measured on the mRNA level, suggesting instability of the fusion transcripts or down-regulation of the expression of these fusion genes.
+Therefore, our results suggests that chromothripsis does not preferentially impact coding regions and that there is no positive selection for in-frame fusion transcripts.
+
+Overall, our research has shown that any studies involving this commonly used prostate cancer cell line should take the presence of chromothripsis on chromosome 5q into account.
+Furthermore, this study highlights the potential utility of this cell line as a model for research on chromothripsis.
+
+Chromothripsis has been observed in many other cancer types as well, with the frequency of occurrence varying greatly across tumour types \cite{cortes2020comprehensive,voronina2020landscape,Koltsova2019,kloosterman2014prevalence}.
+A study examining 2,658 WGS patient samples across 38 cancer types generated by the ICGC and TCGA projects found prevalences of chromothripsis that ranged from 100\% for liposarcomas and 77\% of osteosarcomas on the high end, to thyroid adenocarcinomas (3.3\% and chronic lymphocytic leukemia (1.2\%) on the lower end of the spectrum \cite{cortes2020comprehensive}.
+It must be noted that due to the variability in detection methods and in the precise definition and criteria of chromothripsis used in different studies, the exact numbers vary significantly in the literature, though the variability across different tumour types is consistently observed.
+
+Chromothripsis has been shown to be associated with poorer outcome \cite{fontana2018chromothripsis,Hirsch2012,magrangeas2011chromothripsis,molenaar} and accurate detection of the presence of chromothripsis could therefore provide clinically relevant prognostic value.
+
+
+%Prostate cancer is one of the most commonly diagnosed cancer types in men, and while many patients present with an indolent form of the disease, others develop a highly aggressive tumour type, and overall, prostate cancer is among the top 10 leading causes of cancer-related deaths in men~\cite{jemal2010global}.
+%Cancer is a disease of the genome, where accumulation of mutations over time drive the progression of the illness. Genome sequencing approaches can be used to extensively explore these genomic alterations in cancer, including small variants and larger structural variants (SVs), within or ouside genes.
+
+%The advent of whole-genome sequencing techniques has enable the characterization of SVs and other mutations not detectable by exome-based approaches.
+%Fusion genes may arise when structural variants (SVs) occur within two different genes, causing the creation of hybrid genes with the potential to produce hybrid proteins that may disrupt vital cell functions.
+%For example, the presence of the \emph{TMPRSS2-ERG} gene fusion is observed in approximately 50\% of prostate cancer patients and many other less frequent fusions have also been identified~\cite{tomlins2005recurrent}. Detection of fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
+
+%Chromothripsis is a phenomenon observed primarily in cancer cells, that involves the shattering and subsequent imprecise repair of one or more chromosomes in a single catastrophic event. Chromothripsis is characterized by the observation of 1) large numbers of chromosomal rearrangements on a localized parts of the genome, 2) alternations between a small number of different copy number states, and 3) alternation between regions displaying a loss of heterozygosity (LOH) and those with preserved heterozygosity~\cite{maher2012chromothripsis}.
+
+
+
+%chromoplexy (chains) in PCa - \cite{Baca2013}
+
 
 \subsubsection{The Informatics}
 Whole-genome sequence experiments typically generate very large output files. Furthermore, in the case of structural variant analysis, the output file formats lack consistency across tools and sequencing platforms, and interpretation is greatly aided by visualisation and annotation with external data resources. To this end, the iFUSE application was developed, creating a visual representation of fusion gene candidates and computing various metrics such as predictions of fusion protein product.
@@ -158,6 +198,13 @@ Whole-genome sequence experiments typically generate very large output files. Fu
 While iFUSE provides valuable aid in interpretation on a per-event basis through its visualisation and annotation, it is less suitable for obtaining a genome-wide overview of structural rearrangements. Large-scale rearrangements such as chromothripsis for instance are easy to miss when examining the raw textual output files or the iFUSE visualisations. In order to evaluate the presence of chromothripsis, a more high-level view of the genome is needed, and to that end, whole-genome visualisations were created using Circos~\cite{circos} for rearrangements, and GNUplot~\cite{url-gnuplot} for the copy number and heterozygosity plots. This approach enabled the instant identification of chromothripsis present in the VCaP sample, which could then be followed up by closer examination of individual rearrangements involving the chromosome 5q using iFUSE.
 
 Both the iFUSE application, the Circos Galaxy wrappers, and the other tools and visualisations created in this chapter are open-source and publicly available on an example server, and are accompanied by extensive documentation to enable re-use by institutes that may have legal restrictions about the use of clinical samples on public servers.
+
+If we want to go beyond the mere detection of chromothripsis to the prediction of the effects of these catastrophic events on the cell, we will have to fully reconstruct the tumour genome.
+While algorithms have been developed for the reconstruction of structurally rearranged genomes \cite{prego,Baca2013}, none of these methods is currently capable of handling the high degree of rearrangement observed in some cancers, let alone those displaying chromothripsis.
+This appears to be a limitation of the power of the data yielded by short-read techniques, rather than a shortcoming of the algorithmic methods.
+The recent advances in long-read sequencing techniques will provide valuable improvements for reconstructing cancer genomes impacted by chromothripsis by providing reads spanning multiple breakpoints.
+Indeed, a recent paper described the successful reconstruction of a genome displaying chromothripsis in a patient with the rare genetic Langer–Giedion syndrome \cite{lei2020long}.
+Similar approaches can be used to reconstruct tumour genomes and have the potential to significantly increase biological insight into the effects of chromothripsis events on the cell.
 
 \subsection{Cancer Analysis: Somatic Mutation Determination}
 \subsubsection{The Bio}
