@@ -5,11 +5,11 @@
 \begin{minipage}{5in}
 \tikz[remember picture,overlay]
 \node[opacity=0.8,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{frontmatter/images/border-1.png}};
-%\thispagestyle{empty} %remove page number?
+\thispagestyle{empty} %remove page number?
 
 \begin{center}
 
-{\Large Scaling The Researcher \normalsize
+{\Large Scaling the Researcher \normalsize
 
 \vspace*{0.5cm}
 
@@ -19,19 +19,44 @@
 
 \vspace*{0.5cm}
 
-Meet Dana. Dana is a biologist, she studies DNA. Dana sent her samples out to be sequenced. She got back a hard drive full of files. She does not know what to do with the fies. She tries opening a VCF file in Excel, but it complains that there are too many lines and immediately closes. She double clicks on a FASTQ file, her computer freezes while trying to open the file in Notepad.
+Meet Dana.
+Dana is a biologist who studies DNA.
+Dana sends her samples out to be sequenced, and gets back hard drives full of files.
+However, she doesn't really know what to do with these files.
+She tries opening a VCF file in Excel, but it complains that there are too many lines and immediately closes.
+She double clicks on a FASTQ file, and her computer freezes while trying to open the file in Notepad.
 
 \ \\
-Luckily her group has a bioinformatician, Bindi, surely they can just do the analysis for her! Bindi tells her she is very busy right now doing analysis for the group, and can look at her files in a few months, ..hopefully. Dana just wants to analyse her data and publish her paper! Dana does not want to wait months, so she tries analyzing her data herself. She finds some tools in the literature. When she tries to install them, she sees they cannot run on Windows. What now? She gets access to a Linux compute server, but the tool she wants does not install properly. There are no good instructions on how to fix the problem. She tries another tool, which does install, but she gets errors when she runs it on her own data. Dana is sad, \emph{"only bioinformaticians could make sense of all this!"}, she sighs.
+Luckily her group has a bioinformatician, Bindi, surely they can just do the analysis for her!
+Bindi tells her she is very busy right now doing analysis for the group, and can look at her files in a few months, hopefully.
+Dana just wants to analyse her data and publish her paper! She doesn't want to wait months, so she tries analyzing her data herself.
+She finds some tools in the literature but when she tries to install them, she sees they cannot be run on Windows, what now?
+She gets access to a Linux compute server, but the tool she wants does not install properly.
+There are no good instructions on how to fix the problem.
+She tries a different tool, which does install, but when she runs it on her own data, she gets some cryptic error messages.
+\emph{"Only bioinformaticians could make sense of all this!"}, she sighs.
 
 \ \\
-Then somebody tells her about Galaxy. It has the tools she wants, and she doesn't even have to install anything, all she has to do is click buttons in her browser! And it's free! Galaxy is not easy, but there are a lot of useful training materials available. She teaches herself how to use Galaxy, and how to analyze her data. She reads papers and reproduces their methods in Galaxy. She gets stuck, but asks for help from the community. She goes to workshops to learn more. It was a lot of work, but she gets some promising results! She has another batch of samples on the way. She makes a workflow to speed up the analysis next time.
+Then somebody tells her about Galaxy.
+It has the tools she wants, and she doesn't even have to install anything, all she has to do is click buttons in her browser!
+And it's free!
+Galaxy is not easy, but there are a lot of useful training materials available.
+She teaches herself how to use Galaxy, and how to analyze her data. She reads papers and reproduces their methods in Galaxy.
+She gets stuck, but asks for help from the community.
+She goes to workshops to learn more.
+It was a lot of work, but she gets some promising results! She has another batch of samples on the way. She creates a workflow to speed up the analysis next time.
 
 \ \\
-Her coworkers also want to analyze their data. Bindi the bioinformatician is still very busy, and the queue is long, so they ask Dana for help. Dana shares her Galaxy workflow with them. She gets a lot of emails with questions from her coworkers, so she decides to create her own Galaxy tutorial about the workflow. Dana teaches a workhops, training her colleagues on how to use Galaxy and her workflow.
+Her coworkers also want to analyze their data.
+Bindi the bioinformatician is still very busy, and the queue is long, so they ask Dana for help.
+Dana shares her Galaxy workflow with them.
+She gets a lot of emails with questions from her coworkers, so she decides to create her own Galaxy tutorial about the workflow.
+Dana teaches a workhops, training her colleagues on how to use Galaxy and her workflow.
 
 \ \\
-Dana publishes her paper. Dana is happy. With researchers in the group now running their own day-to-day analyses, Bindi has more time. Bindi can use this time to add new tools to Galaxy, create more workflows for the group, and develop training materials for her coworkers to use. Bindi is happy too.
+Dana publishes her paper. Dana is happy.
+With researchers in the group now running their own day-to-day analyses, Bindi the bioinformaticians has more time.
+She can use this time to add new tools to Galaxy, create workflows for the group, and develop training materials for her coworkers to use. Bindi is happy too.
 \normalsize
 }
 \end{center}
@@ -67,13 +92,15 @@ And while these are both very important factors, the much greater challenge lies
 And nobody is better suited for this task than the research scientists themselves. So the question now becomes: \emph{How can we scale the researcher?}
 
 The answer to this question lies in empowering researchers to run their own data analyses again.
-The way we do this by shining a light in the black box of bioinformatics.
+The way we achieve this is by shining a light in the black box of bioinformatics.
 This entails making bioinformatics tools and pipelines accessible and easy to use for domain scientists.
 It requires training of researchers not just in how to use these tools, but also basic knowledge about the computational methodologies, and any biases these may introduce that can impact the interpretation of results.
 
-This is not to say there is no role for bioinformaticians. It takes a lot of work to make analysis accessible, but by enabling research scientists to handle their own day-to-day analyses, we free up bioinformaticians to focus on the development of new and better tools and workflows, improving reproducibility and developing and delivering training.
+This is not to say there is no role for bioinformaticians.
+It takes a lot of work to make analysis accessible, but by enabling research scientists to handle their own day-to-day analyses, we free up bioinformaticians to focus on the development of new and better tools, for configuring new workflows, improving reproducibility, and developing and delivering training.
 
-Therefore, in this thesis we set out to develop a user-friendly, open, and FAIR bioinformatics framework for NGS analysis, and to create a community of researchers who are computationally informed. We then applied this paradigm to a series of research projects to illustrate its utility.
+Therefore, in this thesis we set out to develop a user-friendly, open, and FAIR bioinformatics framework for NGS analysis, so that we can create a community of researchers who are computationally informed.
+We then applied this paradigm to a series of research projects to illustrate its utility.
 
 
 %Since the completion of the human reference genome in 2003, the field of molecular biology has been transformed almost beyond recognition, and along with it, the field of bioinformatics has evolved from a niche discipline to an integral part of every biomolecular research question. Where decades ago most genomic data analyses could largely be performed by hand, nowadays they often require a supercomputer. Programming knowledge is required to run such analyses, but biomedical scientists are not typically trained in these skills, and have thus become reliant on bio\-infor\-ma\-ticians to carry out this work for them. Similarly, bioinformaticians often lack the increasingly complex biological knowledge required to fully interpret the results~\cite{preeyanon2014reproducible}. Biologist and bioinformatician must therefore work together closely, and each should be trained in the other discipline in order gain awareness of factors that might influence analysis or result interpretation.
@@ -83,57 +110,72 @@ Therefore, in this thesis we set out to develop a user-friendly, open, and FAIR 
 
 \section{Accessible Bioinformatics}
 
-So how do we make bioinformatics more accessible for non-bioinformaticians?
-We can do this by always keeping the FAIR data principles in mind.
-
-- data management
-- standardisation of tools and workflows
-- UI
-- training
-- clinical applications / results reporting
-
-\subsection{Standardisation of tools and workflows}
-% tools installation
-A big pain point in using bioinformatics tools comes already during the installation step. Each tool has custom installation procedure, and may or may not have clear instructions. In order to remedy this, we need to standardise the installation process of tools, and make them run on as many different operating systems as possible. Many frameworks exist to assist in this process. For example, bioconda \cite{gruning2018bioconda} provides a level of abstraction to bioinformatics tools, creating a single installation process for all tools, regardless of the underlying installation procedure. In other words, it handles the installation for you. It also handles installation of all dependencies required by the tools, and detects your operating system and adjusts the installation procedure accordingly. Conda can then be used in container-based approaches such as Docker \cite{}, singularity \cite{}, GNU guix \cite{courtes2013function}, and many others. Each of these solutions falls somewhere on a spectrum of level of reproducibility and ease-of-use. We opted for bioconda in our framework because it has an explicit focus on bioinformatics software. Conda can in turn be used by platforms such as Galaxy to outsource installation of tools, while itself focusing on optimizing the user experience.
-
-% workflows
-Different tools can now be combined into workflows. Again, there exist many different ways to accomplish this, but standardisation is key for reproducibility. Many efforts toward standardised workflow language exist, for example workflow management systems such as CWL \cite{}, NextFlow \cite{}, and Snakemake \cite{}.
+The main challenge in our aim of scaling the researcher, is making bioinformatics accessible for non-bioinformaticians. This includes not only making analyses easy to use, but also easier to understand and interpret.
+In our approach we used the Galaxy platform to provide a user-friendly interface to bioinformatics analyses. Galaxy does all the heavy lifting of handling installation of the tools and all their dependencies, of optimally scheduling jobs across the compute resources, tracking provenance of analyses, enabling sharing, and much more. This leaves the researcher free to focus the interpretation of their results.
+The second main component of our approach to making bioinformatics more accessible consists of providing extensive bioinformatics training. To this end, we founded the Galaxy training materials project, a collaborative framework for development and maintenance of training materials using the Galaxy framework.
 
 
+\subsection{Galaxy as a user-friendly workflow platform}
 
-\subsection{User interface}
-
-With the
-The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} --with the latest update paper \cite{afgan2018galaxy} in \hyperref[chapter:galaxy]{Chapter~\ref{chapter:general}}-- is a framework that enables the empowerment of researchers to run complex data analysis without programming expertise. The Galaxy project is free and open-source and has an active user and community. Galaxy encourages feedback and code contributions from its users to improve and evolve along with the ever-changing landscape that is bioinformatics. \hyperref[chapter:galaxy]{\textbf{Chapter~\ref{chapter:general}}} outlines the ongoing development in the Galaxy framework.
+The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} is a framework that enables the empowerment of researchers to run complex data analysis without programming expertise. The Galaxy project is free and open-source and has an active user and community. Galaxy encourages feedback and code contributions from its users to improve and evolve along with the ever-changing landscape that is bioinformatics. \hyperref[chapter:galaxy]{\textbf{Chapter~\ref{chapter:galaxy}}} outlines the ongoing development in the Galaxy framework.
 
 The set of tools wrapped into Galaxy by both the user community and the core development team continues to increase exponentially, and the number of tools in the tool shed has now surpassed 7200. New core features are also continually incorporated into the Galaxy code base in order to facilitate the needs of users. For example, scalability is an important area of development, and continual efforts are made to ensure the platform can keep up with the current \emph{big data} explosion. To this end, several improvement were made to assist users with the handling of large datasets, such as the introduction of dataset collections and the rule-based uploader. Dataset collections allow large numbers of files to be analysed with minimal effort, and the rule-based uploader supports the specification of experimental design files at upload time to import and structure large sets of data files. In terms of server scalability, Galaxy supports integration with a multitude of workload managers and compute infrastructures.
 
-Accessibility of the Galaxy platform was improved by the integration of a new help forum, the introduction of interactive tours to faimilarize users with the Galaxy interface, and through the development of a central repository of Galaxy-based training materials (\hyperref[chapter:galaxy]{Chapter~\ref{chapter:training}}). Furthermore, the Galaxy Hub was developed, the one-stop shop for finding all things Galaxy, whether it be events, documentation, training, public Galaxy servers or scientific publications using Galaxy. These efforts to enhance accessibilty of the Galaxy platform appear to be paying off, given the exponentially growing number of scientific publications that refer to Galaxy~\cite{url-zotero-galaxy}.
+Accessibility of the Galaxy platform was improved by the integration of a new help forum, the introduction of interactive tours to familiarize users with the Galaxy interface, and through the development of a central repository of Galaxy-based training materials (\hyperref[chapter:galaxy]{Chapter~\ref{chapter:training}}). Furthermore, the Galaxy Hub was developed, the one-stop shop for finding all things Galaxy, whether it be events, documentation, training, public Galaxy servers or scientific publications using Galaxy. These efforts to enhance accessibility of the Galaxy platform appear to be paying off, given the exponentially growing number of scientific publications that refer to Galaxy~\cite{url-zotero-galaxy}.
 
+While the Galaxy project certainly greatly improves accessibility of bioinformatics analyses, there are still a number of areas of improvement remaining.
+
+For example, with sequencing now widespread and affordable, it has become feasible to use NGS directly in the clinic to inform patient care.
+However, until now Galaxy has focused mainly on researchers, and in order to make Galaxy more appealing for clinicians, the framework could benefit from a number of additional features.
+Firstly, a \emph{locked-down}, workflow-centric user interface is required; in contrast with research applications where Galaxy's great flexibility is an asset, for clinical applications this flexibility can be a hindrance, as it goes hand in hand with added complexity.
+Unlike researchers, clinicians do not typically need to play around with their datasets and try different tools; their analysis options should be limited to a small set of predefined and thoroughly validated analysis pipelines.
+While Galaxy does not (yet) offer such an alternate user view, it does offer API access to its framework, enabling custom front-ends to be developed on top of the Galaxy back-end.
+The need for such a simplified user interface to Galaxy is exemplified by the number of projects that have developed such a customized front-end to the Galaxy interface \cite{klingstrom2017galaksio,matthews2018integrated,lemoine2019ngphylogeny,SEEK2015}, including several in-house projects at the ErasmusMC.
+For example, the IRIDA (Integrated Rapid Infectious Disease Analysis) project \cite{matthews2018integrated} is an open-source platform for public health genomics, which is currently in use by the Canadian public health department to track infectious disease outbreaks.
+It uses Galaxy as its analysis platform, but provides a custom user interface tailored specifically to the needs of its users. This approach also enabled the project to integrate Galaxy directly with a third-party data management system where users can easily mange their projects and data.
+
+%simplified interface --> domain-specific views, subdomains in usegalaxy
+%standardization of reference data between servers --> idc
+
+Another area of
+
+We used Galaxy as the main data analysis platform in each of the 3 research projects described in this thesis, including one clinical analysis platform (MYcrobiota). For several of these publications, we were able to submit our Galaxy history and workflows directly to the journal as a full end-to-end demonstration of our analysis pipeline, which could then be used to reproduce our results by any motivated readers.
 
 
 \subsection{Visualisation and Reporting}
 Visualisation is an essential component to aid in interpretation of big and multidimensional datasets. Tools such as Circos \cite{circos} allow for the visualisation of multiple large and complex datasets in a single circular plot. Circos is highly customizable, but this high degree of flexibility comes paired with a high degree of complexity and a steep learning curve. To improve the user-friendliness of this tool and improve its interoperability with upstream tools, we developed Galactic Circos (Chapter~\ref{chapter:general}), integrating Circos into Galaxy, and providing a set of preprocessing tools to facilitate interoperability with a wide range of output formats produced by upstream tools.
 
-Galaxy in its current form lacks an appealing system of results summation and reporting. While Galaxy sports a plugin system for visualisation of individual datasets, a generic reporting tool for displaying a set of workflow outputs together does not exist. To this end, we developed iReport (Chapter~\ref{chapter:general}); a fully customizable Galaxy tool for the generation HTML reports capable of displaying any number of workflow outputs.
-iReport is intended to be used as the final step of a workflow; in this manner, end-users need only to open a single workflow output to get a full overview of results. The developer of the workflow can fully tailor an iReport to the needs of their end users (e.g. clinicians), including the ability to add links to datasets and external resources, create searchable and sortable tables, embed images and custom text, and to divide content into different pages.
-By adding such a summarizing report at the end of an analysis pipeline, clinicians and other end users are able to run workflows and view results with minimal instruction or knowledge of the Galaxy interface.
+The Circos visualisation tool was especially useful in discovery of chromothripsis of the VCaP sample (chapter~\ref{chapter:vcap}).
+Here the highly rearranged nature of chromosome 5q was instantly obvious in one glance at the circular plot, in a way that simply inspecting the textual files listing the SVs could not convey.
 
-Galaxy is a highly flexible analysis platform, which is very useful for researchers still developing their pipelines, but for clinicians who have fixed and validated workflows, the flexibility is no longer required, and in many cases even undesirable. By utilizing the Galaxy API, simplified web front-ends for Galaxy may be created (e.g. Galaksio~\cite{klingstrom2017galaksio} and IRIDA~\cite{matthews2018integrated}), such that only those features needed by the users are exposed in the user interface. In the case of clinical applications, this provides the additional benefit of minimizing the chances of incorrect invocations of the validated workflows by the end user.
+Effective visualisation of large data is crucial for the interpretation of analysis results, and in a broader sense, so is the reporting of results in a single, easily-digestible overview or report. Analysis pipelines often result in a large set of different output files, and displaying these results effectively to the end user tasked with interpretation of the results is a challenge in its own right.
+Galaxy in its current form lacks an appealing system of results summation and reporting. While Galaxy sports a plugin system for visualisation of individual datasets, a generic reporting tool for displaying a set of workflow outputs together does not exist. To this end, we developed iReport (Chapter~\ref{chapter:general}); a fully customizable Galaxy tool for the generation HTML reports capable of displaying any number of workflow outputs.
+
+iReport is intended to be used as the final step of a workflow, and is generic enough that it makes no assumptions about the underlying analysis or scientific domain. iReport supports  the ability to add links to datasets and external resources, create searchable and sortable tables, embed images and custom text, and to structure content into different pages.
+By adding such a summarizing report at the end of an analysis pipeline, clinicians and other end users are able to run workflows and view results with minimal instruction or knowledge of the Galaxy interface.
+We used iReport as the reporting tool for the MYcrobiota clinical analysis platform (chapter~\ref{chapter:mycrobiota}), based on the requirements of the clinicians at the Streeklab Haarlem.
+
+Since the development of the iReport tool, the need for a reporting system more tightly integrated with the Galaxy framework itself was recognized by the Galaxy core team, and they have since started to integrate similar functionality into the Galaxy code base. While this reporting system is relatively new and does not yet support the full functionality of iReport, we are hopeful that continued development here will improve Galaxy's reporting mechanisms.
 
 \subsection{Training}
 Training is an essential component in the dissemination of accessible bioinformatics tools and workflows. The Galaxy platform is especially well-suited for the delivery of bioinformatics training because it provides a layer of abstraction that allows trainees to focus on the bioinformatics \emph{concepts} rather than the implementation details of the tools. Without this separation, trainees would have to simultaneously learn about the UNIX commandline or programming environment, on top of the bioinformatics topics at hand. This would increase the cognitive load and hamper the learning process~\cite{paas2003cognitive}. Given this observation of Galaxy's suitability for use in training, the Galaxy Training Network (GTN)~\cite{url-gtn} was formed; a loosely-defined open group of instructors around the world who use Galaxy for training purposes. Initially there was little coordination between the different instructors in terms of materials used, and thus a lot of duplication of effort. There was a clear need for centralisation of training materials and knowledge sharing within the trainer community. Chapter~\ref{chapter:training} describes the community-driven web-based framework for the delivery of bioinformatics training using the Galaxy platform that we developed in response to this need.
 Our aim was to create a fully open and transparent framework that is accessible and easy to use for both trainees and trainers. The materials are centered around \emph{research stories}; usually the recreation of results described in published papers. This gives trainees the confidence that the tools and pipelines are practically useful and of publication-level quality, as well providing them with the opportunity to dive deeper into the science and informatics behind the training. Since the creation of this training platform, a number of scientific publications have included Galaxy training materials as a form of documentation and illustration of the presented analysis pipelines~\cite{gruning2017rna,blank2018disseminating,batut2017asaim,hiltemann2018galaxy}.
 
-One of the main challenges in designing this framework was to allow easy contributions from instructors, without the need for any web development knowledge. To this end, we used Jekyll templating~\cite{url-jekyll}, which allows tutorials to be written in the simple and accessible markup language called Markdown~\cite{url-markdown} which can be rendered as HTML. Analogous to how Galaxy allows scientists to run analyses while being abstracted away from the implementation layer of the tools, this approach allows instructors to create web pages for their tutorials without being concerned with the the syntax and intricacies of the web application layer.
+One of the main challenges in designing this framework was to allow easy contributions from instructors, without the need for any web development knowledge. To this end, we used Jekyll templating~\cite{url-jekyll}, which allows tutorials to be written in the simple and accessible markup language called Markdown~\cite{url-markdown} which can be rendered as HTML. Analogous to how Galaxy allows scientists to run analyses while being abstracted away from the implementation layer of the tools, this approach allows instructors to create web pages for their tutorials without being concerned with the syntax and intricacies of the web application layer.
 
 A further challenge was to enable the materials to be usable both by instructors during workshops, and by individuals learning on their own. This is accomplished by including all materials instructors might provide during a workshop in the GTN training materials framework. This includes introduction slides as well as hand-on materials, input datasets and workflows, further reading suggestions, and an automatically updated list of available Galaxy servers which meet the requirements to run a given tutorial. Furthermore, learning assessments are provided in the form of question boxes, answers to which are included within the materials (in an initially hidden state) for trainees to verify their understanding of the materials. If further assistance is required, links to support channels such as a help forum and chat rooms are provided.
 
-The community-driven nature of the training framework is essential for the long-term survival of the project; it allows for the distribution of the maintenance burden and takes advantage of the combined expertise present in the community. All development happens on GitHub~\cite{url-github}, where anybody may suggest additions or changes, and any such proposed changes are thoroughly tested using the Travis continuous integration system~\cite{travis-ci} to ensure functionality and adherence to guidelines. The proposed changes are subsequently reviewed by one or more of the dedicatied topic maintainers, or other volunteers from the community. Once approved, the code is merged into the main code base, and the new website is automatically built and deployed using Travis and GitHub. In order to assess the quality of the tutorials and identify areas of improvement, feedback from both trainees and instructors is indispensable. To this end, we integrated evaluation forms at the end of each tutorial, and hold regular community meetings with training developers and trainers.
+The community-driven nature of the training framework is essential for the long-term survival of the project; it allows for the distribution of the maintenance burden and takes advantage of the combined expertise present in the community. All development happens on GitHub~\cite{url-github}, where anybody may suggest additions or changes, and any such proposed changes are thoroughly tested using the Travis continuous integration system~\cite{travis-ci} to ensure functionality and adherence to guidelines. The proposed changes are subsequently reviewed by one or more of the dedicated topic maintainers, or other volunteers from the community. Once approved, the code is merged into the main code base, and the new website is automatically built and deployed using Travis and GitHub. In order to assess the quality of the tutorials and identify areas of improvement, feedback from both trainees and instructors is indispensable. To this end, we integrated evaluation forms at the end of each tutorial, and hold regular community meetings with training developers and trainers.
 
 As Galaxy evolves, so will the associated tutorials; where Galaxy is expanding beyond bioinformatics and is now also being used in fields such as natural language processing and computational chemistry, so have we noticed a steady expansion of topics and tutorials contributed by the community. In the year following the publication of Chapter \ref{chapter:training} , we saw 6 new topics added, 66 new tutorials, and the number of contributors grew from 64 to 137.
 
 While the focus of development in this project initially lay with improving the experience for end-users of the tutorials, our focus is now shifting to increasing support for tutorial contributors and instructors intending to use our materials. The main challenge in the coming years will be the community management; creating and sustaining a close-knit community of Galaxy users and instructors so that the project can survive even when its original developers have moved on.
+
+While this project focuses on the training of research scientists to effectively use bioinformatics analyses, the reverse is also important; much like bioinformatics may feel like a \emph{black box} to researchers and clinicians, so can the wetlab seem like a black box to many bioinformaticians.
+Bioinformaticians typically work on multiple projects at the same time, often covering a variety of different scientific domains, and therefore can not acquire the same level of knowledge about the underlying biology as the domain specialists.
+However, similar to how researchers and clinicians will benefit from a basic knowledge of computational concepts to aid the interpretation of analysis results, so do bioinformaticians need a minimum knowledge of the scientific domains in order to optimally develop their tools and workflows.
+The tutorials in the GTN framework are generally aimed at novices and as a result can also be used by bioinformaticians to acquire knowledge of the basic concept involved in different scientific domains.
+However, I would love to see a project conceptually similar to the GTN training materials framework, but explicitly aimed at training bioinformaticians in the relevant biological concepts.
 
 
 \section{Use Cases}
@@ -141,7 +183,7 @@ While the focus of development in this project initially lay with improving the 
 The concepts and tools described in the previous sections were applied to two separate use cases. Chapters~\ref{chapter:fusiongenes} and~\ref{chapter:virtualnormal} describe the creation of analysis tools and pipelines for variant analysis in prostate cancer research. In Chapter~\ref{chapter:microbiota}, Galaxy-based analysis pipelines were developed and tested for the application of NGS-based microbiota profiling for clinical diagnostics.
 
 
-\subsection{Cancer Analysis: Fusion Gene Detection}
+\subsection{Cancer Analysis: Structural Variant Analysis}
 \subsubsection{The Bio}
 
 Cancer is a disease of the genome, where DNA mutations accumulate over time and wreak havoc on the cell. Our best hope in defeating this disease lies in the full characterization of the cancer cell, not only in terms of their observed mutational signatures, but also the mechanisms behind these mutational landscapes.
@@ -150,7 +192,8 @@ While small-scale mutations that affect the protein-coding regions of the genome
 
 Large-scale genomic rearrangements have the potential to lead to the generation of hybrid genes known as fusion genes.
 Accurate detection of such fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
-Prostate cancer was among the first solid tumours demonstrated to harbour frequent large-scale genomic rearrangements, demonstrated by the discovery of the \emph{TMPRSS2-ERG} fusion gene, which was found to be present in approximately 50\% of all prostate cancers \cite{tomlins2005recurrent}. Subsequent studies have shown that point-mutations occur relatively infrequently in prostate cancer as compared to structural variations and extensive copy-number variation, suggesting that it is these large-scale genomic rearrangements that are the primary driver of prostate cancer progression \cite{taylor2010integrative,rubin2011common}.
+Prostate cancer was among the first solid tumours demonstrated to harbour frequent large-scale genomic rearrangements, demonstrated by the discovery of the \emph{TMPRSS2-ERG} fusion gene, which was found to be present in approximately 50\% of all prostate cancers \cite{tomlins2005recurrent}.
+Subsequent studies have shown that point-mutations occur relatively infrequently in prostate cancer as compared to structural variations and extensive copy-number variation, suggesting that it is these large-scale genomic rearrangements that are the primary driver of prostate cancer progression \cite{taylor2010integrative,rubin2011common}.
 
 Understanding the mechanisms behind the acquisition of these structural variations will provide valuable insights into tumor progression.
 While historically the acquisition of mutations in tumour cells has been thought of as a gradual and incremental process, subsequent insights have uncovered several mutational processes capable of generating large numbers of mutations in a single event \cite{cortes2020comprehensive,willis2015}.
@@ -200,17 +243,17 @@ While iFUSE provides valuable aid in interpretation on a per-event basis through
 Both the iFUSE application, the Circos Galaxy wrappers, and the other tools and visualisations created in this chapter are open-source and publicly available on an example server, and are accompanied by extensive documentation to enable re-use by institutes that may have legal restrictions about the use of clinical samples on public servers.
 
 If we want to go beyond the mere detection of chromothripsis to the prediction of the effects of these catastrophic events on the cell, we will have to fully reconstruct the tumour genome.
-While algorithms have been developed for the reconstruction of structurally rearranged genomes \cite{prego,Baca2013}, none of these methods is currently capable of handling the high degree of rearrangement observed in some cancers, let alone those displaying chromothripsis.
+While algorithms have been developed for the reconstruction of structurally rearranged genomes \cite{prego,Baca2013}, none of these methods is currently capable of handling the high degree of rearrangement observed in some cancers, let alone those harbouring chromothripsis.
 This appears to be a limitation of the power of the data yielded by short-read techniques, rather than a shortcoming of the algorithmic methods.
 The recent advances in long-read sequencing techniques will provide valuable improvements for reconstructing cancer genomes impacted by chromothripsis by providing reads spanning multiple breakpoints.
 Indeed, a recent paper described the successful reconstruction of a genome displaying chromothripsis in a patient with the rare genetic Langer–Giedion syndrome \cite{lei2020long}.
-Similar approaches can be used to reconstruct tumour genomes and have the potential to significantly increase biological insight into the effects of chromothripsis events on the cell.
+Similar approaches could be used to reconstruct tumour genomes and have the potential to significantly increase biological insight into the effects of chromothripsis events on the cell.
 
 \subsection{Cancer Analysis: Somatic Mutation Determination}
 \subsubsection{The Bio}
 One of the main challenges in analysis of oncological samples is the identification of those mutations that potentially function as oncogenic drivers, and the large number of passenger mutations or polymorphisms present in the germline of the patient that are typically deemed to be functionally benign~\cite{lawrence2013mutational}. To this end, a sample of normal tissue from the same individual is often sequenced in conjunction with the tumour sample. This allows the subtraction of germline variants from the set of mutations detected in the cancer sample, in order to narrow down the set of potential driver mutations. However, in practice such an associated normal sample may not always be available, for a variety of reasons. In such cases, an alternative approach is required.
 
-Given the observation that the majority of any individuals germline variants are polymorphic and observed frequently throughout the human population~\cite{10002010map,10002012integrated}, in combination with the exponential increase in publicly available genomic datasets, we explored the feasibility of constructing a so-called \emph{virtual normal}, consisting of a reference set of variants found in the population. Chapter \ref{chapter:virtual-normal} describes this investigation.
+Given the observation that the majority of any individuals germline variants are polymorphic and observed frequently throughout the human population~\cite{10002010map,10002012integrated}, in combination with the exponential increase in publicly available genomic datasets, we explored the feasibility of constructing a so-called \emph{virtual normal}, consisting of a reference set of variants found in the population. Chapter \ref{chapter:virtualnormal} describes this investigation.
 
 Our approach used a set of over 900 publicly available whole genomes from healthy, ethnically diverse individuals. We combined this with the customary approach of annotating variants for presences in several online databases of polymorphism in the human population. We tested the performance of our method using 4 different tumour samples with associated normal samples, 2 of which had been sequenced on two different platforms (Complete Genomics and Illumina).
 
@@ -268,7 +311,7 @@ The field of bioinformatics is in a constant state of flux, with data being gene
 As sequencing technologies continue to evolve, so will the entire ecosystem of bioinformatics tools and algorithms surrounding them.
 The majority of  microbiota profiling has been limited to a single hypervariable region of the 16S rRNA gene, but as long-read technologies mature, whole-gene sequencing of the 16S gene may increase resolution and allow for taxonomic determination down to the species level, which will greatly increase its utility in clinical applications \cite{toma2014single,franzen2015improved}.
 Long-read technologies are equally promising in cancer analyses, where they have the potential to span large-scale structural variants and greatly aid in the reconstruction of highly rearranged tumour genomes or even chromosomes affected by chromothripsis \cite{norris2016nanopore,nattestad2018complex}.
-Currently such technologies are limited due to a high error rate as compared to traditional short-read sequencing technologies, but these error rates are quickly approaching competitive levels~\cite{kraft2019long}.
+Currently, such technologies are limited due to a high error rate as compared to traditional short-read sequencing technologies, but these error rates are quickly approaching competitive levels~\cite{kraft2019long}.
 A further challenge is the limited availability of tools in the community aimed at the use of such relatively novel technologies, which will be remedied by the simple passage of time, and as the technologies improve, so does the incentive to develop tools capable of analysing the resulting data.
 
 Similarly, the advent of single-cell sequencing technologies has the potential to greatly aid cancer genetics research by providing an accurate view of the state of a single cell within a tumour. This allows for the characterization intratumor heterogeneity by sampling physically distinct locations, as well as for the exploration of the role of rare cells in tumor progression \cite{navin2015first}.
