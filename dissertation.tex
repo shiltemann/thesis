@@ -75,8 +75,7 @@
 
 \newcommand*\cleartoleftpage{%
   \clearpage
-  \ifodd\value{page}
-  \else\hbox{}\newpage\fi
+  \ifodd\value{page} \else \hbox{}\newpage \fi
 }
 
 \begin{document}
@@ -84,7 +83,7 @@
 % the front matter
 %\include{frontmatter/cover}
 \include{frontmatter/cover_jigsaw}
-%\include{frontmatter/cover_jigsaw_everyone}
+\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
 %\include{frontmatter/cover3}
 
