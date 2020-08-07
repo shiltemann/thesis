@@ -30,7 +30,7 @@ She finds some tools in the literature but when she tries to install them, she s
 She gets access to a Linux compute server, but the tool she wants does not install properly.
 There are no good instructions on how to fix the problem.
 She tries a different tool, which does install, but when she runs it on her own data, she gets some cryptic error messages.
-\emph{"Only bioinformaticians could make sense of all this!"}, she sighs.
+\emph{``Only bioinformaticians could make sense of all this!''}, she sighs.
 
 Then somebody tells her about Galaxy.
 It has the tools she wants, and she doesn't even have to install anything, all she has to do is click buttons in her browser!
@@ -77,7 +77,7 @@ She can use this time to add new tools to Galaxy, create workflows for the group
 \setcounter{section}{-1}
 
 
-\emph{"Bioinformatics has become too central to biology to be left to specialist bioinformaticians"} notes Lincoln Stein in 2008 \cite{stein2008bioinformatics}.
+\emph{``Bioinformatics has become too central to biology to be left to specialist bioinformaticians''} notes Lincoln Stein in 2008 \cite{stein2008bioinformatics}.
 And indeed, bioinformatics now plays a vital role in almost every biological and biomedical research project.
 Data is being generated at an exponential rate, but bioinformaticians are not,  and it is not scalable to leave the analysis of all this data to specialist bioinformaticians.
 Much of the discussion around the challenge of scaling to meet the needs of this data deluge tends to focus on the need for scaling up compute resources and data storage.
@@ -90,7 +90,7 @@ This entails making bioinformatics tools and pipelines accessible and easy to us
 It requires training of researchers not just in how to use these tools, but also basic knowledge about the computational methodologies, and any biases these may introduce that can impact the interpretation of results.
 
 This is not to say there is no role for bioinformaticians.
-It takes a lot of work to make analysis accessible, but by enabling research scientists to handle their own day-to-day analyses, we free up bioinformaticians to focus on the development of new and better tools, for configuring new workflows, improving reproducibility, and developing and delivering training.
+It takes a lot of work to make analysis accessible, but by enabling research scientists to handle their own day-to-day analyses, we free up bioinformaticians to focus on the development of new and better tools, configuring new workflows, improving reproducibility, and developing and delivering training.
 
 Therefore, in this thesis we set out to develop a user-friendly, open, and FAIR bioinformatics framework for NGS analysis, so that we can create a community of researchers who are computationally informed.
 We then applied this paradigm to a series of research projects to illustrate its utility.
@@ -104,13 +104,13 @@ We then applied this paradigm to a series of research projects to illustrate its
 \section{Accessible Bioinformatics}
 
 The main challenge in our aim of scaling the researcher, is making bioinformatics accessible for non-bioinformaticians. This includes not only making analyses easy to use, but also easier to understand and interpret.
-In our approach we used the Galaxy platform to provide a user-friendly interface to bioinformatics analyses. Galaxy does all the heavy lifting of handling installation of the tools and all their dependencies, of optimally scheduling jobs across the compute resources, tracking provenance of analyses, enabling sharing, and much more. This leaves the researcher free to focus the interpretation of their results.
+In our approach we used the Galaxy platform to provide a user-friendly interface to bioinformatics analyses. Galaxy does all the heavy lifting of handling installation of the tools and all their dependencies, of optimally scheduling jobs across the compute resources, tracking provenance of analyses, enabling sharing, and much more. This leaves the researcher free to focus on the interpretation of their results.
 The second main component of our approach to making bioinformatics more accessible consists of providing extensive bioinformatics training. To this end, we founded the Galaxy training materials project, a collaborative framework for development and maintenance of training materials using the Galaxy framework.
 
 
 \subsection{Galaxy as a user-friendly workflow platform}
 
-The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} enables researchers to run complex data analysis without programming expertise, directly from their web browser. While there are several workflow management systems \cite{clcbio,taverna,onlinehpc,anduril,molgenis}, some of these solutions are commercial and may not be affordable to many labs, others require local installation, prohibiting scaling to accomodate large datasets. Furthermore, many solutions are not open source, meaning only the core development team can provide updates to the platform, limiting flexibility of the platform to its end users.
+The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} enables researchers to run complex data analysis without programming expertise, directly from their web browser. While there are several workflow management systems \cite{clcbio,taverna,onlinehpc,anduril,molgenis}, some of these solutions are commercial and may not be affordable to many labs, and others require local installation, prohibiting scaling to accomodate large datasets. Furthermore, many solutions are not open source, meaning only the core development team can provide updates to the platform, limiting flexibility of the platform to its end users.
 
 In contrast, Galaxy is completely free and open-source, and perhaps its most attractive asset is the very large and active user and developer community behind it. Galaxy encourages feedback and code contributions from its users to improve the platform, and evolve along with the ever-changing landscape that is bioinformatics. This paradigm means that anybody is able to add features to Galaxy or provide bug fixes, and can share those enhancements back to the main code base, thereby enabling a much faster and more flexible development cycle.
 
@@ -150,7 +150,7 @@ Since the development of the iReport tool, the need for a reporting system more 
 
 \subsection{Training}
 Training is an essential component in the dissemination of accessible bioinformatics tools and workflows. The Galaxy platform is especially well-suited for the delivery of bioinformatics training because it provides a layer of abstraction that allows trainees to focus on the bioinformatics \emph{concepts} rather than the implementation details of the tools. Without this separation, trainees would have to simultaneously learn about the UNIX commandline or programming environment, on top of the bioinformatics topics at hand. This would increase the cognitive load and hamper the learning process~\cite{paas2003cognitive}. Given this observation of Galaxy's suitability for use in training, the Galaxy Training Network (GTN)~\cite{url-gtn} was formed; a loosely-defined open group of instructors around the world who use Galaxy for training purposes. Initially there was little coordination between the different instructors in terms of materials used, and thus a lot of duplication of effort. There was a clear need for centralisation of training materials and knowledge sharing within the trainer community. Chapter~\ref{chapter:training} describes the community-driven web-based framework for the delivery of bioinformatics training using the Galaxy platform that we developed in response to this need.
-Our aim was to create a fully open and transparent framework that is accessible and easy to use for both trainees and trainers. The materials are centered around \emph{research stories}; usually the recreation of results described in published papers. This gives trainees the confidence that the tools and pipelines are practically useful and of publication-level quality, as well providing them with the opportunity to dive deeper into the science and informatics behind the training. Since the creation of this training platform, a number of scientific publications have included Galaxy training materials as a form of documentation and illustration of the presented analysis pipelines~\cite{gruning2017rna,blank2018disseminating,batut2017asaim,hiltemann2018galaxy}.
+Our aim was to create a fully open and transparent framework that is accessible and easy to use for both trainees and trainers. The materials are centered around \emph{research stories}; usually the recreation of results described in published papers. This gives trainees the confidence that the tools and pipelines are practically useful and of publication-level quality, as well as providing them with the opportunity to dive deeper into the science and informatics behind the training. Since the creation of this training platform, a number of scientific publications have included Galaxy training materials as a form of documentation and illustration of the presented analysis pipelines~\cite{gruning2017rna,blank2018disseminating,batut2017asaim,hiltemann2018galaxy}.
 
 One of the main challenges in designing this framework was to allow easy contributions from instructors, without the need for any web development knowledge. To this end, we used Jekyll templating~\cite{url-jekyll}, which allows tutorials to be written in the simple and accessible markup language called Markdown~\cite{url-markdown} which can be rendered as HTML\@. Analogous to how Galaxy allows scientists to run analyses while being abstracted away from the implementation layer of the tools, this approach allows instructors to create web pages for their tutorials without being concerned with the syntax and intricacies of the web application layer.
 
@@ -179,7 +179,7 @@ The concepts and tools described in the previous sections were applied to two se
 
 Cancer is a disease of the genome, where DNA mutations accumulate over time and wreak havoc on the cell. Our best hope in defeating this disease lies in the full characterization of the cancer cell, not only in terms of their observed mutational signatures, but also the mechanisms behind these mutational landscapes.
 
-While small-scale mutations that affect the protein-coding regions of the genome have been widely studied, the impact of non-coding mutations and large-scale structural variants (SVs) in cancer remain largely undefined~\cite{cuykendall2017non,khurana2016role}. Now that whole-genome sequencing has become more available and affordable, a comprehensive characterization of SVs has become possible.
+While small-scale mutations that affect the protein-coding regions of the genome have been widely studied, the impact of non-coding mutations and large-scale structural variants (SVs) in cancer remains largely undefined~\cite{cuykendall2017non,khurana2016role}. Now that whole-genome sequencing has become more available and affordable, a comprehensive characterization of SVs has become possible.
 
 Large-scale genomic rearrangements have the potential to lead to the generation of hybrid genes known as fusion genes.
 Accurate detection of such fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
@@ -192,7 +192,7 @@ Kataegis (from the greek word for thunderstorm) represents a \emph{mutation stor
 Chromothripsis is a shattering of the genome --often an entire chromosome or chromosome arm-- followed by a highly erroneous repair step \cite{stephens2011massive,maher2012chromothripsis}.
 Chromoplexy (from the Greek \emph{pleko}, which means to weave) is a phenomenon where large chains of rearrangements affecting multiple chromosomes occur \cite{shen2013chromoplexy}. All these mechanisms challenge the classical view of cancer progression as a gradual and step-wise process.
 
-In Chapter~\ref{chapter:vcap} we showed that chromothripsis also occurs in prostate cancer, by describing the identification of chromothripsis in the 5q arm of the VCaP cell line. A very large number of SVs were detected, and copy number varied primarily between two copy number states states, with only sporadic occurrences of a third state. This alternation between a small number of copy number states suggest the rearrangements were precipitated by a single catastrophic event.
+In Chapter~\ref{chapter:vcap} we showed that chromothripsis also occurs in prostate cancer, by describing the identification of chromothripsis in the 5q arm of the VCaP cell line. A very large number of SVs were detected, and copy number varied primarily between two copy number states, with only sporadic occurrences of a third state. This alternation between a small number of copy number states suggest the rearrangements were precipitated by a single catastrophic event.
 Other studies have also observed chromothripsis in other prostate cancer samples \cite{wu2012poly,Baca2013}.
 
 Such a high degree of genomic rearrangement has the potential of contributing to cancer progression e.g.\ through activation of oncogenes, or inactivation of tumor suppressor genes.
@@ -209,7 +209,6 @@ Chromothripsis has been observed in many other cancer types as well, with the fr
 A study examining 2,658 WGS patient samples obtained from the ICGC and TCGA projects found pervasive chromothripsis across all 38 cancer types examined. The prevalace varied significantly by tumour type, with liposarcomas (100\%) and osteosarcomas (77\%) on the high end, and thyroid adenocarcinomas (3.3\%) and chronic lymphocytic leukemia (1.2\%) on the lower end of the spectrum \cite{cortes2020comprehensive}.
 It must be noted that due to the variability in detection methods and in the precise definition and criteria of chromothripsis used in different studies, the exact numbers vary significantly in the literature, though the variability across different tumour types is consistently observed.
 Chromothripsis has been shown to be associated with poorer outcome \cite{fontana2018chromothripsis,Hirsch2012,magrangeas2011chromothripsis,molenaar} and accurate detection of the presence of chromothripsis could therefore provide clinically relevant prognostic value.
-
 
 %Prostate cancer is one of the most commonly diagnosed cancer types in men, and while many patients present with an indolent form of the disease, others develop a highly aggressive tumour type, and overall, prostate cancer is among the top 10 leading causes of cancer-related deaths in men~\cite{jemal2010global}.
 %Cancer is a disease of the genome, where accumulation of mutations over time drive the progression of the illness. Genome sequencing approaches can be used to extensively explore these genomic alterations in cancer, including small variants and larger structural variants (SVs), within or ouside genes.
@@ -379,7 +378,7 @@ Similarly, analysis software and tools also greatly benefit from this open scien
 
 
 \begin{center}
-\emph{“No man is an island, entire of itself; every man is a piece of the continent, a part of the main."} - John Donne
+\emph{``No man is an island, entire of itself; every man is a piece of the continent, a part of the main.''} - John Donne
 \end{center}
 
 \bibliographystyle{ieeetr}
