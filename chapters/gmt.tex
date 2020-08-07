@@ -94,7 +94,7 @@ To compare the output from a single experiment or across multiple experiments we
 \section*{Methods}
 
 \subsection*{Handling large datasets}
-Large-scale analyses have become the norm in the field, both large in disk space as in the number of files, and this can pose a challenge for analysis. For large files, Galaxy offers the option of uploading via FTP rather than web transfer. The introduction of the concept of "collections" in Galaxy has enabled users to analyze datasets consisting of a large number of files (>100K) as easily as they would a single file.
+Large-scale analyses have become the norm in the field, both large in disk space as in the number of files, and this can pose a challenge for analysis. For large files, Galaxy offers the option of uploading via FTP rather than web transfer. The introduction of the concept of ``collections'' in Galaxy has enabled users to analyze datasets consisting of a large number of files (>100K) as easily as they would a single file.
 
 \subsection*{Galaxy mothur Toolset}
 Many mothur components support parallelization, and our Galaxy wrappers will run these components with the maximum number of CPUs allotted to them by the Galaxy administrator. In order to diagnose potential failures, Galaxy outputs the full standard and error logs, which the users can inspect. Furthermore, we have contributed mothur datatype definitions to the Galaxy core code, meaning that the users will be protected from inputting the wrong datasets and thus reduce the number of errors they will make with the tools. All tools in GmT use only conda dependencies, making their installation in Galaxy a painless experience that requires nothing more than a single press of a button.
