@@ -83,20 +83,20 @@
 % the front matter
 %\include{frontmatter/cover}
 \include{frontmatter/cover_jigsaw}
-\include{frontmatter/cover_jigsaw_everyone}
+%\newpage \thispagestyle{empty} This page was intentionally left blank. %\newpage
+%\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
 %\include{frontmatter/cover3}
 
-\setcounter{page}{0}
-
 \input{frontmatter/personalize}
+\maketitle
 
-%\maketitle
 
-
-%\ciopyrightpage
+%\copyrightpage
 %\abstractpage
-\dedicationpage
+%\dedicationpage
+
+\setcounter{page}{0}
 
 \begin{justify}
 \include{frontmatter/foreword}
