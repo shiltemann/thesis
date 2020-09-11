@@ -77,7 +77,7 @@ She can use this time to add new tools to Galaxy, create workflows for the group
 \setcounter{section}{-1}
 
 
-\emph{``Bioinformatics has become too central to biology to be left to specialist bioinformaticians''} notes Lincoln Stein in 2008 \cite{stein2008bioinformatics}.
+\emph{``Bioinformatics has become too central to biology to be left to specialist bioinformaticians''} notes Lincoln Stein in 2008~\cite{stein2008bioinformatics}.
 And indeed, bioinformatics now plays a vital role in almost every biological and biomedical research project.
 Data is being generated at an exponential rate, but bioinformaticians are not,  and it is not scalable to leave the analysis of all this data to specialist bioinformaticians.
 Much of the discussion around the challenge of scaling to meet the needs of this data deluge tends to focus on the need for scaling up compute resources and data storage.
@@ -110,11 +110,11 @@ The second main component of our approach to making bioinformatics more accessib
 
 \subsection{Galaxy as a user-friendly workflow platform}
 
-The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} enables researchers to run complex data analysis without programming expertise, directly from their web browser. While there are several workflow management systems \cite{clcbio,oinn2004taverna,onlinehpc,anduril,molgenis}, some of these solutions are commercial and may not be affordable to many labs, and others require local installation, prohibiting scaling to accomodate large datasets. Furthermore, many solutions are not open source, meaning only the core development team can provide updates to the platform, limiting flexibility of the platform to its end users.
+The Galaxy project~\cite{giardine2005galaxy,blankenberg2010galaxy,afgan2016galaxy} enables researchers to run complex data analysis without programming expertise, directly from their web browser. While there are several workflow management systems~\cite{clcbio,oinn2004taverna,onlinehpc,anduril,molgenis}, some of these solutions are commercial and may not be affordable to many labs, and others require local installation, prohibiting scaling to accomodate large datasets. Furthermore, many solutions are not open source, meaning only the core development team can provide updates to the platform, limiting flexibility of the platform to its end users.
 
 In contrast, Galaxy is completely free and open-source, and perhaps its most attractive asset is the very large and active user and developer community behind it. Galaxy encourages feedback and code contributions from its users to improve the platform, and evolve along with the ever-changing landscape that is bioinformatics. This paradigm means that anybody is able to add features to Galaxy or provide bug fixes, and can share those enhancements back to the main code base, thereby enabling a much faster and more flexible development cycle.
 
-Galaxy continues to increase in popularity, illustrated by the exponential growth of both the number of available tools (over 8000) \cite{galaxytoolshed}, and the number of publication citing Galaxy (almost 10,000) \cite{url-zotero-galaxy}.
+Galaxy continues to increase in popularity, illustrated by the exponential growth of both the number of available tools (over 8000)~\cite{galaxytoolshed}, and the number of publication citing Galaxy (almost 10,000)~\cite{url-zotero-galaxy}.
 \hyperref[chapter:galaxy]{\textbf{Chapter~\ref{chapter:galaxy}}} outlines the ongoing development in the Galaxy framework. One of the major improvements was in the handling of big data. Galaxy addresses this issue by introducing the concept of data collections. This allows users to easily scale their analyses up from single datasets to hundreds of thousands of samples at once, using the exact same procedures they have grown accustomed to.
 However, the greater challenge of big datasets is not just the processing of the files, but rather managing all this data in an effective way.
 To support the organisation of these large number of samples in Galaxy, the rule-based uploader was created, a novel feature which essentially allows sample sheets to be uploaded alongside the raw data files, and the metadata stored within them to be coupled to the datasets in Galaxy.
@@ -125,8 +125,8 @@ However, until now Galaxy has focused mainly on researchers, and in order to mak
 Firstly, a \emph{locked-down}, workflow-centric user interface is required; in contrast with research applications where Galaxy's great flexibility is an asset, for clinical applications this flexibility can be a hindrance, as it goes hand in hand with added complexity.
 Unlike researchers, clinicians do not typically need to play around with their datasets and try different tools; their analysis options should be limited to a small set of predefined and thoroughly validated analysis pipelines.
 While Galaxy does not (yet) offer such an alternate user view, it does offer API access to its framework, enabling custom front-ends to be developed on top of the Galaxy back-end.
-The need for such a simplified user interface to Galaxy is exemplified by the number of projects that have developed such a customized front-end to the Galaxy interface \cite{klingstrom2017galaksio,matthews2018integrated,lemoine2019ngphylogeny,SEEK2015}, including several in-house projects at the ErasmusMC\@.
-For example, the IRIDA (Integrated Rapid Infectious Disease Analysis) project \cite{matthews2018integrated} is an open-source platform for public health genomics, which is currently in use by the Canadian public health agency to track infectious disease outbreaks.
+The need for such a simplified user interface to Galaxy is exemplified by the number of projects that have developed such a customized front-end to the Galaxy interface~\cite{klingstrom2017galaksio,matthews2018integrated,lemoine2019ngphylogeny,SEEK2015}, including several in-house projects at the ErasmusMC\@.
+For example, the IRIDA (Integrated Rapid Infectious Disease Analysis) project~\cite{matthews2018integrated} is an open-source platform for public health genomics, which is currently in use by the Canadian public health agency to track infectious disease outbreaks.
 It uses Galaxy as its analysis platform, but provides a custom user interface tailored specifically to the needs of its users. This approach also enabled the project to integrate Galaxy directly with a third-party data management system where users can easily mange their projects and data.
 While Galaxy does not aim to be a data management system, in this big data era it has become increasingly imperative to offer good data management solutions to researchers. Therefore, integrations of Galaxy with third-party data management systems in the future could profoundly increase usability of the platform even further.
 
@@ -134,7 +134,7 @@ We used Galaxy as the main data analysis platform in each of the 3 research proj
 
 
 \subsection{Visualisation and Reporting}
-Visualisation is an essential component to aid in interpretation of big and multidimensional datasets. Tools such as Circos \cite{circos} allow for the visualisation of multiple large and complex datasets in a single circular plot. Circos is highly customizable, but this high degree of flexibility comes paired with a high degree of complexity and a steep learning curve. To improve the user-friendliness of this tool and improve its interoperability with upstream tools, we developed Galactic Circos (Chapter~\ref{chapter:general}), integrating Circos into Galaxy, and providing a set of preprocessing tools to support integration with a wide range of input file formats.
+Visualisation is an essential component to aid in interpretation of big and multidimensional datasets. Tools such as Circos~\cite{circos} allow for the visualisation of multiple large and complex datasets in a single circular plot. Circos is highly customizable, but this high degree of flexibility comes paired with a high degree of complexity and a steep learning curve. To improve the user-friendliness of this tool and improve its interoperability with upstream tools, we developed Galactic Circos (Chapter~\ref{chapter:general}), integrating Circos into Galaxy, and providing a set of preprocessing tools to support integration with a wide range of input file formats.
 
 The Circos visualisation tool was especially useful in discovery of chromothripsis of the VCaP sample (Chapter~\ref{chapter:vcap}).
 Here the highly rearranged nature of chromosome 5q was instantly obvious in one glance at the circular plot, in a way that simply inspecting the textual files listing the SVs could not convey.
@@ -183,17 +183,17 @@ While small-scale mutations that affect the protein-coding regions of the genome
 
 Large-scale genomic rearrangements have the potential to lead to the generation of hybrid genes known as fusion genes.
 Accurate detection of such fusion genes may aid in the diagnosis or treatment of cancer~\cite{nowell1960chromosome,nowell1961chromosome,druker2001activity,druker2001efficacy}.
-Prostate cancer was among the first solid tumours demonstrated to harbour frequent large-scale genomic rearrangements, demonstrated by the discovery of the \emph{TMPRSS2-ERG} fusion gene, which was found to be present in approximately 50\% of all prostate cancers \cite{tomlins2005recurrent}.
-Subsequent studies have shown that point-mutations occur relatively infrequently in prostate cancer as compared to structural variations and extensive copy-number variation, suggesting that it is these large-scale genomic rearrangements that are the primary driver of prostate cancer progression \cite{taylor2010integrative,rubin2011common}.
+Prostate cancer was among the first solid tumours demonstrated to harbour frequent large-scale genomic rearrangements, demonstrated by the discovery of the \emph{TMPRSS2-ERG} fusion gene, which was found to be present in approximately 50\% of all prostate cancers~\cite{tomlins2005recurrent}.
+Subsequent studies have shown that point-mutations occur relatively infrequently in prostate cancer as compared to structural variations and extensive copy-number variation, suggesting that it is these large-scale genomic rearrangements that are the primary driver of prostate cancer progression~\cite{taylor2010integrative,rubin2011common}.
 
 Understanding the mechanisms behind the acquisition of these structural variations will provide valuable insights into tumor progression.
-While historically the acquisition of mutations in tumour cells has been thought of as a gradual and incremental process, subsequent insights have uncovered several mutational processes capable of generating large numbers of mutations in a single event \cite{cortes2020comprehensive,willis2015}.
-Kataegis (from the greek word for thunderstorm) represents a \emph{mutation storm} of localised hypermutations, and has been observed in multiple cancer types \cite{nik2012mutational,davis2014somatic}.
-Chromothripsis is a shattering of the genome --often an entire chromosome or chromosome arm-- followed by a highly erroneous repair step \cite{stephens2011massive,maher2012chromothripsis}.
-Chromoplexy (from the Greek \emph{pleko}, which means to weave) is a phenomenon where large chains of rearrangements affecting multiple chromosomes occur \cite{shen2013chromoplexy}. All these mechanisms challenge the classical view of cancer progression as a gradual and step-wise process.
+While historically the acquisition of mutations in tumour cells has been thought of as a gradual and incremental process, subsequent insights have uncovered several mutational processes capable of generating large numbers of mutations in a single event~\cite{cortes2020comprehensive,willis2015}.
+Kataegis (from the greek word for thunderstorm) represents a \emph{mutation storm} of localised hypermutations, and has been observed in multiple cancer types~\cite{nik2012mutational,davis2014somatic}.
+Chromothripsis is a shattering of the genome --often an entire chromosome or chromosome arm-- followed by a highly erroneous repair step~\cite{stephens2011massive,maher2012chromothripsis}.
+Chromoplexy (from the Greek \emph{pleko}, which means to weave) is a phenomenon where large chains of rearrangements affecting multiple chromosomes occur~\cite{shen2013chromoplexy}. All these mechanisms challenge the classical view of cancer progression as a gradual and step-wise process.
 
 In Chapter~\ref{chapter:vcap} we showed that chromothripsis also occurs in prostate cancer, by describing the identification of chromothripsis in the 5q arm of the VCaP cell line. A very large number of SVs were detected, and copy number varied primarily between two copy number states, with only sporadic occurrences of a third state. This alternation between a small number of copy number states suggest the rearrangements were precipitated by a single catastrophic event.
-Other studies have also observed chromothripsis in other prostate cancer samples \cite{wu2012poly,Baca2013}.
+Other studies have also observed chromothripsis in other prostate cancer samples~\cite{wu2012poly,Baca2013}.
 
 Such a high degree of genomic rearrangement has the potential of contributing to cancer progression e.g.\ through activation of oncogenes, or inactivation of tumor suppressor genes.
 To investigate this further, we evaluated the 573 rearrangements involving the impacted region of chromosome 5 for their potential to lead to the formation of fusion genes, using the iFUSE application presented in Chapter~\ref{chapter:ifuse}.
@@ -205,10 +205,10 @@ Therefore, our results suggests that chromothripsis does not preferentially impa
 Overall, our research has shown that any studies involving this commonly used prostate cancer cell line should take the presence of chromothripsis on chromosome 5q into account.
 Furthermore, this study highlights the potential utility of this cell line as a model for research on chromothripsis.
 
-Chromothripsis has been observed in many other cancer types as well, with the frequency of occurrence varying greatly across tumour types \cite{cortes2020comprehensive,voronina2020landscape,Koltsova2019,kloosterman2014prevalence}.
-A study examining 2,658 WGS patient samples obtained from the ICGC and TCGA projects found pervasive chromothripsis across all 38 cancer types examined. The prevalace varied significantly by tumour type, with liposarcomas (100\%) and osteosarcomas (77\%) on the high end, and thyroid adenocarcinomas (3.3\%) and chronic lymphocytic leukemia (1.2\%) on the lower end of the spectrum \cite{cortes2020comprehensive}.
+Chromothripsis has been observed in many other cancer types as well, with the frequency of occurrence varying greatly across tumour types~\cite{cortes2020comprehensive,voronina2020landscape,Koltsova2019,kloosterman2014prevalence}.
+A study examining 2,658 WGS patient samples obtained from the ICGC and TCGA projects found pervasive chromothripsis across all 38 cancer types examined. The prevalace varied significantly by tumour type, with liposarcomas (100\%) and osteosarcomas (77\%) on the high end, and thyroid adenocarcinomas (3.3\%) and chronic lymphocytic leukemia (1.2\%) on the lower end of the spectrum~\cite{cortes2020comprehensive}.
 It must be noted that due to the variability in detection methods and in the precise definition and criteria of chromothripsis used in different studies, the exact numbers vary significantly in the literature, though the variability across different tumour types is consistently observed.
-Chromothripsis has been shown to be associated with poorer outcome \cite{fontana2018chromothripsis,Hirsch2012,magrangeas2011chromothripsis,molenaar} and accurate detection of the presence of chromothripsis could therefore provide clinically relevant prognostic value.
+Chromothripsis has been shown to be associated with poorer outcome~\cite{fontana2018chromothripsis,Hirsch2012,magrangeas2011chromothripsis,molenaar} and accurate detection of the presence of chromothripsis could therefore provide clinically relevant prognostic value.
 
 %Prostate cancer is one of the most commonly diagnosed cancer types in men, and while many patients present with an indolent form of the disease, others develop a highly aggressive tumour type, and overall, prostate cancer is among the top 10 leading causes of cancer-related deaths in men~\cite{jemal2010global}.
 %Cancer is a disease of the genome, where accumulation of mutations over time drive the progression of the illness. Genome sequencing approaches can be used to extensively explore these genomic alterations in cancer, including small variants and larger structural variants (SVs), within or ouside genes.
@@ -221,7 +221,7 @@ Chromothripsis has been shown to be associated with poorer outcome \cite{fontana
 
 
 
-%chromoplexy (chains) in PCa - \cite{Baca2013}
+%chromoplexy (chains) in PCa -~\cite{Baca2013}
 
 
 \subsubsection{The Informatics}
@@ -232,7 +232,7 @@ While iFUSE provides valuable aid in interpretation on a per-event basis through
 Both the iFUSE application, the Circos Galaxy wrappers, and the other tools and visualisations created in this chapter are open-source and publicly available on an example server, and are accompanied by extensive documentation to enable re-use by institutes that may have legal restrictions about the use of clinical samples on public servers.
 
 If we want to go beyond the mere detection of chromothripsis to the prediction of the effects of these catastrophic events on the cell, we will have to fully reconstruct the tumour genome.
-While algorithms have been developed for the reconstruction of structurally rearranged genomes \cite{prego,Baca2013}, none of these methods is currently capable of handling the high degree of rearrangement observed in some cancers, let alone those harbouring chromothripsis.
+While algorithms have been developed for the reconstruction of structurally rearranged genomes~\cite{prego,Baca2013}, none of these methods is currently capable of handling the high degree of rearrangement observed in some cancers, let alone those harbouring chromothripsis.
 This appears to be a limitation of the power of the data yielded by short-read techniques, rather than a shortcoming of the algorithmic methods.
 The recent advances in long-read sequencing techniques will provide valuable improvements for reconstructing cancer genomes impacted by chromothripsis by providing reads spanning multiple breakpoints.
 Indeed, this method was employed recently for the successful reconstruction of a genome impacted chromothripsis in a patient with the rare genetic Langer–Giedion syndrome~\cite{lei2020long}.
@@ -334,7 +334,7 @@ Data are being generated at an exponential rate, with estimates placing the stor
 But storage space is only a small part of the story. The far greater challenge will lie in the data stewardship; the efficient handling of this data in a way that it can be easily searched, accessed, and shared within the worldwide scientific community.
 Initiatives such as the FAIR data project~\cite{wilkinson2016fair} are aimed at providing the necessary best practice guidelines needed for efficient data management and analyses in the genomic big data era. Beyond the technical challenges posed by this data explosion lie the even more complex and often legal questions of data privacy and security.
 These efforts must occur at different levels of organisation; each institute should provide guidelines to standardize data management within its various departments. National-level initiatives may then focus on interoperability between the various systems in use, which in turn can be used by international efforts to provide global data harmonization solutions.
-Many such international initiatives exist, such as the Global Alliance for Genomics and Health (GA4GH) \cite{ga4gh}, ELIXIR \cite{elixir} and CINECA \cite{cineca}, which are currently coordinating their efforts to provide interoperability layers on top of existing data management solutions.
+Many such international initiatives exist, such as the Global Alliance for Genomics and Health (GA4GH)~\cite{ga4gh}, ELIXIR~\cite{elixir} and CINECA~\cite{cineca}, which are currently coordinating their efforts to provide interoperability layers on top of existing data management solutions.
 When generally adopted, these solutions will promote interoperability of data, and allow for a federated data analysis model.
 
 
@@ -347,10 +347,10 @@ Initiatives such as CWL (Common Workflow Language)~\cite{amstutz2016common} exis
 As bioinformatics and data analysis skills are increasingly becoming prerequisites for scientific research, scalable and flexible educational resources are required for the training of researchers and clinicians dealing with these datasets.
 Delivery of training in remote or economically underprivileged areas poses additional challenges; such communities often lack experienced local instructors as well as the technical infrastructure required for large data analysis.
 The Galaxy platform provides a step towards alleviating the latter, by allowing its users to access powerful computer resources with nothing more than a web browser. One way to address the lack of access to experienced instructors in geographically or economically isolated areas is the delivery of hybrid trainings.
-In such an approach, instructors do not travel, but teach in front of a camera, and a live feed is streamed to one or more satellite locations. Each of these locations consists of a classroom with students and local supporting instructors who can communicate with the primary instructors. In the Gallantries project \cite{gallantries} we recently prototyped such an approach for delivery of Galaxy workshops.
+In such an approach, instructors do not travel, but teach in front of a camera, and a live feed is streamed to one or more satellite locations. Each of these locations consists of a classroom with students and local supporting instructors who can communicate with the primary instructors. In the Gallantries project~\cite{gallantries} we recently prototyped such an approach for delivery of Galaxy workshops.
 With both Galaxy itself and the associated training materials being freely available on the internet, this approach greatly reduced the effort and cost of workshop organisation.
 Instructors could be enlisted from various geographical locations without the funds and time usually required for travel. Within the Gallantries pilot project we tested this approach through 2 workshops with 5 satellite locations, and instructors residing in 4 different locations.
-In the coming years we will continue developing and scaling up this hybrid training approach for Galaxy. Furthermore, this project was a collaboration between the Galaxy and Carpentries \cite{wilson2006software} communities, optimally utilizing the combined knowledge and experience these two communities represent, and fostering closer ties between distinct but complementary scientific training communities.
+In the coming years we will continue developing and scaling up this hybrid training approach for Galaxy. Furthermore, this project was a collaboration between the Galaxy and Carpentries~\cite{wilson2006software} communities, optimally utilizing the combined knowledge and experience these two communities represent, and fostering closer ties between distinct but complementary scientific training communities.
 
 
 \subsection{Bioinformatics in the Clinic}
