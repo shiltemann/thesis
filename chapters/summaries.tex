@@ -14,15 +14,15 @@
 \includegraphics[height=10em]{frontmatter/images/samenvatting.png}
 \end{figure}
 
-\begin{enumerate}[label=\ref{chapter:summary}.\arabic*]
+\begin{enumerate}[label=\color{emc-dark-blue}{\ref{chapter:summary}.\arabic*}]
 \itemsep-0.5em
 \setcounter{enumi}{-1}
-\item Summary (English)
-\item Summary (Dutch)
+\item English Summary
+\item Dutch Summary
 \end{enumerate}
 
 
-\section{Summary}
+\section{Summary}\label{section:summary-en}
 \phantomsection\addcontentsline{toc}{section}{Summary}
 
 DNA is often referred to as the \emph{source code of life}; it encodes the proteins that control the functioning of our cells and plays a huge role in our health. The publication of the human reference genome in 2003, combined with sustained technological advances in genome sequencing ever since, have transformed the field biomedical research, and have led to an explosion of the amount of data being generated.
@@ -49,7 +49,7 @@ In addition to these two research-oriented use cases, \textbf{Chapter~\ref{chapt
 First, we integrated the full mothur suite of 125+ tools into Galaxy, and then combined them into a workflow. In order to accommodate the specific experimental setup employed by the Streeklab, we additionally developed a set of auxiliary Galaxy tools to supplement the standard analysis pipeline.
 These tools, as well as several preexisting Galaxy tools were integrated into an end-to-end workflow, with an iReport at the end for results reporting. This workflow was carefully tested and validated in collaboration with the Streeklab. We also developed Docker images with the full Galaxy setup so that it can be run in-house by the Streeklab.
 
-For each of these use cases, we adhered to the bioinformatics best-practices and Open Science principles outlined in the introduction, and all the code is freely available in GitHub. Training materials have also been developed in order to aid not only our own researchers and clinicians in the use of the tools and workflows we developed, but also others around the world. All these training materials have deposited in the Galaxy training repository described in Chapter ~ref{chapter:training}.
+For each of these use cases, we adhered to the bioinformatics best-practices and Open Science principles outlined in the introduction, and all the code is freely available in GitHub. Training materials have also been developed in order to aid not only our own researchers and clinicians in the use of the tools and workflows we developed, but also others around the world. All these training materials have deposited in the Galaxy training repository described in Chapter~\ref{chapter:training}.
 
 
 \section{Samenvatting}
@@ -59,7 +59,7 @@ DNA word vaak beschouwd als de \emph{broncode van het leven}; het encodeert
 de eiwitten die onze celprocessen beinvloeden, en speelt een belangrijke rol in onze gezondheid.
 De publicatie van het humane referentie genoom in 2003, in combinatie met continue technologische vooruitgangen sindsdien, hebben het veld van biomedisch onderzoek volkomen getransformeerd, en hebben geresulteerd in een explosie van de hoeveelheid data die gegenereerd wordt in de biomedische wetenschappen.
 
-Wetenschappers worden echter vaak niet opgeleid in de benodigde vaardigheden om deze efficient om te gaan met deze grote hoeveelheden complexe datasets en ze te analyseren.
+Wetenschappers worden echter meestal niet opgeleid in de benodigde vaardigheden om deze efficient om te gaan met deze grote hoeveelheden complexe datasets en ze te analyseren.
 Verder zijn bioinformatica tools en pijplijnen vaak erg complex, en zijn programmeervaardigheden meestal benodigd om ze te kunnen gebruiken. Hierdoor onstaat de situatie waarin onderzoekers vaak afhankelijk zijn van gespecialiseerde bioinformatici om hun analyses uit te voeren.
 Door deze vaardigheidskloof kan bioinformatica vaak aanvoelen als een \emph{black box} voor de onderzoekers en clinici die de resultaten van deze analyse moeten interpreteren.
 Desalniettemin is een basiskennis van de achterliggende computationele concepten vaak essentieel voor de accurate interpretatie van de resultaten.
@@ -84,7 +84,7 @@ In \textbf{Hoofdstuk~\ref{chapter:training}} hebben we een de Galaxy Training Re
 In dit project hebben we een centrale repository ontwikkeld voor het verzamelen en onderhouden van wetenschappelijke training materialen die begruik maken van het Galaxy platform.
 Door de grootschalige aard van dit project, is het zo opgezet dat gebruikersgemeenschap rond Galaxy het project samen draaiend kan houden, en gebruik gemaakt kan worden van de gecombineerde expertise van wetenschappers en opleiders over de hele wereld.
 
-Vervolgens hebben we deze aanpak toegepast op een aantal casussen. In \textbf{Hoofdstuk \ref{chapter:fusiongenes}} hebben we fusie genen in een prostaatkanker cellijn onderzocht. Hiervoor hebben we eerst een applicatie ontwikkeld (\emph{iFUSE}) voor het visualiseren van structurele varianten en het identificeren van fusiegen kandidaten.
+Vervolgens hebben we deze aanpak toegepast op een aantal casussen. In \textbf{Hoofdstuk~\ref{chapter:fusiongenes}} hebben we fusie genen in een prostaatkanker cellijn onderzocht. Hiervoor hebben we eerst een applicatie ontwikkeld (\emph{iFUSE}) voor het visualiseren van structurele varianten en het identificeren van fusiegen kandidaten.
 Door gebruik van deze applicatie, in combinatie met de Circos tool, waren we in staat een groot aantal potentiele fusie genen te identificeren in de VCaP cellijn, en hebben we deze bevindingen in het lab kunnen bevestigen.
 Verder hebben we zo ook kunnen vaststellen dat de q arm van chromosoom 5 \emph{chromothripsis} vertoonde, een phenomeen waarbij een deel van het genoom verbrijzeld wordt, waarna het genetische materiaal vervolgens op inaccurate wijze weer aan elkaar geplakt wordt door de reparatiemechanismen van de cel.
 
@@ -94,7 +94,7 @@ Echter, zo'n geassocieerd normaal sample is niet altijd beschikbaar.
 In zulke gevallen wilden we achterhalen of deze aanpak gesimuleerd kon worden door het gebruiken van een grote set van monsters afkomstig van gezonde, ongerelateerde, ethnisch diverse individuelen.
 Hiervoor hebben we eerst een set analyse tools geidentificeerd en ontwikkeld, en deze in Galaxy beschikbaar gemaakt, en ze gecombineerd tot een pijplijn.
 
-Naast deze twee onderzoeks georienteerde toepassingen, beschrijven we in \textbf{hoofdstuk \ref{chapter:microbiota}} een derde, clinisch georienteerde casus. Hier hebben we het MYcrobiota platform ontwikkeld voor de profilering van microbiota via 16S rRNA sequencing voor gebruik binnen de diagnostiek.
+Naast deze twee onderzoeks georienteerde toepassingen, beschrijven we in \textbf{Hoofdstuk~\ref{chapter:microbiota}} een derde, clinisch georienteerde casus. Hier hebben we het MYcrobiota platform ontwikkeld voor de profilering van microbiota via 16S rRNA sequencing voor gebruik binnen de diagnostiek.
 Deze applicatie is ontwikkeld in samenwerking met het Streeklab Haarlem, als aanvulling op hun traditionele diagnostiek, wanneer de resultaten daarvan geen uitsluitsel geven.
 
 Hiervoor hebben we eerst de complete mothur toolkit van 125+ tools in Galaxy geintegreerd, en een workflow gemaakt die precies afgestemd is op de exacte experimentele setup van het Streeklab.
