@@ -66,7 +66,7 @@ Our tool combines the power of Circos with the user-friendliness of the Galaxy i
 Previously, custom Circos Galaxy plotter tools have been written \cite{hiltemann2014cgtag}; however, these tools are not generic, but are tailored specifically to the use-case at hand. This means that a new Galaxy tool has to be created whenever a new plot type is needed. Galactic Circos aims to be a generic tool capable of creating any Circos plot regardless of data domain.
 
 \subsection*{Results}
-The Galactic Circos tool changes the way users must specify the configuration of a Circos plot. Instead of writing a number of configuration files, users now only need to select the various plot options from a web interfacem, and datasets from their analysis history (Figure \ref{figure:userinterface}). Because Circos plot specifications can be quite complex, the tool interface is subdivided into several collapsible sections, each corresponding to a different Circos configuration option in order to increase the usability of the tool. Parameters are preconfigured with sensible default values so that basic plots can be generated with minimal configuration.
+The Galactic Circos tool changes the way users must specify the configuration of a Circos plot. Instead of writing a number of configuration files, users now only need to select the various plot options from a web interfacem, and datasets from their analysis history (Figure~\ref{figure:userinterface}). Because Circos plot specifications can be quite complex, the tool interface is subdivided into several collapsible sections, each corresponding to a different Circos configuration option in order to increase the usability of the tool. Parameters are preconfigured with sensible default values so that basic plots can be generated with minimal configuration.
 
 \begin{figure}[h!]
 \centering
@@ -74,7 +74,7 @@ The Galactic Circos tool changes the way users must specify the configuration of
 \caption{The Galaxy tool interface to Circos. Each collapsed section hides a wealth of configuration options available to users. The web-based interface is significantly more accessible than the command line version.}\label{figure:userinterface}
 \end{figure}
 
-We demonstrate the utility of the Galactic Circos tool by recreating one of the more advanced examples from the Circos online tutorials, the microbial genome lesson \cite{circos-microbial-example} (Figure \ref{figure:microbe}). This displays multiple tracks of different types (text, histogram, tiles), has a customized ideogram, and uses rules for colouring data points dependent on their value.
+We demonstrate the utility of the Galactic Circos tool by recreating one of the more advanced examples from the Circos online tutorials, the microbial genome lesson \cite{circos-microbial-example} (Figure~\ref{figure:microbe}). This displays multiple tracks of different types (text, histogram, tiles), has a customized ideogram, and uses rules for colouring data points dependent on their value.
 
 \begin{figure}[h!]
 \centering
@@ -82,7 +82,7 @@ We demonstrate the utility of the Galactic Circos tool by recreating one of the 
 	\caption{Here we reproduce one of the more complex tutorials from the Circos documentation. The upper left half of the image is produced by the configuration provided by the Circos tutorial, while the bottom-right half is produced completely in Galaxy. While some options used in the original tutorial cannot be directly used (e.g. unrestricted perl code), they can be recreated equivalently in the tool interface. Some options in the tool interface are likewise restricted; Galactic Circos offers a color picker with a limited palette, which accounts for the differences in colour. However, our tool offers the ability to download the full Circos configuration folder, allowing advanced users to configure the colour (or other) parameters manually and rebuild the image locally. See \url{https://usegalaxy.eu/u/helena-rasche/h/circos-microbe-tutorial}.}\label{figure:microbe}
 \end{figure}
 
-In a second example (Figure \ref{figure:encode}), we replicate within Galaxy the cover image of the \emph{Nature} issue \cite{nature-encode} dedicated to the ENCODE project \cite{encode2004encode}. This cover featured a Circos plot and is also available as part of the official Circos tutorials \cite{circos-nature-example}.
+In a second example (Figure~\ref{figure:encode}), we replicate within Galaxy the cover image of the \emph{Nature} issue \cite{nature-encode} dedicated to the ENCODE project \cite{encode2004encode}. This cover featured a Circos plot and is also available as part of the official Circos tutorials \cite{circos-nature-example}.
 
 \begin{figure}[h!]
 \centering
@@ -108,9 +108,9 @@ This enables creation of human-readable summaries of large analysis workflows, s
 \subsubsection{Supporting Tools}
 Circos requires input datasets to adhere to a specific and custom file format. To facilitate the conversion of data to this custom Circos format, we have developed several supporting Galaxy tools for conversion. These tools allow users to convert their datasets from a variety of common genomics formats such as (big)Wig files, interval files, and MAF/Stockholm alignments. Furthermore, the existing Galaxy ecosystem provides a wide array of tabular data manipulation tools that can be leveraged to transform any tabular or text files into the format accepted by Circos.
 
-To demonstrate the utility of these supporting tools, we show a real-world example of a plot using common genomics datasets. This example is a recreation of a plot in a published paper demonstrating chromothripsis in the VCaP prostate cancer cell line \cite{alves2013gene}. The input datasets originate from a variety of sources, including a structural variants file (converted to Circos links track), copy number and B-allele frequency track obtained from Affymetrix single-nucleotide-polymorphism (SN)P array data, and a SNP density track generated from a VCF file. Using a combination of the supporting tools included in the Galactic Circos package and the generic file manipulation tools present in Galaxy, we were able to convert these various datasets to Circos-compatible formats without leaving Galaxy, and reproduced the Circos plot from the publication (Figure \ref{figure:vcap}).
+To demonstrate the utility of these supporting tools, we show a real-world example of a plot using common genomics datasets. This example is a recreation of a plot in a published paper demonstrating chromothripsis in the VCaP prostate cancer cell line \cite{alves2013gene}. The input datasets originate from a variety of sources, including a structural variants file (converted to Circos links track), copy number and B-allele frequency track obtained from Affymetrix single-nucleotide-polymorphism (SN)P array data, and a SNP density track generated from a VCF file. Using a combination of the supporting tools included in the Galactic Circos package and the generic file manipulation tools present in Galaxy, we were able to convert these various datasets to Circos-compatible formats without leaving Galaxy, and reproduced the Circos plot from the publication (Figure~\ref{figure:vcap}).
 
-Once data have been reformatted for Circos, they can either be used immediately or be further processed. Circos includes a tool suite for post-processing and downsampling of data, which can improve plot clarity and processing speed. We additionally included a number of these post-processing tools into Galaxy, notably the link-bundling and binning tools used in Figure \ref{figure:binning-bundling}.
+Once data have been reformatted for Circos, they can either be used immediately or be further processed. Circos includes a tool suite for post-processing and downsampling of data, which can improve plot clarity and processing speed. We additionally included a number of these post-processing tools into Galaxy, notably the link-bundling and binning tools used in Figure~\ref{figure:binning-bundling}.
 
 \begin{figure}[h!]
 \centering
@@ -119,7 +119,7 @@ Once data have been reformatted for Circos, they can either be used immediately 
 \label{figure:binning-bundling}
 \end{figure}
 
-Finally, while Circos is widely used for the visualization of genomic data, and many of the parameter names have a distinctly biological feel to them, the tool does not impose any restrictions on the type of input data, and is capable of displaying non-biological data just as easily \cite{circosnongenomic}. To show that our tool retains this degree of flexibily, we recreated the presidential debate plot included in the Circos tutorials, which in turn was based on a plot which appeared in the New York Times aticle \cite{namingnames}. A plot comparison can be seen in Figure \ref{figure:debate}.
+Finally, while Circos is widely used for the visualization of genomic data, and many of the parameter names have a distinctly biological feel to them, the tool does not impose any restrictions on the type of input data, and is capable of displaying non-biological data just as easily \cite{circosnongenomic}. To show that our tool retains this degree of flexibily, we recreated the presidential debate plot included in the Circos tutorials, which in turn was based on a plot which appeared in the New York Times aticle \cite{namingnames}. A plot comparison can be seen in Figure~\ref{figure:debate}.
 
 \begin{figure}[h!]
 \centering
