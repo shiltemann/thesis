@@ -16,15 +16,18 @@
 \setcounter{table}{-1}
 \setcounter{section}{-1}
 
-With sequencing costs steadily decreasing, 16S sequencing has become a viable alternative to culture-based methods in routine clinical diagnostics. For any clinical application, extensive validation is required. To pilot the utility of 16S profiling in a clinical setting, we first integrated the full mothur toolsuite into Galaxy (GmT), and subsequently used this toolsuite to create a set of workflows for clinical experimental designs in collaboration with Streeklab Haarlem (MYcrobiota).
+With sequencing costs steadily decreasing, 16S sequencing has become a viable alternative to culture-based methods in routine clinical diagnostics. For any clinical application, extensive validation is required. To pilot the utility of 16S profiling in a clinical setting, we first integrated the full mothur toolsuite into Galaxy (GmT), and subsequently used this tool suite to create a set of workflows for clinical experimental designs in collaboration with Streeklab Haarlem (MYcrobiota).
 
 This chapter contains the following sub-chapters:
 
 \begin{enumerate}[label=\ref{chapter:microbiota}.\arabic*]
 \itemsep-0.5em
 \setcounter{enumi}{-1}
-\item \textbf{Galaxy mothur Toolset (GmT):} a user-friendly application for 16S rRNA gene sequencing analysis using mothur
-\item \textbf{MYcrobiota:} Development and evaluation of a culture-free microbiota profiling platform for clinical diagnostics
+\item \textbf{Galaxy mothur Toolset (GmT): a user-friendly application for 16S rRNA gene sequencing analysis using mothur}
+Our aim was to provide a data analysis method that could be used by clinicians directly. In diagnostics, there is often a high throughput of analysis, which must be run in a timely fashion, so if we enable clinicians to run this analysis themselves, without needing to wait for a bioinformatician, we can potentially speed up the analysis process significantly. The first step towards this goal was to integrate the required tools into Galaxy. We identified the mothur tool suite as the optimal solution for your use case, however this package contained over 125 tools. I wrapped all of these into Galaxy and created workflows and tutorials for the recommended Standard Operating Procedure (SOP).
+
+\item \textbf{MYcrobiota: Development and evaluation of a culture-free microbiota profiling platform for clinical diagnostics.} After the required tools were made available in Galaxy (previous sub-chapter), we started working on adapting the SOP to fit the needs of the Streeklab Haarlem. This involved an combination of bioinformatics analysis (by me) and experimental validation (Stephan Boers). The novel experimental approach employed by the Streeklab Haarlem (micelle PCR), as well as experimental setup (sequencing in triplicate, negative extraction control, mock sample sequencing) required corresponding adaptations to the standard workflow. Furthermore, we created a customized analysis report to display to clinicians based on the iReport tool. And of course extensive validation was needed before the MYcrobiota platform could be considered for adoption into routine diagnostics. Since publication of this work, the MYcrobiota has continued to be actively used by the Streeklab Haarlem.
+
 \end{enumerate}
 
 
