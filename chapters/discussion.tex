@@ -140,7 +140,7 @@ The Circos visualisation tool was especially useful in discovery of chromothrips
 Here the highly rearranged nature of chromosome 5q was instantly obvious in one glance at the circular plot, in a way that simply inspecting the textual files listing the SVs could not convey.
 
 Effective visualisation of large data is crucial for the interpretation of analysis results, and in a broader sense, so is the reporting of results in a single, easily-digestible overview or report. Analysis pipelines often result in a large set of different output files, and displaying these results effectively to the end user tasked with interpretation of the results is a challenge in its own right.
-Galaxy in its current form lacks an appealing system of results summation and reporting. While Galaxy sports a plugin system for visualisation of individual datasets, a generic reporting tool for displaying a set of workflow outputs together does not exist. To this end, we developed iReport (Chapter~\ref{chapter:general}); a fully customizable Galaxy tool for the generation HTML reports capable of displaying any number of workflow outputs.\
+Galaxy in its current form lacks an appealing system of results summation and reporting. While Galaxy features a plugin system for visualisation of individual datasets, a generic reporting tool for displaying a set of workflow outputs together does not exist. To this end, we developed iReport (Chapter~\ref{chapter:general}); a fully customizable Galaxy tool for the generation HTML reports capable of displaying any number of workflow outputs.\
 
 iReport is intended to be used as the final step of a workflow, and is generic enough that it makes no assumptions about the underlying analysis or scientific domain.\ iReport supports  the ability to add links to datasets and external resources, create searchable and sortable tables, embed images and custom text, and to structure content into different pages.
 By adding such a summarizing report at the end of an analysis pipeline, clinicians and other end users are able to run workflows and view results with minimal instruction or knowledge of the Galaxy interface.
@@ -332,7 +332,7 @@ However, the uptake has been slow due to the inertia of analysis tools to adapt 
 \subsubsection{Big and FAIR data}
 Data are being generated at an exponential rate, with estimates placing the storage capacity needed for human genomes alone as high as 40 exabytes in 2025~\cite{stephens2015}.
 But storage space is only a small part of the story. The far greater challenge will lie in the data stewardship; the efficient handling of this data in a way that it can be easily searched, accessed, and shared within the worldwide scientific community.
-Initiatives such as the FAIR data project~\cite{wilkinson2016fair} are aimed at providing the necessary best practice guidelines needed for efficient data management and analyses in the genomic big data era. Beyond the technical challenges posed by this data explosion lie the even more complex and often legal questions of data privacy and security.
+Initiatives that champion the FAIR data principles~\cite{wilkinson2016fair} are aimed at providing the necessary best practice guidelines needed for efficient data management and analyses in the genomic big data era. Beyond the technical challenges posed by this data explosion lie the even more complex and often legal questions of data privacy and security.
 These efforts must occur at different levels of organisation; each institute should provide guidelines to standardize data management within its various departments. National-level initiatives may then focus on interoperability between the various systems in use, which in turn can be used by international efforts to provide global data harmonization solutions.
 Many such international initiatives exist, such as the Global Alliance for Genomics and Health (GA4GH)~\cite{ga4gh}, ELIXIR~\cite{elixir} and CINECA~\cite{cineca}, which are currently coordinating their efforts to provide interoperability layers on top of existing data management solutions.
 When generally adopted, these solutions will promote interoperability of data, and allow for a federated data analysis model.
@@ -381,5 +381,7 @@ Similarly, analysis software and tools also greatly benefit from this open scien
 \emph{``No man is an island, entire of itself; every man is a piece of the continent, a part of the main.''} - John Donne
 \end{center}
 
+\footnotesize
 \bibliographystyle{ieeetr}
 \bibliography{references}
+\footnotesize

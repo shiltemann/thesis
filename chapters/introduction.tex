@@ -81,15 +81,15 @@ All of these challenges have resulted in bioinformatics becoming a highly specia
 In order to optimally deal with all the challenges in bioinformatics, adhering to a set of best-practices guidelines may be beneficial. Such best practices have been described many times~\cite{sandve2013ten,Seemann2013,wilson2014best,prlic2012ten,altschul2013anatomy,via2013best,Leprevost2014}, with the most notable example being the widely-adopted FAIR (Findable, Accessible, Interoperable, Reusable) data principles~\cite{wilkinson2016fair}. The FAIR data project provides guidelines and tools to improve standardisation within bioinformatics.
 
 \subsubsection{Findability}
-The first step in (re)using scientific datasets, tools, or services, is to find them. Simply making these resources available online is not enough to make them truly findable. By annotating datasets and tools with metadata using standard ontologies allows them to be discovered more easily by both humans and computers. This will also allow services to be created to aggregate this information into discovery portals for users.
+The first step in (re)using scientific datasets, tools, or services, is to find them. Simply making these resources available online is not enough to make them truly findable. By annotating datasets and tools with metadata using standardized ontologies (e.g. EDAM Ontology \cite{ison2013edam}) using standardised syntax schemes (e.g. BioSchemas \cite{gray2017bioschemas}), allows them to be discovered more easily by both humans and computers. This will also allow services to be created to aggregate this information into discovery portals for users (e.g. BioTools \cite{url-biotools} for analysis tools and databases, and the TeSS portal \cite{url-tess} for training materials).
 
 
 \subsubsection{Accessibility}
-Accessibility of tools and data implies not only that these resources be made publicly available, but also that they are easily findable and \emph{usable}. Most bioinformatics tools are command line UNIX~\cite{url-unix} tools, and biologists are not typically trained in the use of such. Even for the experienced bioinformatician, running some of these tools can be a challenge due to lack of documentation or quality of the tool. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e.\ the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step~\cite{kumar2007bioinformatics}.
+Accessibility of tools and data implies not only that these resources be made publicly available (e.g. on GitHub for code, or Zenodo for data), but also that they are easily findable and \emph{usable}. Most bioinformatics tools are command line UNIX~\cite{url-unix} tools, and biologists are not typically trained in the use of such. Even for the experienced bioinformatician, running some of these tools can be a challenge due to lack of documentation or quality of the tool. Ideally, once a tool or pipeline has been validated, the analysis can be run by the domain expert, i.e.\ the research scientist responsible for the interpretation of the analysis results, without being reliant on the support of a bioinformatician at every step~\cite{kumar2007bioinformatics}.
 
 Creating user-friendly software is not a trivial task. Application linking (also referred to as \emph{wrapping}), can ease this burden for the tool developer. In such an approach, existing user-friendly interfaces host third-party software packages --at minimum effort to the developer of the hosted software-- and thereby offer a layer of abstraction to the end-user that shields them from the implementation details of the tool and provides a uniform usage paradigm for all tools, regardless of their differences behind the scenes. Two examples of such hosting frameworks in the context of bioinformatics are Galaxy~\cite{giardine2005galaxy,goecks2010galaxy} and Taverna~\cite{oinn2004taverna}.
 
-Accessibility also includes the creation of high-quality documentation of tools, both aimed at developers and end-users, and ideally some form of training manual to educate users in the proper use of tool and to warn about possible pitfalls and biases.
+Accessibility also includes the creation of high-quality documentation of tools, both aimed at developers and end-users, and ideally some form of training manual to educate users in the proper use of tool and to warn about possible pitfalls and biases. Platforms like GitHub are not not only great for version control of the code, but also allow for integration of documentation that lives with the code, and integrations with 3rd-party
 
 \subsubsection{Reproducibility}
 
@@ -468,5 +468,7 @@ Together we developed and validated the analysis pipeline, and ensured that the 
 
 \end{justify}
 
+\footnotesize
 \bibliographystyle{ieeetr}
 \bibliography{references}
+\normalsize

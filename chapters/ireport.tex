@@ -38,7 +38,7 @@ DOI: \url{https://doi.org/10.1186/2047-217X-3-19}
 \section*{Abstract}
 
 \textbf{Background:} Galaxy offers a number of visualisation options with components, such as Trackster, Circster and Galaxy Charts, but currently lacks the ability to easily combine outputs from different tools into a single view or report. A number of tools produce HTML reports as output in order to combine the various output files from a single tool; however, this requires programming and knowledge of HTML, and the reports must be custom-made for each new tool.\\
-\textbf{Findings:}We have developed a generic and flexible reporting tool for Galaxy, iReport, that allows users to create interactive HTML reports directly from the Galaxy UI, with the ability to combine an arbitrary number of outputs from any number of different tools. Content can be organised into different tabs, and interactivity can be added to components. To demonstrate the capability of iReport we provide two publically available examples, the first is an iReport explaining about iReports, created for, and using content from the recent Galaxy Community Conference 2014. The second is a genetic report based on a trio analysis to determine candidate pathogenic variants which uses our previously developed Galaxy toolset for whole-genome NGS analysis, CGtag. These reports may be adapted for outputs from any sequencing platform and any results, such as omics data, non-high throughput results and clinical variables.\\
+\textbf{Findings:} We have developed a generic and flexible reporting tool for Galaxy, iReport, that allows users to create interactive HTML reports directly from the Galaxy UI, with the ability to combine an arbitrary number of outputs from any number of different tools. Content can be organised into different tabs, and interactivity can be added to components. To demonstrate the capability of iReport we provide two publicly available examples, the first is an iReport explaining about iReports, created for, and using content from the recent Galaxy Community Conference 2014. The second is a genetic report based on a trio analysis to determine candidate pathogenic variants which uses our previously developed Galaxy toolset for whole-genome NGS analysis, CGtag. These reports may be adapted for outputs from any sequencing platform and any results, such as omics data, non-high throughput results and clinical variables.\\
 \textbf{Conclusions:} iReport provides a secure, collaborative, and flexible web-based reporting system that is compatible with Galaxy (and non-Galaxy) generated content. We demonstrate its value with a real-life example of reporting genetic trio-analysis.
 
 
@@ -157,7 +157,7 @@ Users can create links to web locations by specifying a URL and a link text. Lin
 
 \section*{Genetic report for a trio of HapMap individuals}
 
-Accurate, reproducible and traceable reporting is an essentialrequirement to the evaluation of the genetic outcome from any assay~\cite{skyline}, including those variations predicted from NGS analysis. Since iReport is capable of including many formats, we have used the outcome from a trio analysis generated from the Complete Genomics~\cite{drmanac} NGS platform to demonstrate its utility in representing these data in a user-defined format, which contains the provenance of the underlying analysis. In this example we use a trio of individuals sequenced in the International HapMap Project~\cite{hapmap}\cite{hapmap2}, to demonstrate how to select protein affecting candidate variants based on a recessive genetic model.  All data in this example is freely available for download from the Complete Genomics website~\cite{url-CGpublicdata}.
+Accurate, reproducible and traceable reporting is an essential requirement to the evaluation of the genetic outcome from any assay~\cite{skyline}, including those variations predicted from NGS analysis. Since iReport is capable of including many formats, we have used the outcome from a trio analysis generated from the Complete Genomics~\cite{drmanac} NGS platform to demonstrate its utility in representing these data in a user-defined format, which contains the provenance of the underlying analysis. In this example we use a trio of individuals sequenced in the International HapMap Project~\cite{hapmap}\cite{hapmap2}, to demonstrate how to select protein affecting candidate variants based on a recessive genetic model.  All data in this example is freely available for download from the Complete Genomics website~\cite{url-CGpublicdata}.
 
 This example iReport has one tab devoted to explaining the protocol used (\hyperref[fig:trioscreenshots]{Figure~\ref*{fig:trioscreenshots}B}), one tab with circos plots and an explanation of the family structure (\hyperref[fig:trioscreenshots]{Figure~\ref*{fig:trioscreenshots}D}), and one tab with tables containing the candidate pathogenic variants determined by the protocol based on a recessive model for selection. This iReport is also available as a published history on the TraIT-CTMM public Galaxy~\cite{url-traitgalaxy}.
 
@@ -220,6 +220,7 @@ URL: Uniform Resource Locator. \\
 \section*{Acknowledgements}
  This study was performed within the framework of the Center for Translational Molecular Medicine (CTMM). TraIT project (grant 05T-401).
 
+\footnotesize
 \bibliographystyle{ieeetr}
 \bibliography{references}
-\section*{}
+\normalsize
