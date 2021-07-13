@@ -8,12 +8,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="1172.6549"
+   height="1072.6549"
    version="1.1"
-   viewBox="0 0 945.88544 1172.6549"
-   width="945.88544"
+   viewBox="0 0 845.88544 1072.6549"
+   width="845.88544"
    id="svg802"
-   sodipodi:docname="back-cover.svg"
+   sodipodi:docname="cover-back.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    inkscape:export-filename="/home/hxr/Personal/projects/puzzle-gen/back-cover.png"
    inkscape:export-xdpi="799"
@@ -32,17 +32,19 @@
    inkscape:window-height="1080"
    id="namedview1581"
    showgrid="false"
-   inkscape:zoom="0.50249168"
-   inkscape:cx="935.7292"
-   inkscape:cy="674.26726"
+   inkscape:zoom="0.83128982"
+   inkscape:cx="422.94272"
+   inkscape:cy="536.32748"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
-   fit-margin-top="0"
-   fit-margin-left="0"
-   fit-margin-right="0"
-   fit-margin-bottom="0" />
+   fit-margin-top="-50"
+   fit-margin-left="-50"
+   fit-margin-right="-50"
+   fit-margin-bottom="-50" />
+
+
 
 &gt;
 
@@ -70,7 +72,7 @@
    inkscape:label="back"
    sodipodi:insensitive="true"
    style="display:none"
-   transform="translate(959.19857,-17.371962)">
+   transform="translate(909.19857,-67.371962)">
   <image
      width="922.61743"
      height="1141.4342"
@@ -84,7 +86,7 @@
    inkscape:groupmode="layer"
    id="layer1"
    inkscape:label="pieces"
-   transform="translate(959.19857,-17.371962)">
+   transform="translate(909.19857,-67.371962)">
   <path
      d="m -939.80013,112.37067 h 29.36133 a 11.338583,11.338583 0 0 0 -2.90625,7.56055 11.338583,11.338583 0 0 0 11.33984,11.33789 11.338583,11.338583 0 0 0 11.33789,-11.33789 11.338583,11.338583 0 0 0 -2.90625,-7.56055 h 29.36328 V 83.011301 a 11.338583,11.338583 0 0 0 7.5586,2.904296 11.338583,11.338583 0 0 0 11.33984,-11.339843 11.338583,11.338583 0 0 0 -11.33984,-11.337891 11.338583,11.338583 0 0 0 -7.5586,2.90625 V 36.780832 h -29.36328 a 11.338583,11.338583 0 0 1 2.90625,7.558593 11.338583,11.338583 0 0 1 -11.33789,11.339844 11.338583,11.338583 0 0 1 -11.33984,-11.339844 11.338583,11.338583 0 0 1 2.90429,-7.558593 h -29.35937 V 66.14216 a 11.338583,11.338583 0 0 1 7.55859,-2.904297 11.338583,11.338583 0 0 1 11.33789,11.337891 11.338583,11.338583 0 0 1 -11.33789,11.339843 11.338583,11.338583 0 0 1 -7.55859,-2.904296 z"
      style="fill:#ffff00;stroke:#000000;stroke-width:1;stroke-opacity:1"
