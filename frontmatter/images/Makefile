@@ -20,4 +20,7 @@ border-%.svg: border-base.svg
 border-%.png: border-%.svg
 	convert -density 240 $< $@
 
+cover-back.png: cover-back.svg
+	convert -density 240 $< $@
+
 clean: rm *.png
