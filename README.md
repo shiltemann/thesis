@@ -12,8 +12,8 @@ Run `make thesis` to generate the pdf, `make view` to open pdf in okular, and `m
 Ubuntu:
 
 ```
-sudo apt-get install texlive texlive-xetex fonts-noto
+sudo apt-get install texlive texlive-xetex latexmk fonts-noto
 
-# optional (needed to be able to use all make commands):  
+# optional (needed to be able to use all make commands):
 sudo apt-get install inotify-tools okular
 ```

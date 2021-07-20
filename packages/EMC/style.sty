@@ -3,7 +3,10 @@
 % School name and location
 \university{Erasmus Medical Center}
 \universitycity{Rotterdam}
-
+\defensedate{27-10-2021}
+\defensedatedutch{27}
+\defensetime{10:30}
+\geboorteplaats{Tilburg}
 
 % School color found from university's graphic identity site:
 % http://www.nyu.edu/employees/resources-and-services/media-and-communications/styleguide.html
@@ -99,37 +102,103 @@
 
 \renewcommand{\maketitle}{
 	\thispagestyle{empty}
-	\vspace*{\fill}
-	\vspace{10pt}
+	%\ \\
+    %\vspace{10pt}
 	\begin{center}
 	\huge \thetitle \\
     \large \@subtitle \\
 	\vspace{25pt}
   	\huge \@titledutch \\
     \large \@subtitledutch \\
-	\vspace{100pt}
-    \textbf{Proefschrift} \\
+    \vspace{15pt}
+    \textbf{Thesis} \\
 	%\textsc{
-    \vspace{20pt}
-    ter verkrijging van de graad van doctor aan de \\
-    Erasmus Universiteit Rotterdam \\
-    op gezag van de rector magnificus \\
+    \vspace{15pt}
+    to obtain the degree of Doctor from the \\
+    Erasmus University Rotterdam \\
+    by command of the \\
+    rector magnificus \\
 	\vspace{20pt}
 	\@rector \\
 	\vspace{20pt}
-	en volgens besluit van de College voor Promoties. \\
-    De openbare verdediging zal plaatsvinden op \\
-    \@defensedate, om \@defensetime uur \\
+    and in accordance with the decision of the Doctorate Board. \\
+    The public defence shall be held on \\
     \vspace{15pt}
+    \@defensedate \\
+    by \\
+    \vspace{15pt}
+    \theauthor \\
+    born in \@placeofbirth
+    %}
+	\end{center}
+    \vspace*{\fill}
+    \includegraphics[]{frontmatter/images/titelpage-logo2.png}
+    \hspace*{\fill}
+    \includegraphics[]{frontmatter/images/titelpage-logo1.png}
+
+    %\vspace*{\fill}
+
+    \newpage
+    \textbf{Doctoral Committee:} \\
+    \ \\
+    \textbf{Promotors:} \\
+    prof. dr. P.J. van der Spek \\
+    prof. dr. ir. G.W. Jenster \\
+    \ \\
+    \textbf{Other members:} \\
+    prof. dr. S.G.M.A. Pasmans\\
+    prof. dr. M.J. Roobol - Bouts\\
+    prof. dr. P.-.B. 't Hoen\\
+    \ \\
+    \textbf{Copromotor:} \\
+    dr. A.P. Stubbs \\
+
+    \vspace*{\fill}
+    \includegraphics[]{frontmatter/images/titelpage-logo2.png}
+    \hspace*{\fill}
+    \includegraphics[]{frontmatter/images/titelpage-logo1.png}
+
+
+
+}
+
+\newcommand{\maketitledutch}{
+	\thispagestyle{empty}
+	\vspace*{\fill}
+	\vspace{10pt}
+	\begin{center}
+	\huge \@titledutch \\
+    \large \@subtitledutch \\
+	\vspace{25pt}
+  	\huge \thetitle \\
+    \large \@subtitle \\
+	\vspace{15pt}
+    \includegraphics[width=4cm]{frontmatter/images/chapter-header-training.png} \\
+    \vspace{15pt}
+    \textbf{Proefschrift} \\
+	%\textsc{
+    \vspace{15pt}
+    ter verkrijging van de graad van doctor aan de \\
+    Erasmus Universiteit Rotterdam \\
+    op gezag van de \\
+    rector magnificus\\
+	\vspace{20pt}
+	\@rector \\
+	\vspace{20pt}
+    en volgens besluit van het College voor Promoties.\\
+    De openbare verdediging zal plaatsvinden op\\
+    \vspace{15pt}
+    \@defensedatedutch \\
     door \\
     \vspace{15pt}
     \theauthor \\
-    \vspace{15pt}
-    geboren te \@placeofbirth
+    geboren te \@geboorteplaats
     %}
 	\end{center}
 	\vspace*{\fill}
+
 }
+
 
 %\makeatletter
 %\renewcommand\@biblabel[1]{[\the\numexpr#1-1\relax]}

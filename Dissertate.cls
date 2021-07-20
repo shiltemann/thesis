@@ -23,7 +23,9 @@
 \def\titledutch#1{\gdef\@titledutch{#1}}
 \def\subtitledutch#1{\gdef\@subtitledutch{#1}}
 \def\placeofbirth#1{\gdef\@placeofbirth{#1}}
+\def\geboorteplaats#1{\gdef\@geboorteplaas{#1}}
 \def\defensedate#1{\gdef\@defensedate{#1}}
+\def\defensedatedutch#1{\gdef\@defensedatedutch{#1}}
 \def\defensetime#1{\gdef\@defensetime{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\field#1{\gdef\@field{#1}}
