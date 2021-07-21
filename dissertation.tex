@@ -124,13 +124,13 @@
 \ifMaterial%
 \ifodd\value{page} %
   \backgroundsetup{
-  angle=90,
+  angle=270,
   position={current page.east|-current page text area.north east},
-  vshift=15pt,
-  hshift=-\thechapter*\LabelSize,
+  vshift=-15pt,
+  hshift=\thechapter*\LabelSize,
   contents={%
   \tikz\node[fill=gray!30,anchor=west,text width=\LabelSize,
-    align=center,text height=20pt,text depth=15pt,font=\large\sffamily] {\thechapter};
+    align=center,text height=20pt,text depth=10pt,font=\large\sffamily] {\thechapter};
   }%
  }
  \else
@@ -141,7 +141,7 @@
   hshift=-\thechapter*\LabelSize,
   contents={%
   \tikz\node[fill=gray!30,anchor=west,text width=\LabelSize,
-    align=center,text height=20pt,text depth=15pt,font=\large\sffamily] {\thechapter};
+    align=center,text height=20pt,text depth=10pt,font=\large\sffamily] {\thechapter};
   }%
  }
  \fi
