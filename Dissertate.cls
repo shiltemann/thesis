@@ -11,7 +11,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Dissertate}[2014/01/24 v1.0 Dissertate Class]
-\LoadClass[10pt, oneside]{book}
+\LoadClass[10pt, twoside]{book}
 
 % some definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
@@ -118,7 +118,7 @@
 
 \RequirePackage[labelfont={bf,sf,footnotesize,singlespacing},
 								textfont={sf,footnotesize,singlespacing},
-								justification={justified,RaggedRight},
+								justification={RaggedRight},
 								singlelinecheck=false,
 								margin=0pt,
 								figurewithin=chapter,
