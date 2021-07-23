@@ -64,33 +64,36 @@ CGATools is an open-source project to provide tools for downstream analysis of C
 \small
 \begin{tabular}{l|l|l}
 \textbf{Function} & \textbf{CGATool}  & \textbf{Description} \\ \toprule
-Variant detection & CGATools ListVariants & Lists the non-redundant set of small variations found in an \\
-                  &                       & arbitrary number of genomes.\\
-Variant detection & CGATools TestVariants & Determine which variants are found in which genomes given \\
-                  &                       & the results of ListVariants.\\
-Variant detection & CGATools CallDiff     & Compares two variant files to determine where and how the \\
-                  &                       & genomes differ.\\
-Variant detection & CGATools VarFilter    & Copies the input varfile or masterVar file, applying filters.\\
-Variant detection & CGATools JunctionDiff & Reports difference between junction calls of CG junction files.\\
+Variant detection & CGATools ListVariants & Lists the non-redundant set of small variations found\\
+                  &                       & in an arbitrary number of genomes.\\
+Variant detection & CGATools TestVariants & Determine which variants are found in which genomes\\
+                  &                       & given the results of ListVariants.\\
+Variant detection & CGATools CallDiff     & Compares two variant files to determine where and how\\
+                  &                       & the genomes differ.\\
+Variant detection & CGATools VarFilter    & Copies the input varfile or masterVar file, applying\\
+                  &                       & filters. \\
+Variant detection & CGATools JunctionDiff & Reports difference between junction calls of CG junction\\
+                  &                       & files. \\
 Variant detection & CGATools Junctions2Events & Groups and annotate related junctions.\\
 Quality control   & CGATools SNPDiff      & Compares genotype calls to CG variant files.\\
-File merge        & CGATools Join         & Merge two tab-delimited files based on equal field or overlapping \\
-                  &                       & regions.\\
-Sequence retrieval& CGATools DecodeCRR    & Retrieve sequences from a CRR file for a given range of a \\
-                  &                       & chromosome.\\
+File merge        & CGATools Join         & Merge two tab-delimited files based on equal field or \\
+                  &                       & overlapping regions.\\
+Sequence retrieval& CGATools DecodeCRR    & Retrieve sequences from a CRR file for a given range of\\
+                  &                       & a chromosome.\\
 File conversion   & CGATools mkVCF        & Converts CG variant and/or junction files to VCF.\\
 File conversion   & CGATools generateMasterVar & Converts a varfile to a on-line-per-locus format.\\
 File conversion   & CGATools fasta-2-crr  & Converts fasta sequences into a single reference crr file.\\
 File conversion   & CGATools crr-2-fasta  & Converts crr file to fasta sequence.\\
-File conversion   & TestVariants2VCF      & CG community tool. Converts output of the TestVariants tool \\
-                  &                       & to VCF.\\
-Annotation        & ANNOVAR               & Functional annotation of genetic variants from high-throughput \\
-                  &                       & sequencing data.\\
+File conversion   & TestVariants2VCF      & CG community tool. Converts output of the TestVariants \\
+                  &                       & tool to VCF.\\
+Annotation        & ANNOVAR               & Functional annotation of genetic variants from \\
+                  &                       & high-throughput sequencing data.\\
 Annotation        & MutationAssessor      & Functional impact of protein mutations.\\
 Annotation        & Condel                & CONsensus DELeteriousness score of missense SNVs.\\
 Visualisation     & CG Circos plots       & Create CG-style tumour, normal and somatic plots.\\
 Visualisation     & Integrative plot      & Create circos plot from CG and SNParray data.\\
-Visualisation     & Generic genomic data plotter & Plot any type of numerical genomic data using GNUplot.\\
+Visualisation     & Generic genomic data plotter & Plot any type of numerical genomic data using\\
+                  &                       & GNUplot.\\
 File manipulation & Filter columns        & Filter tab-delimited files based on column contents.\\
 File manipulation & Add/remove chr prefix & adds or removes chr prefix from chromosome column.\\
 File manipulation & Column select         & Extract and/or rearrange columns in tab-delimited file.\\
@@ -127,7 +130,7 @@ To support fusion gene analysis we have created a custom Circos tool which uses 
 
 \begin{figure}[t!]
 \centering
-\includegraphics[scale=2]{chapters/images/cgtag/fig2-circos.png}
+\includegraphics[scale=1.5]{chapters/images/cgtag/fig2-circos.png}
 \caption{\textbf{Circos Integrative Plot Tool.} Circos plots for (left) whole genome, (middle) overview or all chromosomes in single images, and (right) for a single chromosome.  Each chromosome is represented in the outer ring and then from outer to inner rings represent copy number variation (with regions of gain depicted in green and loss in red), B-allele frequency, SNP density and the intra- and interchromosomal rearrangements are on the inside and depicted in black and red lines, respectively.  Impacted genes track (red gene symbols) are displayed outside the outer chromosome ring and only on the single chromosome plot.}\label{fig:circos}
 \end{figure}
 
