@@ -20,17 +20,15 @@
 \fancyhf{}
 \fancyfoot[LE,RO]{\thepage}
 
-
 % Book size: 17 x 24 cm
-% 'bleed' / 'afloopgebied' toevoegen: "https://tex.stackexchange.com/questions/178653/add-bleed-using-geometry"
-% verander pdf naar 18*25
-% verander margins naar 2.5cm
-% dan heb je netto marges van 2.0cm en aan beide kanten 5mm ruimte om te snijden
-% "Als vlakken, foto’s en andere beeldelementen door moeten lopen tot de rand van de pagina, moet de opmaak ‘aflopend’ gemaakt worden. Dit doet u door de opmaak minimaal 3 mm door te laten lopen buiten het eindformaat."
-% -> minimaal 3mm
-% afstand van pagina nummers tot aan rand: 1.75cm
+% Bleed needed by ipskamp: 2 mm
+% Margins recommended by IPSkamp: top & inner: 2.5cm, bottom & outer: 2 cm
+\usepackage[paperwidth=17.4cm, paperheight=24.4cm, inner=2.6cm, outer=2.1cm,bottom=2.1cm,top=2.6cm]{geometry}
 
-\usepackage[paperwidth=18.0cm, paperheight=25.0cm, left=2.5cm,right=2.5cm,bottom=2.5cm,top=2.5cm]{geometry}
+
+
+
+
 %\usepackage[width=6.75in, letterpaper, bottom=3cm, top=3cm]{geometry}
 %\newcommand\bookepigraph[4]{
 %\vspace{1em}\hfill{}\begin{minipage}{#1}{\begin{spacing}{0.9}
@@ -158,8 +156,8 @@
 
 % the front matter
 %\include{frontmatter/cover}
-\include{frontmatter/cover_jigsaw}
-\newpage \thispagestyle{empty} This page was intentionally left blank (inside cover).\newpage
+%\include{frontmatter/cover_jigsaw}
+%\newpage \thispagestyle{empty} This page was intentionally left blank (inside cover).\newpage
 %\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
 %\include{frontmatter/cover3}
@@ -244,6 +242,8 @@
 
 \cleartorightpage
 \acknowledgments
+\cleartoleftpage
+\include{endmatter/colophon}
 \singlespacing
 \end{justify}
 % the back matter
@@ -252,7 +252,7 @@
 %\addcontentsline{toc}{chapter}{References}
 %\bibliographystyle{apalike2}
 \bibliographystyle{ieeetr}
-%\include{endmatter/colophon}
+
 
 \end{document}
 %!TEX TS-program = xelatex

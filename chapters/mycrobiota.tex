@@ -14,18 +14,18 @@
 
 \phantomsection\addcontentsline{toc}{section}{The Bio: MYcrobiota}
 \articletitle{Development and evaluation of a culture- free microbiota profiling platform (MYcrobiota) for clinical diagnostics}
-Stefan Boers\textsuperscript{\ref{affil:emc-microbiology},*},
-Saskia Hiltemann\textsuperscript{\ref{affil:emc-bioinf},*},
-Andrew Stubbs\textsuperscript{\ref{affil:emc-bioinf}},
-Ruud Jansen\textsuperscript{\ref{affil:streeklabhaarlem}},
-John Hays\textsuperscript{\ref{affil:emc-microbiology}}
+Stefan Boers\textsuperscript{\ref{mycrobiota-affil:emc-microbiology},*},
+Saskia Hiltemann\textsuperscript{\ref{mycrobiota-affil:emc-bioinf},*},
+Andrew Stubbs\textsuperscript{\ref{mycrobiota-affil:emc-bioinf}},
+Ruud Jansen\textsuperscript{\ref{mycrobiota-affil:streeklabhaarlem}},
+John Hays\textsuperscript{\ref{mycrobiota-affil:emc-microbiology}}
 
 \small
 \begin{enumerate}
 \itemsep-0.5em
-\item Department of Bioinformatics, Erasmus Medical Center, Rotterdam, The Netherlands.\label{affil:emc-bioinf}
-\item Department of Medical Microbiology and Infectious Diseases, Erasmus Medical Center, Rotterdam, The Netherlands.\label{affil:emc-microbiology}
-\item Department of Molecular Biology, Regional Laboratory of Public Health Kennemerland, Haarlem, The Netherlands.\label{affil:streeklabhaarlem}
+\item Department of Bioinformatics, Erasmus Medical Center, Rotterdam, The Netherlands.\label{mycrobiota-affil:emc-bioinf}
+\item Department of Medical Microbiology and Infectious Diseases, Erasmus Medical Center, Rotterdam, The Netherlands.\label{mycrobiota-affil:emc-microbiology}
+\item Department of Molecular Biology, Regional Laboratory of Public Health Kennemerland, Haarlem, The Netherlands.\label{mycrobiota-affil:streeklabhaarlem}
 \end{enumerate}
 
 {\color{chaptergrey}{Published in:}} European Journal of Clinical Microbiology \& Infectious Diseases, volume 37, pages1081–1089(2018) \\
@@ -153,7 +153,7 @@ The bioinformatics pipeline designed during this study consists of 23 well-estab
 
 \begin{figure}[t!]
 \centering
-\includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-fig1.png}
+\includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-fig1.jpg}
 \caption{Schematical overview of the bioinformatics pipeline. FASTQ-formatted sequences obtained from triplicate experiments using micPCR/NGS (R1, R2, and R3) are automatically processed via the use of 32 (mothur) tools that have been integrated and combined in Galaxy as an “end-to-end” analysis service. The results obtained per sample (average of triplicate results) are presented to the user in a single, interactive iReport that consist of three tabs. The taxonomy tab visualizes and lists the resultant microbiota profiles. The diversity tab summarizes the results of three diversity calculators (Chao1, Shannon, and Simpson). The quality control tab provides an extensive overview of the quality control measurements during the analysis}\label{fig:mycrobiota-pipeline}
 \end{figure}
 
@@ -181,7 +181,7 @@ As shown in \hyperref[fig:accuracy]{Fig.~\ref{fig:accuracy}}, MYcrobiota results
 
 \begin{figure}[t!]
 \centering
-\includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-fig2.png}
+\includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-fig2.jpg}
 \caption{Accuracy of 16S rRNA gene copy determination using MYcrobiota. The expected number of 16S rRNA gene copies within the positive control (PC) was compared to the measured number of 16S rRNA gene copies using MYcrobiota (green dots). The PC contained 10,000 16S rRNA gene copies of four different bacterial species and was processed in three independent MYcrobiota experiments. The indirect estimation of the total bacterial biomass within 37 clinical samples using MYcrobiota was compared to the total 16S rRNA gene copies measured directly using a 16S rRNA gene qPCR (blue dots). The \textit{Staphylococcus} OTU-specific biomass from 13 \textit{S. aureus} culture-positive samples was compared to the \textit{S. aureus} biomass detected directly using a \textit{S. aureus}-specific qPCR (yellow dots). In order to compare the number of \textit{S. aureus} genome copies estimated using qPCR to the number of 16S rRNA gene copies detected using MYcrobiota, the estimated \textit{S. aureus} genome copies were first multiplied by a factor of 6 to correct for differences in copy numbers of the Martineau fragment and the 16S rRNA gene present on the \textit{S. aureus} genome. The calculated differences between methods were plotted using a binary logarithmic scale}
 \label{fig:accuracy}
 \end{figure}
@@ -194,13 +194,13 @@ In order to explore the utility of MYcrobiota in the field of clinical diagnosti
 \begin{figure}[ht!]
 \begin{subfigure}{\textwidth}
   \centering
-  \includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-table1a.png}
+  \includegraphics[width=\textwidth]{chapters/images/mycrobiota/mycrobiota-table1a.png}
 \end{subfigure}
 \end{figure}
 \begin{figure}\ContinuedFloat
 \begin{subfigure}{\textwidth}
  \centering
- \includegraphics[scale=0.5]{chapters/images/mycrobiota/mycrobiota-table1b.png}
+ \includegraphics[width=\textwidth]{chapters/images/mycrobiota/mycrobiota-table1b.png}
 \end{subfigure}
 \caption{\textbf{Bacterial genera identified from 47 clinical samples using routine bacterial culture and MYcrobiota.} Samples were derived from wounds (W), ulcers (U), abscesses (A), puss (P), erysipelas (Es), erythema (Et), and suspected joint infections (S). Cultured bacteria other than Gram-negative rods, beta-hemolytic \textit{streptococci}, \textit{S. aureus}, \textit{S. lugdunensis}, and anaerobic bacteria were reported as commensal flora. The semi-quantitative culture results are presented as 1+, 2+, 3+, or 4+, depending on which quadrants demonstrate bacterial growth. The presence of anaerobic bacteria was reported as either a positive or a negative result. Bacterial species and OTUs detected using culture and MYcrobiota respectively are grouped at the genus level to compare results. Red shades indicate bacterial genera that were only identified by culture and blue shades indicate bacterial genera that were only identified by MYcrobiota (with “commensal flora” culture results representing a positive detection signal for any kind of aerobic bacterial OTU identified by MYcrobiota). The number of 16S rRNA genes measured using MYcrobiota is indicated in parentheses \\ *Several bacterial genera that belong to the \textit{Enterobacteriaceae} and \textit{Dermabacteraceae} families could not be differentiated at a 97\% similarity level using MYcrobiota}\label{table:samples}
 \end{figure}
