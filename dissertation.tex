@@ -16,7 +16,7 @@
 % Book size: 17 x 24 cm
 % Bleed needed by ipskamp: 2 mm
 % Margins recommended by IPSkamp: top & inner: 2.5cm, bottom & outer: 2 cm
-\usepackage[paperwidth=17.4cm, paperheight=24.4cm, inner=2.6cm, outer=2.1cm,bottom=2.5cm,top=2.1cm]{geometry}
+\usepackage[paperwidth=17.4cm, paperheight=24.4cm, inner=2.6cm, outer=2.1cm,bottom=2.4cm,top=2.2cm]{geometry}
 
 
 % place page number on outside of page (left for even pages, right for odd)
@@ -160,7 +160,7 @@
 %\newpage \thispagestyle{empty} This page was intentionally left blank (inside cover).\newpage
 %\include{frontmatter/cover_jigsaw_everyone}
 %\include{frontmatter/cover2}
-%\include{frontmatter/cover3}
+\include{frontmatter/cover}
 \setcounter{page}{1}
 \input{frontmatter/personalize}
 \maketitle
@@ -252,7 +252,7 @@
 %\addcontentsline{toc}{chapter}{References}
 %\bibliographystyle{apalike2}
 \bibliographystyle{ieeetr}
-
+\include{frontmatter/cover-back}
 
 \end{document}
 %!TEX TS-program = xelatex
