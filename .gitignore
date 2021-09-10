@@ -9,4 +9,5 @@
 *.swo
 *.fls
 *.fdb_latexmk
+*.xdv
 cronout.txt
