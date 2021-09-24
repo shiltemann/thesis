@@ -2,7 +2,11 @@
 
 My PhD Thesis created in LaTeX
 
-[Online Flipbook of my PhD Thesis](shiltemann.github.io/thesis/)
+[Online Flipbook of my PhD Thesis](https://shiltemann.github.io/thesis/)
+
+![](frontmatter/images/cover-front.png)
+
+
 
 
 PhD thesis based on the [dissertate template](https://github.com/suchow/Dissertate)
