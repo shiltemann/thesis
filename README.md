@@ -1,5 +1,10 @@
 # PhD Thesis
 
+My PhD Thesis created in LaTeX
+
+[Online Flipbook of my PhD Thesis](shiltemann.github.io/thesis/)
+
+
 PhD thesis based on the [dissertate template](https://github.com/suchow/Dissertate)
 
 ### Usage
